@@ -1,0 +1,16 @@
+{
+    "name": "ShopModule",
+    "alias": "shopmodule",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\ShopModule\\Providers\\ShopModuleServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

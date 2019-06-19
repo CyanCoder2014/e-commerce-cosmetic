@@ -1,0 +1,16 @@
+{
+    "name": "ForumModule",
+    "alias": "forummodule",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\ForumModule\\Providers\\ForumModuleServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

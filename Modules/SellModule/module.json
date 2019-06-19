@@ -1,0 +1,16 @@
+{
+    "name": "SellModule",
+    "alias": "sellmodule",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\SellModule\\Providers\\SellModuleServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

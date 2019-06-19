@@ -1,0 +1,16 @@
+{
+    "name": "BlogModule",
+    "alias": "blogmodule",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\BlogModule\\Providers\\BlogModuleServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

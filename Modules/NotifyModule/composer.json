@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/notifymodule",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\NotifyModule\\Providers\\NotifyModuleServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\NotifyModule\\": ""
+        }
+    }
+}

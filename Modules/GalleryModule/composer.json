@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/gallerymodule",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\GalleryModule\\Providers\\GalleryModuleServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\GalleryModule\\": ""
+        }
+    }
+}
