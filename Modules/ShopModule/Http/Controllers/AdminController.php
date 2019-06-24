@@ -272,8 +272,8 @@ class AdminController extends Controller
 //            'price' => 'required|numeric',
 //            'discount' => 'required|digits_between:0,100',
             'name' => 'required|max:255',
-            'description_fa' => 'required',
-//            'details_fa' => 'required',
+            'description' => 'required',
+//            'details' => 'required',
         ];
         $this->validate($request,$validation);
 //        return var_dump($request->all());

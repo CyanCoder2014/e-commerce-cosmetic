@@ -82,7 +82,7 @@
                     </div>
                 @endif
 
-                <form id="productForm" class="form-horizontal ng-pristine ng-valid" role="form" method="post" action="{{route('product.add')}}">
+                <form id="productForm" class="form-horizontal ng-pristine ng-valid" role="form" method="post" action="{{route('product.update',['id' => $product->id])}}">
                     {{ csrf_field() }}
                     <input type="hidden" name="users_id" value="{{Auth::id()}} ">
                     <input type="hidden" name="state" value="1">
