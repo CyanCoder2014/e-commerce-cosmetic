@@ -16,7 +16,7 @@
             <a data-toggle="modal" data-target="#add" class="btn btn-primary" style="float: left;margin-top: 20px">افزودن</a>
 
             <div class="title_sec">
-                <h1>اطلاعات کالکشن ها</h1>
+                <h1>اطلاعات  ها</h1>
 
             </div>
             @if(session()->has('message'))

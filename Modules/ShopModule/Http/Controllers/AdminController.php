@@ -15,8 +15,8 @@ use Modules\ShopModule\Products\ProductDetailModel;
 use Modules\ShopModule\Products\ProductModel;
 use Modules\ShopModule\Products\ProductDetailGroupModel;
 use Modules\ShopModule\Products\ProductPackage;
-use Modules\ShopModule\Products\ProuductFeature;
-use Modules\ShopModule\Products\ProuductFeaturePvot;
+use Modules\ShopModule\Products\ProductFeature;
+use Modules\ShopModule\Products\ProductFeaturePvot;
 use Modules\ShopModule\Products\Provider;
 use Modules\ShopModule\Products\ShippingProduct;
 
@@ -157,11 +157,11 @@ class AdminController extends Controller
                 if(ctype_digit($feature))
                     $feature_id = $feature;
                 else{
-                    $feature = ProuductFeature::create(['name' => $feature]);
+                    $feature = ProductFeature::create(['name' => $feature]);
                     $feature_id = $feature->id;
                 }
 
-                $new = new ProuductFeaturePvot();
+                $new = new ProductFeaturePvot();
                 $new->product_feature_id = $feature_id;
                 $new->product_id = $product->id;
                 $new->save();
@@ -429,27 +429,28 @@ class AdminController extends Controller
 
         $product->save();
         ////////////////////////****** Features *******//////////////////////////////
-        $features = $product->featresPvot;
+        $features = $product->featuresPvot;
         if(isset($request->features))
             foreach ($request->features as $feature){
                 if(ctype_digit($feature))
                     $feature_id = $feature;
                 else{
-                    $feature = ProuductFeature::create(['name' => $feature]);
+                    $feature = ProductFeature::create(['name' => $feature]);
                     $feature_id = $feature->id;
                 }
 
                 if ($features->count() > 0)
                     $new = $features->pop();
                 else
-                    $new = new ProuductFeaturePvot();
+                    $new = new ProductFeaturePvot();
                 $new->product_feature_id = $feature_id;
                 $new->product_id = $product->id;
                 $new->save();
 
             }
         if ($features->count() > 0)
-            $new = $features->delete();
+            ProductFeaturePvot::whereIn('id',$features->pluck('id'))->delete();
+
         ////////////////////////****** shipping *******//////////////////////////////
 //        ShippingProduct::where('product_id',$product->id)->delete();
 //        if(isset($request->shipping_list))

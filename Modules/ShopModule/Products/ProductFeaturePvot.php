@@ -4,7 +4,7 @@ namespace Modules\ShopModule\Products;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProuductFeaturePvot extends Model
+class ProductFeaturePvot extends Model
 {
 public $timestamps=false;
 }

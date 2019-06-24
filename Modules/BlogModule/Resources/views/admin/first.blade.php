@@ -12,7 +12,7 @@
                 <div class="widget white with-padding">
                     <div class="service">
                         <span><i class="ti-briefcase"></i></span>
-                        <h3>   مدیریت  کالکشن ها</h3>
+                        <h3>   مدیریت  ها</h3>
                         <p> </p>
                         <a href="<?= Url('/admin/data'); ?>" title="" class="c-btn medium blue-bg">مدیریت اطلاعات </a>
                     </div>

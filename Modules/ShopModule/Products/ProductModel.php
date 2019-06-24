@@ -52,12 +52,12 @@ class ProductModel extends Model
     }
     public function features(){
 
-            return $this->hasManyThrough(ProuductFeature::class,ProuductFeaturePvot::class,'product_id','id','id','product_feature_id');
+            return $this->hasManyThrough(ProductFeature::class,ProductFeaturePvot::class,'product_id','id','id','product_feature_id');
 
     }
     public function featuresPvot(){
 
-            return $this->hasMany(ProuductFeature::class ,'product_id');
+            return $this->hasMany(ProductFeaturePvot::class ,'product_id');
 
     }
 //    public function shippings(){

@@ -5,7 +5,7 @@ namespace Modules\ShopModule\Products;
 use Illuminate\Database\Eloquent\Model;
 use Sofa\Eloquence\Eloquence;
 
-class ProuductFeature extends Model
+class ProductFeature extends Model
 {
     use Eloquence;
     protected $searchableColumns = ['name'];

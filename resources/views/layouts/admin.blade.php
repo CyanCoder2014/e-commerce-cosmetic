@@ -356,7 +356,7 @@
                                             @can('add provider','edit provider','delete provider')
                                             <li>
                                                 <a href="<?= Url('/shop/admin/providers') ?>">
-                                                    <i class="fa fa-caret-right"></i>کالکشن ها محصولات
+                                                    <i class="fa fa-caret-right"></i>تولید کننده ها محصولات
                                                 </a>
                                             </li>
                                             @endcan

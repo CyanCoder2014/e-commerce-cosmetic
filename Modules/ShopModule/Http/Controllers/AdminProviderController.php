@@ -59,7 +59,7 @@ class AdminProviderController extends Controller
         $provider->save();
 
 
-        return redirect(route('providers.index'))->with('message', 'کالکشن   با موفقیت اضافه شد');
+        return redirect(route('providers.index'))->with('message', 'تولید کننده   با موفقیت اضافه شد');
     }
 
     public function edit($id)
@@ -94,7 +94,7 @@ class AdminProviderController extends Controller
 
         Provider::destroy($id);
 
-        return back()->with('message', 'کالکشن  با موفقیت حذف شد');
+        return back()->with('message', 'تولید کننده  با موفقیت حذف شد');
     }
 
 

@@ -206,7 +206,7 @@
 
 
                                                     <div class="col-md-12"><p>  فعال </p>
-                                                        <input type="checkbox" name="active">
+                                                        <input type="checkbox" name="active" @if($product->active == 1) checked @endif>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="name" class="col-sm-2 control-label">نام محصول: <span class="text-lightred text-md">*</span></label>
