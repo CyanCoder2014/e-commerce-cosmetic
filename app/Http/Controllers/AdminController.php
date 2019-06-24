@@ -67,7 +67,7 @@ class AdminController extends Controller
             ->take(6)
             ->get();
         $cats = ProductCatModel::select('product_cat.id','product_cat.name',DB::raw('CONVERT(GROUP_CONCAT(product.id SEPARATOR \',\') USING utf8) AS products'))
-            ->join('product','product.pc_id', '=', 'product_cat.id')
+            ->join('product','product.category_id', '=', 'product_cat.id')
             ->groupby('id')
             ->get();
 
@@ -99,7 +99,7 @@ class AdminController extends Controller
         $register['all']=User::count();
 
         $products = ProductModel::select('product_cat.name as cat_name','product.id','product.name','product.created_at')
-            ->leftjoin('product_cat','product.pc_id', '=', 'product_cat.id')
+            ->leftjoin('product_cat','product.category_id', '=', 'product_cat.id')
             ->orderby('id','desc')
             ->take(6)
             ->get();

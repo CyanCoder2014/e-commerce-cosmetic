@@ -18,11 +18,11 @@ return [
 //        'banners' => 'بنر ها و عکس چهار لینک اصلی',
 //        'sliderFirst' => 'اسلاید شو اول',
         'setting' => 'تنظیمات سایت',
-        'slider' => 'اسلاید شو',
-        'slider2' => 'اسلاید دوم',
-//        'contact' => 'تماس با ما',
-        'gallery' => 'گالري عکس',
-        'banner2' => 'بنر دوم',
+        'sliderFirst' => 'اسلاید شو صفحه اول',
+        //       'slider2' => 'اسلاید دوم',
+        'contact' => 'تماس با ما',
+        //       'gallery' => 'گالري عکس',
+//        'banner2' => 'بنر دوم',
 //        'footer_1' => 'فوتر اول',
 //        'footer_2' => 'فوتر دوم',
 //        'footer_3' => 'فوتر سوم',
@@ -31,7 +31,7 @@ return [
 
 
     ],
-    'types' => ['introduction', 'setting', 'slider', 'contact', 'banner1', 'banner2', 'footer_title', 'footer_1', 'footer_2', 'footer_3', 'footer_4', 'factor','sliderFirst','banners'],
+    'types' => ['introduction', 'setting', 'slider', 'contact', 'banner1', 'banner2', 'footer_title', 'footer_1', 'footer_2', 'footer_3', 'footer_4', 'factor','sliderFirst'],
     'forms' => [             //  name       type            label
         'setting' => [
 //                        'title_fa' => ['type'=>'text','label'=>'نام سایت فارسی','class'=>null,'style'=>null,'values' => array()],
@@ -40,59 +40,40 @@ return [
 //                        'name2_fa' => ['type'=>'text','label'=>'قسمت دوم نام شرکت فارسی','class'=>null,'style'=>null,'values' => array()],
 //                        'name1' => ['type'=>'text','label'=>'قسمت اول نام شرکت انگی','class'=>null,'style'=>null,'values' => array()],
 //                        'name2' => ['type'=>'text','label'=>'قسمت دوم نام شرکت فارسی','class'=>null,'style'=>null,'values' => array()],
-            'image' => ['type' => 'file', 'label' => 'لوگو شرکت', 'class' => null, 'style' => null, 'values' => array()],
+            'image_white' => ['type' => 'file', 'label' => 'لوگو سفید شرکت', 'class' => null, 'style' => null, 'values' => array()],
+            'image_black' => ['type' => 'file', 'label' => 'لوگو مشکی شرکت', 'class' => null, 'style' => null, 'values' => array()],
 //                        'banner' => ['type'=>'file','label'=>'بنر بالای صفحه','class'=>null,'style'=>null,'values' => array()],
 //                        'banner1' => ['type'=>'file','label'=>'بنر 1','class'=>null,'style'=>null,'values' => array()],
 //                        'banner2' => ['type'=>'file','label'=>'بنر 2','class'=>null,'style'=>null,'values' => array()],
-            'about_us' => ['type' => 'textarea', 'label' => 'درباره ما فوتر', 'class' => 'ckeditor', 'style' => null, 'values' => array()],
+            'about_us' => ['type' => 'text', 'label' => 'توضیحات درباره ما', 'class' => null, 'style' => null, 'values' => array()],
+            'about_us_image' => ['type' => 'file', 'label' => 'عکس درباره ما', 'class' => null, 'style' => null, 'values' => array()],
+            'catalog_right_title' => ['type' => 'text', 'label' => 'عنوان عکس کاتالوگ سمت راست', 'class' => null, 'style' => null, 'values' => array()],
+            'catalog_right_image' => ['type' => 'file', 'label' => 'عکس کاتالوگ سمت راست', 'class' => null, 'style' => null, 'values' => array()],
+            'catalog_left_top_title' => ['type' => 'text', 'label' => 'عنوان عکس کاتالوگ سمت چپ بالا', 'class' => null, 'style' => null, 'values' => array()],
+            'catalog_left_top_image' => ['type' => 'file', 'label' => 'عکس کاتالوگ سمت چپ بالا', 'class' => null, 'style' => null, 'values' => array()],
+            'catalog_left_bottom_title' => ['type' => 'text', 'label' => 'عنوان عکس کاتالوگ سمت چپ پایین', 'class' => null, 'style' => null, 'values' => array()],
+            'catalog_left_bottom_image' => ['type' => 'file', 'label' => 'عکس کاتالوگ سمت چپ پایین', 'class' => null, 'style' => null, 'values' => array()],
+            'grow_image1' => ['type' => 'file', 'label' => 'عکس بزرگ شونده 1', 'class' => null, 'style' => null, 'values' => array()],
+            'grow_image1_text' => ['type' => 'text', 'label' => 'عنوان عکس بزرگ شونده 1', 'class' => null, 'style' => null, 'values' => array()],
+            'grow_image2' => ['type' => 'file', 'label' => 'عکس بزرگ شونده 2', 'class' => null, 'style' => null, 'values' => array()],
+            'grow_image2_text' => ['type' => 'text', 'label' => 'عنوان عکس بزرگ شونده 2', 'class' => null, 'style' => null, 'values' => array()],
+            'grow_image3' => ['type' => 'file', 'label' => 'عکس بزرگ شونده 3', 'class' => null, 'style' => null, 'values' => array()],
+            'grow_image3_text' => ['type' => 'text', 'label' => 'عنوان عکس بزرگ شونده 3', 'class' => null, 'style' => null, 'values' => array()],
+            'grow_image4' => ['type' => 'file', 'label' => 'عکس بزرگ شونده 4', 'class' => null, 'style' => null, 'values' => array()],
+            'grow_image4_text' => ['type' => 'text', 'label' => 'عنوان عکس بزرگ شونده 4', 'class' => null, 'style' => null, 'values' => array()],
 //                        'about_us_fa' => ['type'=>'text','label'=>'درباره ما فوتر فارسی','class'=>null,'style'=>null,'values' => array()],
         ],
-        'slider' => [
+        'sliderFirst' => [
 //                        'title_fa' => ['type'=>'text','label'=>'عنوان فارسی','class'=>null,'style'=>null,'values' => array()],
-                        'title' => ['type'=>'text','label'=>'عنوان ','class'=>null,'style'=>null,'values' => array()],
+            'title' => ['type' => 'text', 'label' => 'عنوان ', 'class' => null, 'style' => null, 'values' => array()],
             'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
 //                        'description_fa' => ['type'=>'textarea','label'=>'توضیحات ','class'=>null,'style'=>null,'values' => array()],
-                        'description' => ['type'=>'textarea','label'=>'توضیحات ','class'=>null,'style'=>null,'values' => array()],
-//                        'op1_fa' => ['type'=>'text','label'=>'گزینه 1 فارسی','class'=>null,'style'=>null,'values' => array()],
-//                        'op1' => ['type'=>'text','label'=>'گزینه 1 انگلیسی','class'=>null,'style'=>null,'values' => array()],
-//                        'op2_fa' => ['type'=>'text','label'=>'گزینه 2 فارسی','class'=>null,'style'=>null,'values' => array()],
-//                        'op2' => ['type'=>'text','label'=>'گزینه 2 انگلیسی','class'=>null,'style'=>null,'values' => array()],
-//                        'op3_fa' => ['type'=>'text','label'=>'گزینه 3 فارسی','class'=>null,'style'=>null,'values' => array()],
-//                        'op3' => ['type'=>'text','label'=>'گزینه 3 انگلیسی','class'=>null,'style'=>null,'values' => array()],
-//                        'op4_fa' => ['type'=>'text','label'=>'گزینه 4 فارسی','class'=>null,'style'=>null,'values' => array()],
-//                        'op4' => ['type'=>'text','label'=>'گزینه 4 انگلیسی','class'=>null,'style'=>null,'values' => array()],
+            'description' => ['type' => 'textarea', 'label' => 'توضیحات ', 'class' => null, 'style' => null, 'values' => array()],
 //                        'link_fa' => ['type'=>'text','label'=>'لینک فارسی','class'=>null,'style'=>null,'values' => array()],
             'link' => ['type' => 'text', 'label' => 'لینک ', 'class' => null, 'style' => null, 'values' => array()]
         ],
-        'slider2' => [
-//
-                        'title' => ['type'=>'text','label'=>'عنوان ','class'=>null,'style'=>null,'values' => array()],
-                        'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
-                        'description' => ['type'=>'textarea','label'=>'توضیحات ','class'=>null,'style'=>null,'values' => array()],
-                        'link' => ['type' => 'text', 'label' => 'لینک ', 'class' => null, 'style' => null, 'values' => array()]
-        ],
 
-        'banner1' => [
-//            'title' => ['type'=>'text','label'=>'عنوان','class'=>null,'style'=>null,'values' => array()],
-//                        'title_fa' => ['type'=>'text','label'=>'عنوان فارسی','class'=>null,'style'=>null,'values' => array()],
-            'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
-//                        'description' => ['type'=>'text','label'=>'توضیحات انگلیسی','class'=>null,'style'=>null,'values' => array()],
-//                        'description_fa' => ['type'=>'text','label'=>'توضیحات فارسی','class'=>null,'style'=>null,'values' => array()],
-            'link' => ['type' => 'text', 'label' => 'لینک', 'class' => null, 'style' => null, 'values' => array()],
-//                        'link_fa' => ['type'=>'text','label'=>'لینک فارسی','class'=>null,'style'=>null,'values' => array()]
-        ],
-        'banner2' => [
-                        'title' => ['type'=>'text','label'=>'عنوان','class'=>null,'style'=>null,'values' => array()],
-                        'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
-                        'description' => ['type'=>'text','label'=>'توضیحات','class'=>null,'style'=>null,'values' => array()],
-                        'link' => ['type' => 'text', 'label' => 'لینک', 'class' => null, 'style' => null, 'values' => array()],
-        ],
-        'gallery' => [
-                        'title' => ['type'=>'text','label'=>'عنوان','class'=>null,'style'=>null,'values' => array()],
-                        'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
-                        'description' => ['type'=>'text','label'=>'توضیحات','class'=>null,'style'=>null,'values' => array()],
-                        'link' => ['type' => 'text', 'label' => 'لینک', 'class' => null, 'style' => null, 'values' => array()],
-        ],
+
         'footer_title' => [
             'title_1' => ['type' => 'text', 'label' => 'عنوان اولی', 'class' => null, 'style' => null, 'values' => array()],
             'title_2' => ['type' => 'text', 'label' => 'عنوان دومی', 'class' => null, 'style' => null, 'values' => array()],
@@ -150,27 +131,7 @@ return [
             'linkedin_link' => ['type' => 'text', 'label' => 'لینک لینکیداین', 'class' => null, 'style' => null, 'values' => array()],
             'instagram_link' => ['type' => 'text', 'label' => 'لینک اینستاگرام', 'class' => null, 'style' => null, 'values' => array()]
         ],
-        'factor' => [
-            'item' => ['type' => 'text', 'label' => ' کم ترین تعداد محصول مورد تخفیف', 'class' => null, 'style' => null, 'values' => array()],
-            'item_discount' => ['type' => 'text', 'label' => 'درصد تخفیف برا تعداد محصول', 'class' => null, 'style' => null, 'values' => array()],
-            'price' => ['type' => 'text', 'label' => 'حداقل مقدار جمع سبد خرید', 'class' => null, 'style' => null, 'values' => array()],
-            'price_discount' => ['type' => 'text', 'label' => 'مقدار تخفیف برای کل ', 'class' => null, 'style' => null, 'values' => array()],
-            'tax' => ['type' => 'text', 'label' => 'مالیات', 'class' => null, 'style' => null, 'values' => array()],
-        ],
-        'sliderFirst' => [
-            'background_img' => ['type' => 'file', 'label' => 'عکس بکگراند', 'class' => null, 'style' => null, 'values' => array()],
-            'header' => ['type' => 'text', 'label' => 'عنوان', 'class' => null, 'style' => null, 'values' => array()],
-            'intro' => ['type' => 'text', 'label' => 'توضیحات', 'class' => null, 'style' => null, 'values' => array()],
 
-        ],
-        'banners' => [
-            'img_brand' => ['type' => 'file', 'label' => 'عکس بنر برند', 'class' => null, 'style' => null, 'values' => array()],
-            'img_reg' => ['type' => 'file', 'label' => 'عکس بنر ثبتنام فروشگاه', 'class' => null, 'style' => null, 'values' => array()],
-            'img_maghale' => ['type' => 'file', 'label' => 'عکس مقاله', 'class' => null, 'style' => null, 'values' => array()],
-            'img_tamir' => ['type' => 'file', 'label' => 'عکس تعمیرگاه', 'class' => null, 'style' => null, 'values' => array()],
-            'img_frush' => ['type' => 'file', 'label' => 'عکس فروشگاه', 'class' => null, 'style' => null, 'values' => array()],
-            'img_agahi' => ['type' => 'file', 'label' => 'عکس آگهی', 'class' => null, 'style' => null, 'values' => array()],
-        ],
         'introduction' => [
             'background_img' => ['type' => 'file', 'label' => 'عکس بکگراند قسمت دوم', 'class' => null, 'style' => null, 'values' => array()],
             'catalog_img' => ['type' => 'file', 'label' => 'عکس کاتالوگ قسمت دوم', 'class' => null, 'style' => null, 'values' => array()],
@@ -197,19 +158,13 @@ return [
         'introduction' => true,
         'banners' => true,
         'sliderFirst' => true,
-        'setting' => false,
-        'slider' => true,
-        'slider2' => true,
+        'setting' => true,
         'contact' => true,
-        'banner1' => true,
-        'banner2' => true,
-        'gallery' => true,
         'footer_title' => true,
         'footer_1' => true,
         'footer_2' => true,
         'footer_3' => true,
         'footer_4' => true,
-        'factor' => true,
 
     ]
 

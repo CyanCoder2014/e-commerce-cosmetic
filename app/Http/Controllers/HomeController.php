@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Gate;
 use Modules\BlogModule\Contents\Content;
 use Modules\BlogModule\Contents\ContentCat;
 use Modules\ShopModule\Products\Brand;
+use Modules\ShopModule\Products\ProductCatModel;
 use Modules\ShopModule\Products\ProductModel;
 use Symfony\Component\Yaml\Tests\A;
 use App\Utility;
@@ -65,7 +66,7 @@ class HomeController extends BaseController
         $introduction= Utility::where('type',"introduction")->orderBy('id', 'desc')->first();
         $sliderFirst= Utility::where('type',"sliderFirst")->orderBy('id', 'desc')->take(6)->get();
 
-        $cats = ContentCat::where('id', '!=', '25')->orderBy('id', 'desc')->paginate(6);
+        $cats = ProductCatModel::where('id', '!=', '25')->orderBy('id', 'desc')->paginate(6);
 
         $brandsHome = Brand::paginate(15);
 

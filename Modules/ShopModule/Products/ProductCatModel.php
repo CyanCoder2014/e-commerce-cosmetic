@@ -57,7 +57,7 @@ class ProductCatModel extends Model
     public function products($take = 0){
         $cat_ids = $this->dynasty_ids();
         $cat_ids[]= $this->id;
-        $products= ProductModel::whereIn('pc_id',$cat_ids)->orderby('id','desc');
+        $products= ProductModel::whereIn('category_id',$cat_ids)->orderby('id','desc');
         if($take > 0)
              return $products->paginate($take)->appends(Input::except('page'));
         return $products->get();
