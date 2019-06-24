@@ -80,6 +80,7 @@ Route::group(array('prefix' => Config::get('app.locale_prefix')), function () {
             Route::get('/data/delete/{id}', 'AdminController@dataDelete');
 
 
+            Route::get('/product/features', 'ProuductFeatureController@find')->name('shop.feature.find');
             Route::get('/product/manage', 'AdminController@productList')->name('product.index')
                 ->middleware('permission:add product|edit product|delete product');
             Route::get('/product/add/', 'AdminController@productAddPage')->name('product.addpage')

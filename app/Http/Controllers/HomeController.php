@@ -51,29 +51,15 @@ class HomeController extends BaseController
 
     public function index()
     {
-//       $client = new \SoapClient('http://merchant.arianpal.com/WebService.asmx?wsdl');
-//
-//        $result = $client->RequestPayment(array("MerchantID" => '5134202' ,
-//            "Password" => 'LxBiPtrDG' , "Price" =>100000, "ReturnPath" =>'http://modirju.com/sdfsd/',
-//            "ResNumber" =>433, "Description" =>'you are stupid', "Paymenter" =>'me',
-//            "Email" =>'asdfas@asf.ee', "Mobile" =>'09128514651'
-//        ));
-//
-//       print_r($result->RequestPaymentResult) ;
 
 
 
         $sellers = UserProfile::activate()->whereIn('type',[0,1])->has('user')->orderby('id', 'desc')->paginate(4);
-//
         $contents = Content::where('cat_id', '!=', '25')->orderBy('id', 'desc')->paginate(6);
-//
-////        $cat1 = ContentCat::where('state', '1')->first();
-////        $contents1 = Content::where('cat_id', $cat1->id)->orderBy('state', 'desc')->paginate(6);
-//
-        $products = ProductModel::orderBy('id', 'desc')->paginate(6);
-//
+
+        $products = ProductModel::where('active', 1)->orderBy('id', 'desc')->paginate(10);
         $slides=Utility::where('type',"slider")->orderBy('id', 'desc')->take(4)->get();
-//        $banner1=Utility::where('type',"banner1")->orderBy('id', 'desc')->take(4)->get();
+        $slider2=Utility::where('type',"slider2")->orderBy('id', 'desc')->take(4)->get();
         $banner2= Utility::where('type',"banner2")->orderBy('id', 'desc')->take(2)->get();
         $lastproduct= ProductModel::orderby('id','desc')->take(6)->get();
         $introduction= Utility::where('type',"introduction")->orderBy('id', 'desc')->first();

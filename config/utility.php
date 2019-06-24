@@ -14,20 +14,20 @@ return [
     */
 
     'names' => [
-        'introduction' => 'معرفی صفحه اول',
-        'banners' => 'بنر ها و عکس چهار لینک اصلی',
-        'sliderFirst' => 'اسلاید شو اول',
+//        'introduction' => 'معرفی صفحه اول',
+//        'banners' => 'بنر ها و عکس چهار لینک اصلی',
+//        'sliderFirst' => 'اسلاید شو اول',
         'setting' => 'تنظیمات سایت',
-        'slider' => 'اسلایدشو',
-        'contact' => 'تماس با ما',
-        'banner1' => 'بنر 1 صفحه اول',
-        'banner2' => 'بنر 2 صفحه اول',
-        'footer_title' => 'عنوان فوترها',
-        'footer_1' => 'فوتر اول',
-        'footer_2' => 'فوتر دوم',
-        'footer_3' => 'فوتر سوم',
-        'footer_4' => 'فوتر چهارم',
-        'factor' => 'تنظیمات فاکتور',
+        'slider' => 'اسلاید شو',
+        'slider2' => 'اسلاید دوم',
+//        'contact' => 'تماس با ما',
+        'gallery' => 'گالري عکس',
+        'banner2' => 'بنر دوم',
+//        'footer_1' => 'فوتر اول',
+//        'footer_2' => 'فوتر دوم',
+//        'footer_3' => 'فوتر سوم',
+//        'footer_4' => 'فوتر چهارم',
+//        'factor' => 'تنظیمات فاکتور',
 
 
     ],
@@ -49,10 +49,10 @@ return [
         ],
         'slider' => [
 //                        'title_fa' => ['type'=>'text','label'=>'عنوان فارسی','class'=>null,'style'=>null,'values' => array()],
-//                        'title' => ['type'=>'text','label'=>'عنوان انگلیسی','class'=>null,'style'=>null,'values' => array()],
-            'image' => ['type' => 'file', 'label' => 'عکس اسلایدر', 'class' => null, 'style' => null, 'values' => array()],
-//                        'description_fa' => ['type'=>'textarea','label'=>'توضیحات فارسی','class'=>null,'style'=>null,'values' => array()],
-//                        'description' => ['type'=>'textarea','label'=>'توضیحات انگلیسی','class'=>null,'style'=>null,'values' => array()],
+                        'title' => ['type'=>'text','label'=>'عنوان ','class'=>null,'style'=>null,'values' => array()],
+            'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
+//                        'description_fa' => ['type'=>'textarea','label'=>'توضیحات ','class'=>null,'style'=>null,'values' => array()],
+                        'description' => ['type'=>'textarea','label'=>'توضیحات ','class'=>null,'style'=>null,'values' => array()],
 //                        'op1_fa' => ['type'=>'text','label'=>'گزینه 1 فارسی','class'=>null,'style'=>null,'values' => array()],
 //                        'op1' => ['type'=>'text','label'=>'گزینه 1 انگلیسی','class'=>null,'style'=>null,'values' => array()],
 //                        'op2_fa' => ['type'=>'text','label'=>'گزینه 2 فارسی','class'=>null,'style'=>null,'values' => array()],
@@ -63,6 +63,13 @@ return [
 //                        'op4' => ['type'=>'text','label'=>'گزینه 4 انگلیسی','class'=>null,'style'=>null,'values' => array()],
 //                        'link_fa' => ['type'=>'text','label'=>'لینک فارسی','class'=>null,'style'=>null,'values' => array()],
             'link' => ['type' => 'text', 'label' => 'لینک ', 'class' => null, 'style' => null, 'values' => array()]
+        ],
+        'slider2' => [
+//
+                        'title' => ['type'=>'text','label'=>'عنوان ','class'=>null,'style'=>null,'values' => array()],
+                        'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
+                        'description' => ['type'=>'textarea','label'=>'توضیحات ','class'=>null,'style'=>null,'values' => array()],
+                        'link' => ['type' => 'text', 'label' => 'لینک ', 'class' => null, 'style' => null, 'values' => array()]
         ],
 
         'banner1' => [
@@ -75,13 +82,16 @@ return [
 //                        'link_fa' => ['type'=>'text','label'=>'لینک فارسی','class'=>null,'style'=>null,'values' => array()]
         ],
         'banner2' => [
-//                        'title' => ['type'=>'text','label'=>'عنوان','class'=>null,'style'=>null,'values' => array()],
-//                        'title_fa' => ['type'=>'text','label'=>'عنوان فارسی','class'=>null,'style'=>null,'values' => array()],
-            'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
-//                        'description' => ['type'=>'text','label'=>'توضیحات انگلیسی','class'=>null,'style'=>null,'values' => array()],
-//                        'description_fa' => ['type'=>'text','label'=>'توضیحات فارسی','class'=>null,'style'=>null,'values' => array()],
-            'link' => ['type' => 'text', 'label' => 'لینک', 'class' => null, 'style' => null, 'values' => array()],
-//                        'link_fa' => ['type'=>'text','label'=>'لینک فارسی','class'=>null,'style'=>null,'values' => array()]
+                        'title' => ['type'=>'text','label'=>'عنوان','class'=>null,'style'=>null,'values' => array()],
+                        'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
+                        'description' => ['type'=>'text','label'=>'توضیحات','class'=>null,'style'=>null,'values' => array()],
+                        'link' => ['type' => 'text', 'label' => 'لینک', 'class' => null, 'style' => null, 'values' => array()],
+        ],
+        'gallery' => [
+                        'title' => ['type'=>'text','label'=>'عنوان','class'=>null,'style'=>null,'values' => array()],
+                        'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
+                        'description' => ['type'=>'text','label'=>'توضیحات','class'=>null,'style'=>null,'values' => array()],
+                        'link' => ['type' => 'text', 'label' => 'لینک', 'class' => null, 'style' => null, 'values' => array()],
         ],
         'footer_title' => [
             'title_1' => ['type' => 'text', 'label' => 'عنوان اولی', 'class' => null, 'style' => null, 'values' => array()],
@@ -189,9 +199,11 @@ return [
         'sliderFirst' => true,
         'setting' => false,
         'slider' => true,
+        'slider2' => true,
         'contact' => true,
         'banner1' => true,
         'banner2' => true,
+        'gallery' => true,
         'footer_title' => true,
         'footer_1' => true,
         'footer_2' => true,

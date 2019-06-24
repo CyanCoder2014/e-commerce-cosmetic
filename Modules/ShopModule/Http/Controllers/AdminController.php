@@ -15,6 +15,8 @@ use Modules\ShopModule\Products\ProductDetailModel;
 use Modules\ShopModule\Products\ProductModel;
 use Modules\ShopModule\Products\ProductDetailGroupModel;
 use Modules\ShopModule\Products\ProductPackage;
+use Modules\ShopModule\Products\ProuductFeature;
+use Modules\ShopModule\Products\ProuductFeaturePvot;
 use Modules\ShopModule\Products\Provider;
 use Modules\ShopModule\Products\ShippingProduct;
 
@@ -71,21 +73,19 @@ class AdminController extends Controller
 //        return var_dump($request->file_name);
         $validation =[
 //            'active_fa' => 'required',
-            'price' => 'required|numeric',
-            'discount' => 'required|digits_between:0,100',
-            'name_fa' => 'required|max:255',
-            'description_fa' => 'required',
-            'details_fa' => 'required',
+//            'price' => 'required|numeric',
+//            'discount' => 'required|digits_between:0,100',
+            'name' => 'required|max:255',
+            'description' => 'required',
+//            'details' => 'required',
         ];
         $this->validate($request,$validation);
 //        return var_dump($request->all());
 //        $product = new ProductModel($request->all());
 
         $product = new ProductModel();
-        $active=[];
-        $product->active_fa = ($request->input('active_fa'))? true : false ;
-        $product->active_en = ($request->input('active_en'))? true : false ;
-        $product->active_ar = ($request->input('active_ar'))? true : false ;
+        $product->active = ($request->input('active'))? true : false ;
+
 
 //        return var_dump($request->all());
 //        $image = [];
@@ -119,23 +119,18 @@ class AdminController extends Controller
         $product->file = $request->file;
 
 
-        $product->name_fa = $request->name_fa;
-        $product->name_en = $request->name_en;
-        $product->name_ar = $request->name_ar;
+        $product->name = $request->name;
 
 
-        $product->description_fa = $request->description_fa;
-        $product->description_en = $request->description_en;
-        $product->description_ar = $request->description_ar;
 
-        $product->details_fa = $request->details_fa;
-        $product->details_en = $request->details_en;
-        $product->details_ar = $request->details_ar;
-       
+        $product->description = $request->description;
 
-        if ($request->discount == null) {
-            $product->discount = '0';
-        }else {$product->discount = $request->discount; };
+//        $product->details = $request->details;
+//
+//
+//        if ($request->discount == null) {
+//            $product->discount = '0';
+//        }else {$product->discount = $request->discount; };
 
         if ($request->price == null) {
             $product->price = '0';
@@ -143,50 +138,68 @@ class AdminController extends Controller
 
 
 
-        $product->state = $request->state;
-        $product->pc_id = $request->pc_id;
+//        $product->state = $request->state;
+        $product->category_id = $request->pc_id;
 
         $product->user_id = Auth::id();
-        $product->weight =$request->weight;
-        $product->dimensions =$request->dimensions;
-        $product->brand_id =$request->brand_id;
-        $product->provider_id =$request->provider_id;
-        $product->quantity =$request->quantity;
-        $product->special =($request->input('special'))? true : false;
+//        $product->weight =$request->weight;
+//        $product->dimensions =$request->dimensions;
+//        $product->brand_id =$request->brand_id;
+//        $product->provider_id =$request->provider_id;
+//        $product->quantity =$request->quantity;
+//        $product->special =($request->input('special'))? true : false;
 
         $product->save();
-        ////////////////////////****** shipping *******//////////////////////////////
-        if(isset($request->shipping_list))
-            foreach ($request->shipping_list as $shipping){
-                $new = new ShippingProduct();
-                $new->shipping_id = $shipping;
+
+        ////////////////////////****** Features *******//////////////////////////////
+        if(isset($request->features))
+            foreach ($request->features as $feature){
+                if(ctype_digit($feature))
+                    $feature_id = $feature;
+                else{
+                    $feature = ProuductFeature::create(['name' => $feature]);
+                    $feature_id = $feature->id;
+                }
+
+                $new = new ProuductFeaturePvot();
+                $new->product_feature_id = $feature_id;
                 $new->product_id = $product->id;
                 $new->save();
 
             }
         /////////////////////////////////////////////////////////////////////////////
-        if($request->input('file_file'))
-            foreach ($request->input('file_file') as  $key => $fileseq)
-            {
-                if ($request->input('file_name.'.$key) == null )
-                    return back()->with('message','فایل های محصول باید نام داشته باشند');
-//                $file=$request->file('file_file.'.$key);
-//                $imageName = $file->getClientOriginalName();
-//                $file->move(storage_path('file'), $imageName);
-//                $FileName =  $file->getClientOriginalName();
-                $Pfile = new ProductFiles;
-//                $Pfile->file = 'file/'.$FileName;
-                $Pfile->file =$request->input('file_file.'.$key);
-                $Pfile->name = $request->input('file_name.'.$key);
-                $Pfile->type = $request->input('file_type.'.$key);
-                $Pfile->time = $request->input('file_time.'.$key);
-                $Pfile->product_id = $product->id;
-                if ($Pfile->time == null)
-                    $Pfile->time='نامشخص';
-                $Pfile->save();
-            }
-
-        $detail_price=$request->input('detail_price');
+        ////////////////////////****** shipping *******//////////////////////////////
+//        if(isset($request->shipping_list))
+//            foreach ($request->shipping_list as $shipping){
+//                $new = new ShippingProduct();
+//                $new->shipping_id = $shipping;
+//                $new->product_id = $product->id;
+//                $new->save();
+//
+//            }
+        /////////////////////////////////////////////////////////////////////////////
+//        if($request->input('file_file'))
+//            foreach ($request->input('file_file') as  $key => $fileseq)
+//            {
+//                if ($request->input('file_name.'.$key) == null )
+//                    return back()->with('message','فایل های محصول باید نام داشته باشند');
+////                $file=$request->file('file_file.'.$key);
+////                $imageName = $file->getClientOriginalName();
+////                $file->move(storage_path('file'), $imageName);
+////                $FileName =  $file->getClientOriginalName();
+//                $Pfile = new ProductFiles;
+////                $Pfile->file = 'file/'.$FileName;
+//                $Pfile->file =$request->input('file_file.'.$key);
+//                $Pfile->name = $request->input('file_name.'.$key);
+//                $Pfile->type = $request->input('file_type.'.$key);
+//                $Pfile->time = $request->input('file_time.'.$key);
+//                $Pfile->product_id = $product->id;
+//                if ($Pfile->time == null)
+//                    $Pfile->time='نامشخص';
+//                $Pfile->save();
+//            }
+//
+//        $detail_cat=$request->input('detail_cat');
         for ($i=0; $request->input('detail_name.'.$i);$i++)
         {
             if (! $request->input('detail_description.'.$i) )
@@ -195,33 +208,33 @@ class AdminController extends Controller
             $detail->product_id=$product->id;
             $detail->title=$request->input('detail_name.'.$i);
             $detail->description=$request->input('detail_description.'.$i);
-            $detail->group_id=$request->input('detail_price.'.$i);
+            $detail->group_id=$request->input('detail_cat.'.$i);
             $detail->save();
         }
         ///////////////////////////////// package /////////////////////////////////////
-        if($request->input('package_name')){
-            foreach ($request->input('package_desc') as $index => $pname){
-                if (!$request->input('package_desc.'.$index))
-                    return back()->with('message',"پر کردن توضیح فارسی پکیج الزامی است ");
-                if (!$request->input('package_name.'.$index) )
-                    return back()->with('message',"پر کردن نام فارسی پکیج الزامی است ");
-
-                $package = new ProductPackage();
-                $package->product_id = $product->id;
-//                $package->name = $request->package_name[$index];
-//                $package->description = $request->package_desc[$index];
-                $package->name=$request->input('package_name.'.$index);
-                $package->description=$request->input('package_desc.'.$index);
-                $package->image = $request->package_image[$index];
-                $package->product_details = [];
-                $package->price=0;
-                $package->save();
-
-
-
-            }
-
-        }
+//        if($request->input('package_name')){
+//            foreach ($request->input('package_desc') as $index => $pname){
+//                if (!$request->input('package_desc.'.$index))
+//                    return back()->with('message',"پر کردن توضیح فارسی پکیج الزامی است ");
+//                if (!$request->input('package_name.'.$index) )
+//                    return back()->with('message',"پر کردن نام فارسی پکیج الزامی است ");
+//
+//                $package = new ProductPackage();
+//                $package->product_id = $product->id;
+////                $package->name = $request->package_name[$index];
+////                $package->description = $request->package_desc[$index];
+//                $package->name=$request->input('package_name.'.$index);
+//                $package->description=$request->input('package_desc.'.$index);
+//                $package->image = $request->package_image[$index];
+//                $package->product_details = [];
+//                $package->price=0;
+//                $package->save();
+//
+//
+//
+//            }
+//
+//        }
 
         //////////////////////////////////  end    ////////////////////////////////////////
 
@@ -233,12 +246,12 @@ class AdminController extends Controller
         $product = ProductModel::find($id);
         $productCats = ProductCatModel::orderby('id','desc')->get();
         $detailgroup= ProductDetailGroupModel::orderby('id','desc')->get();
-        $productsDetail=ProductDetailModel::where('product_id',$id)->get();
-        $products_file = ProductFiles::where('product_id',$id)->get();
-        $products_package = ProductPackage::where('product_id',$id)->get();
+//        $productsDetail=ProductDetailModel::where('product_id',$id)->get();
+//        $products_file = ProductFiles::where('product_id',$id)->get();
+//        $products_package = ProductPackage::where('product_id',$id)->get();
         $brands= Brand::orderby('id','desc')->get();
         $providers= Provider::orderby('id','desc')->get();
-        $shippings = ShippingProduct::where('product_id',$product->id)->get();
+//        $shippings = ShippingProduct::where('product_id',$product->id)->get();
         return view('shopmodule::admin.products.edit',compact(
             'productCats',
             'detailgroup',
@@ -256,11 +269,11 @@ class AdminController extends Controller
 //        return var_dump($request->package_details);
         $validation =[
 //            'active_fa' => 'required',
-            'price' => 'required|numeric',
-            'discount' => 'required|digits_between:0,100',
-            'name_fa' => 'required|max:255',
+//            'price' => 'required|numeric',
+//            'discount' => 'required|digits_between:0,100',
+            'name' => 'required|max:255',
             'description_fa' => 'required',
-            'details_fa' => 'required',
+//            'details_fa' => 'required',
         ];
         $this->validate($request,$validation);
 //        return var_dump($request->all());
@@ -285,54 +298,54 @@ class AdminController extends Controller
 //
 //        }
 
-        $delete_id =[] ;
-        foreach(ProductFiles::select('id')->where('product_id',$id)->get() as $pfile)
-            $delete_id[]=$pfile->id;
-        if($request->input('pre_file_type'))
-            foreach ($request->input('pre_file_type') as $key => $fid)
-            {
-
-                if ($request->input('pre_file_name.'.$key) == '' )
-                    return back()->with('message','فایل های محصول باید نام داشته باشند');
-                $file= ProductFiles::find($key);
-                $file->type=$request->input('pre_file_type.'.$key);
-                $file->name = $request->input('pre_file_name.'.$key);
-                $file->time=$request->input('pre_file_time.'.$key);
-                $file->file=$request->input('pre_file_file.'.$key);
-                if ($file->time == null)
-                    $file->time='نامشخص';
-                $file->save();
-
-                $index=array_search($key, $delete_id);
-                unset($delete_id[$index]);
-
-
-            }
-
-
-        ProductFiles::destroy($delete_id); // delete what user delete
-
-        if($request->input('file_file'))
-            foreach ($request->input('file_file') as  $key => $fileseq)
-            {
-                if ($request->input('file_name.'.$key) == null )
-                    return back()->with('message','فایل های محصول باید نام داشته باشند');
-                if ($request->input('file_file.'.$key) == null )
-                    return back()->with('message','فایل های محصول باید فایل داشته باشند');
-//                $file=$request->file('file_file.'.$key);
-//                $FileName = time() . $file->getClientOriginalName();
-//                $file->move(storage_path('file'), $FileName);
-                $new = new ProductFiles;
-                $new->file =$request->input('file_file.'.$key);
-                $new->name = $request->input('file_name.'.$key);
-                $new->type = $request->input('file_type.'.$key);
-                $new->time = $request->input('file_time.'.$key);
-                if ($new->time == null)
-                    $new->time='نامشخص';
-                $new->product_id = $id;
-                $new->save();
-
-            }
+//        $delete_id =[] ;
+//        foreach(ProductFiles::select('id')->where('product_id',$id)->get() as $pfile)
+//            $delete_id[]=$pfile->id;
+//        if($request->input('pre_file_type'))
+//            foreach ($request->input('pre_file_type') as $key => $fid)
+//            {
+//
+//                if ($request->input('pre_file_name.'.$key) == '' )
+//                    return back()->with('message','فایل های محصول باید نام داشته باشند');
+//                $file= ProductFiles::find($key);
+//                $file->type=$request->input('pre_file_type.'.$key);
+//                $file->name = $request->input('pre_file_name.'.$key);
+//                $file->time=$request->input('pre_file_time.'.$key);
+//                $file->file=$request->input('pre_file_file.'.$key);
+//                if ($file->time == null)
+//                    $file->time='نامشخص';
+//                $file->save();
+//
+//                $index=array_search($key, $delete_id);
+//                unset($delete_id[$index]);
+//
+//
+//            }
+//
+//
+//        ProductFiles::destroy($delete_id); // delete what user delete
+//
+//        if($request->input('file_file'))
+//            foreach ($request->input('file_file') as  $key => $fileseq)
+//            {
+//                if ($request->input('file_name.'.$key) == null )
+//                    return back()->with('message','فایل های محصول باید نام داشته باشند');
+//                if ($request->input('file_file.'.$key) == null )
+//                    return back()->with('message','فایل های محصول باید فایل داشته باشند');
+////                $file=$request->file('file_file.'.$key);
+////                $FileName = time() . $file->getClientOriginalName();
+////                $file->move(storage_path('file'), $FileName);
+//                $new = new ProductFiles;
+//                $new->file =$request->input('file_file.'.$key);
+//                $new->name = $request->input('file_name.'.$key);
+//                $new->type = $request->input('file_type.'.$key);
+//                $new->time = $request->input('file_time.'.$key);
+//                if ($new->time == null)
+//                    $new->time='نامشخص';
+//                $new->product_id = $id;
+//                $new->save();
+//
+//            }
 
 
         $product = ProductModel::findOrFail($id);
@@ -349,60 +362,111 @@ class AdminController extends Controller
 
 
 
-        $product->file = $request->file;
-        $product->active_fa = ($request->input('active_fa'))? true : false ;
-        $product->active_en = ($request->input('active_en'))? true : false ;
-        $product->active_ar = ($request->input('active_ar'))? true : false ;
+        $product->active = ($request->input('active'))? true : false ;
 
 
+//        return var_dump($request->all());
+//        $image = [];
+//        if ($request->Images != null) {
+//            $file=$request->file('Images');
+//            foreach ($request->Images as $key => $img)
+//                if($img){
+//                $imageName = time() . '.' . $img->getClientOriginalName();
+//                $img->move(public_path('post-img'), $imageName);
+//                $image[] = 'post-img/'.$imageName;
+//            }
+//
+//        }
 
-
-        $product->name_fa = $request->name_fa;
-        $product->name_en = $request->name_en;
-        $product->name_ar = $request->name_ar;
-
-
-        $product->description_fa = $request->description_fa;
-        $product->description_en = $request->description_en;
-        $product->description_ar = $request->description_ar;
-
-        $product->details_fa = $request->details_fa;
-        $product->details_en = $request->details_en;
-        $product->details_ar = $request->details_ar;
 
         if(isset($request->Images))
             $product->image = $request->Images;
         else
             $product->image = [];
-        $product->pc_id = $request->pc_id;
-        $product->discount = $request->discount;
-        $product->price = $request->price;
-        $product->user_id =$request->user_id;
-        $product->weight =$request->weight;
-        $product->dimensions =$request->dimensions;
-        $product->brand_id =$request->brand_id;
-        $product->provider_id =$request->provider_id;
-        $product->quantity =$request->quantity;
-        $product->special =($request->input('special'))? true : false;
+
+//        if ($request->file('file')) {
+//            $file=$request->file('file');
+//            $FileName = time() . '.' . $file->getClientOriginalName();
+//            $file->move(public_path('files/shares'), $FileName);
+//            $product->file = 'files/shares/'.$FileName;
+//
+//
+//
+//        }
+
+        $product->file = $request->file;
+
+
+        $product->name = $request->name;
+
+
+
+        $product->description = $request->description;
+
+//        $product->details = $request->details;
+//
+//
+//        if ($request->discount == null) {
+//            $product->discount = '0';
+//        }else {$product->discount = $request->discount; };
+
+        if ($request->price == null) {
+            $product->price = '0';
+        }else {$product->price = $request->price; };
+
+
+
+//        $product->state = $request->state;
+        $product->category_id = $request->pc_id;
+
+        $product->user_id = Auth::id();
+//        $product->weight =$request->weight;
+//        $product->dimensions =$request->dimensions;
+//        $product->brand_id =$request->brand_id;
+//        $product->provider_id =$request->provider_id;
+//        $product->quantity =$request->quantity;
+//        $product->special =($request->input('special'))? true : false;
 
         $product->save();
-        ////////////////////////****** shipping *******//////////////////////////////
-        ShippingProduct::where('product_id',$product->id)->delete();
-        if(isset($request->shipping_list))
-            foreach ($request->shipping_list as $shipping){
-                $new = new ShippingProduct();
-                $new->shipping_id = $shipping;
+        ////////////////////////****** Features *******//////////////////////////////
+        $features = $product->featresPvot;
+        if(isset($request->features))
+            foreach ($request->features as $feature){
+                if(ctype_digit($feature))
+                    $feature_id = $feature;
+                else{
+                    $feature = ProuductFeature::create(['name' => $feature]);
+                    $feature_id = $feature->id;
+                }
+
+                if ($features->count() > 0)
+                    $new = $features->pop();
+                else
+                    $new = new ProuductFeaturePvot();
+                $new->product_feature_id = $feature_id;
                 $new->product_id = $product->id;
                 $new->save();
 
             }
+        if ($features->count() > 0)
+            $new = $features->delete();
+        ////////////////////////****** shipping *******//////////////////////////////
+//        ShippingProduct::where('product_id',$product->id)->delete();
+//        if(isset($request->shipping_list))
+//            foreach ($request->shipping_list as $shipping){
+//                $new = new ShippingProduct();
+//                $new->shipping_id = $shipping;
+//                $new->product_id = $product->id;
+//                $new->save();
+//
+//            }
         /////////////////////////////////////////////////////////////////////////////
 
 
         //////////////////////// product details ////////////////////////////////
-        $detail_price= [];
+        $detail_cat= [];
         $previous_details=ProductDetailModel::where('product_id',$id)->get();
-        $detail_price=$request->input('detail_price');
+        $detail_cat=$request->input('detail_cat');
         for ($i=0; $request->input('detail_name.'.$i);$i++)
         {
             if (!$request->input('detail_description.'.$i))
@@ -426,13 +490,13 @@ class AdminController extends Controller
                 $detail->description=$request->input('detail_description.'.$i);
 //                $detail->title=$detail_name[$i];
 //                $detail->description=$detail_description[$i];
-                $detail->group_id=$request->input('detail_price.'.$i);
+                $detail->group_id=$request->input('detail_cat.'.$i);
                 $detail->save();
-                $detail_price[$detail->id]=$detail->group_id;
+                $detail_cat[$detail->id]=$detail->group_id;
             }
 
         }
-//        return var_dump($detail_price);
+//        return var_dump($detail_cat);
         foreach ($previous_details as $olddetails)
             $olddetails->delete();
         ///////////////////////////////////////////////////////////////////////////////
@@ -470,7 +534,7 @@ class AdminController extends Controller
                     $price=0;
                     if(isset($request->package_details[$index]))
                     foreach ($request->package_details[$index] as $detail_id)
-                        $price += $detail_price[$detail_id];
+                        $price += $detail_cat[$detail_id];
                     $package->price=$price;
                     $package->save();
 
