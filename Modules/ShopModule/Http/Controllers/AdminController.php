@@ -256,11 +256,11 @@ class AdminController extends Controller
             'productCats',
             'detailgroup',
             'product',
-            'productsDetail',
-            'products_file',
-            'products_package',
+//            'productsDetail',
+//            'products_file',
+//            'products_package',
             'brands',
-            'shippings',
+//            'shippings',
             'providers'
         ));
     }

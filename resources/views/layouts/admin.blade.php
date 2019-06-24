@@ -333,7 +333,7 @@
                                           </a>
                                         <ul>
                                             @can('add product','edit product','delete product')
-                                            <li><a href="<?= Url('admin/products') ?>"><i
+                                            <li><a href="<?= route('product.index') ?>"><i
                                                             class="fa fa-caret-right"></i> مدیریت محصولات </a>
                                             </li>
                                             @endcan
