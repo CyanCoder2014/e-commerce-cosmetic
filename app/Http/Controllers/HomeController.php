@@ -53,8 +53,6 @@ class HomeController extends BaseController
     public function index()
     {
 
-
-
         $sellers = UserProfile::activate()->whereIn('type',[0,1])->has('user')->orderby('id', 'desc')->paginate(4);
         $contents = Content::where('cat_id', '!=', '25')->orderBy('id', 'desc')->paginate(6);
 

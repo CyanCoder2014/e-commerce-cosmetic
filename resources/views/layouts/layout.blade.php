@@ -2,7 +2,6 @@
 <html lang="en">
 
 
-
 <head>
 
 
@@ -15,9 +14,8 @@
     <meta name="title" content="{{$setting->data['title']}} | @yield('title')"/>
     @yield('header')
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 
     <!-- <link rel="stylesheet" href="css/all.css">-->
@@ -27,7 +25,6 @@
     <link rel="stylesheet" href="/css/slick.css">
     <link rel="stylesheet" href="/css/slick-theme.css">
     <link rel="stylesheet" href="/css/mycustom.css">
-
 
 
 </head>
@@ -62,66 +59,22 @@
                         <div class="bg-second shadow h-100 overflow-s">
                             <div class="container-fluid">
                                 <div class="row">
-                                    <div class="col-md-2 pt-3 text-center item-hover">
-                                        <a href="#" class="text-black">
-                                            <img src="pic/menu1.png"
-                                                 height="100"
-                                                 width="100"/>
-                                            <div class="text-center p-3">
-                                                something
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-2 pt-3 text-center item-hover">
-                                        <a href="#" class="text-black">
-                                            <img src="pic/menu2.png"
-                                                 height="100"
-                                                 width="100"/>
-                                            <div class="text-center p-3">
-                                                something
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-2 pt-3 text-center item-hover">
-                                        <a href="#" class="text-black">
-                                            <img src="pic/menu3.png"
-                                                 height="100"
-                                                 width="100"/>
-                                            <div class="text-center p-3">
-                                                something
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-2 pt-3 text-center item-hover">
-                                        <a href="#" class="text-black">
-                                            <img src="pic/menu4.png"
-                                                 height="100"
-                                                 width="100"/>
-                                            <div class="text-center p-3">
-                                                something
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-2 pt-3 text-center item-hover">
-                                        <a href="#" class="text-black">
-                                            <img src="pic/menu5.png"
-                                                 height="100"
-                                                 width="100"/>
-                                            <div class="text-center p-3">
-                                                something
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-2 pt-3 text-center item-hover">
-                                        <a href="#" class="text-black">
-                                            <img src="pic/menu1.png"
-                                                 height="100"
-                                                 width="100"/>
-                                            <div class="text-center p-3">
-                                                something
-                                            </div>
-                                        </a>
-                                    </div>
+                                    @foreach($cats as $key => $cat)
+                                        <div class="col-md-2 pt-3 text-center item-hover">
+                                            <a href="#">
+
+                                                <img src="pic/menu1.png"
+
+                                                     class="w-100"/>
+
+                                                <div class="text-center p-3">
+                                                    {{$cat->name}}
+                                                </div>
+                                            </a>
+                                        </div>
+                                    @endforeach
+
+
                                 </div>
                             </div>
 
@@ -142,13 +95,13 @@
 
     </div>
 </nav>
-<div class="navMenu z-depth-5">
-    <div class="w-100 bg-white p-3 font-weight-bold text-black mb-0 menuBarBtn menuHover2 active">
+<div class="navMenu z-depth-5 menuBarBtn active menuHover2">
+    <div class="w-100 p-3 font-weight-bold text-black mb-0 ">
         <span class="textProduct"> کاتالوگ محصولات</span>
         <i class="fas fa-times"></i>
     </div>
     <div class="w-100 bg-black p-3 h5 mb-0 menuHover">
-        <a href="/"><img src="{{$setting->data['image_white']}}" class="w-100" alt=""></a>
+        <img src="{{$setting->data['image_white']}}" class="w-100" alt="">
     </div>
 </div>
 <div class="menuBar ">
@@ -231,13 +184,12 @@
 </div>
 
 
-
 <section class="my-Index">
 
     @yield('content')
-    <footer class="bg-black">
+    <footer class="bg-black222">
         <div class="p-5 text-center">
-            <img src="pic/pippa-logo-800pxWhite.png" width="250"/>
+            <img src="{{$setting->data['image_white']}}" width="250"/>
         </div>
         <div class="container">
             <div class="row">
@@ -253,7 +205,7 @@
                 </div>
                 <div class="col-md-3">
                     <ul class="d-flex flex-row list-unstyled justify-content-center">
-                        <li class="m-3"><a class="text-white menuHover" href="#"><i
+                        <li class="m-3"><a class="text-white menuHover" href=""><i
                                         class="fab fa-facebook-f"></i></a></li>
                         <li class="m-3"><a class="text-white menuHover" href="#"><i
                                         class="fab fa-instagram"></i></a></li>
@@ -263,14 +215,11 @@
                 </div>
             </div>
         </div>
-        <div class="elegant-color py-3 text-center text-white">
+        <div class="bg-black py-3 text-center text-white">
             designed by CyanCoder
         </div>
     </footer>
 </section>
-
-
-
 
 
 <script src="/js/jquery.min.js"></script>

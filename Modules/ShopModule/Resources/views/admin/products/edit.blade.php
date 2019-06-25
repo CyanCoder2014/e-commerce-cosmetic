@@ -155,7 +155,7 @@
                                                                             @if($cat->parent_id == 0)
                                                                             style="font-weight: 600;color: #2C3E50"
                                                                             @endif
-                                                                            @if($cat->id == $product->pc_id)
+                                                                            @if($cat->id == $product->category_id)
                                                                             selected
                                                                             @endif
                                                                             value="{{$cat->id}}">{{$cat->name}}</option>
