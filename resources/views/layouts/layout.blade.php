@@ -41,7 +41,7 @@
         </div>
 
     </div>
-    <a class="navbar-image" href="#"><img src="{{asset($setting->data['image_black'])}}"/></a>
+    <a class="navbar-image" href="/"><img src="{{asset($setting->data['image_black'])}}"/></a>
     <button class="navbar-toggler text-black p-2" type="button" data-toggle="collapse" style="display: block"
             data-target="#navbarSupportedContent1"
             aria-controls="navbarSupportedContent1"

@@ -212,37 +212,17 @@
                      aria-labelledby="myTab{{$key}}-tab">
                     <div class="grid">
 
-                        @foreach($cat->products() as $key => $productsInner)
+                        @foreach($cat->products() as $key1 => $productsInner)
                             {{-- {{dd($productsInner)}}--}}
-                            @switch($key%5)
-                                @case(4)
-                                <div class="grid-item">
-                                    <a href="{{$productsInner->link()}}">
-                                        <div class="view overlay cursor-p">
+                            @switch($key1%4)
 
-                                                    <div class="bg-background"
-                                                         style="background-image: url('{{$productsInner->image[0]??'defualt'}}');height: 300px"></div>
-
-                                            <div class="mask rgba-black-light">
-                                                <div class="textHover">
-                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                                              height="90" alt=""></div>
-                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
-                                                    <div class="font-small">{!!$productsInner->description!!}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                @break
                                 @case(3)
-                                <div class="grid-item">
+                                <div class=" @if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--height1">
                                     <a href="{{$productsInner->link()}}">
                                         <div class="view overlay cursor-p">
 
-                                            <div class="bg-background"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');height: 400px"></div>
+                                            <div class="bg-background grid-item--height1"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
@@ -257,12 +237,12 @@
                                 </div>
                                 @break
                                 @case(2)
-                                <div class="grid-item">
+                                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--height2">
                                     <a href="{{$productsInner->link()}}">
                                         <div class="view overlay cursor-p">
 
-                                            <div class="bg-background"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');height: 300px"></div>
+                                            <div class="bg-background grid-item--height2"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
@@ -277,12 +257,12 @@
                                 </div>
                                 @break
                                 @case(1)
-                                <div class="grid-item grid-item--width2">
+                                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--width2 grid-item--height4">
                                     <a href="{{$productsInner->link()}}">
                                         <div class="view overlay cursor-p">
 
-                                            <div class="bg-background"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');height: 400px"></div>
+                                            <div class="bg-background grid-item--height4"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
@@ -297,12 +277,12 @@
                                 </div>
                                 @break
                                 @case(0)
-                                <div class="grid-item grid-item--width2">
+                                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--width2 grid-item--height4">
                                     <a href="{{$productsInner->link()}}">
                                         <div class="view overlay cursor-p">
 
-                                            <div class="bg-background"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');height: 400px"></div>
+                                            <div class="bg-background grid-item--height4"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"

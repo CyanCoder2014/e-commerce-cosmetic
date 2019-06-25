@@ -896,15 +896,23 @@ body::-webkit-scrollbar {
     clear: both;
 }
 
-.grid-item {
+.grid-item1 {
     width: 50%;
     float: left;
+}
+.grid-item2 {
+    width: 50%;
+    float: right;
 }
 
 .grid-item--width2 { width: 25%; }
 .bg-black222{
     background-color: #222;
 }
+.grid-item--height1 { height: 270px; }
+.grid-item--height2 { height: 300px; }
+.grid-item--height3 { height: 400px; }
+.grid-item--height4 { height: 570px; }
 .cursor-p{
     cursor: pointer;
 }
