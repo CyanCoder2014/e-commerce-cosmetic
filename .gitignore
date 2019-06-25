@@ -1,5 +1,10 @@
 /node_modules
-/public
+/public/assets
+/public/images
+/public/photos
+/public/pic
+/public/per-fonts
+/public/vendor
 /storage/*.key
 /vendor
 /.idea
