@@ -47,6 +47,7 @@ return [
 //                        'banner2' => ['type'=>'file','label'=>'بنر 2','class'=>null,'style'=>null,'values' => array()],
             'about_us' => ['type' => 'text', 'label' => 'توضیحات درباره ما', 'class' => null, 'style' => null, 'values' => array()],
             'about_us_image' => ['type' => 'file', 'label' => 'عکس درباره ما', 'class' => null, 'style' => null, 'values' => array()],
+            'about_us_image_bg' => ['type' => 'file', 'label' => 'عکس درباره ما بکگراند', 'class' => null, 'style' => null, 'values' => array()],
             'catalog_right_title' => ['type' => 'text', 'label' => 'عنوان عکس کاتالوگ سمت راست', 'class' => null, 'style' => null, 'values' => array()],
             'catalog_right_image' => ['type' => 'file', 'label' => 'عکس کاتالوگ سمت راست', 'class' => null, 'style' => null, 'values' => array()],
             'catalog_left_top_title' => ['type' => 'text', 'label' => 'عنوان عکس کاتالوگ سمت چپ بالا', 'class' => null, 'style' => null, 'values' => array()],
@@ -74,13 +75,13 @@ return [
         ],
 
 
-        'footer_title' => [
+        /*'footer_title' => [
             'title_1' => ['type' => 'text', 'label' => 'عنوان اولی', 'class' => null, 'style' => null, 'values' => array()],
             'title_2' => ['type' => 'text', 'label' => 'عنوان دومی', 'class' => null, 'style' => null, 'values' => array()],
             'title_3' => ['type' => 'text', 'label' => 'عنوان سومی', 'class' => null, 'style' => null, 'values' => array()],
             'title_4' => ['type' => 'text', 'label' => 'عنوان چهارمی', 'class' => null, 'style' => null, 'values' => array()],
-        ],
-        'footer_1' => ['title' => ['type' => 'text', 'label' => 'عنوان', 'class' => null, 'style' => null, 'values' => array()],
+        ],*/
+        /*'footer_1' => ['title' => ['type' => 'text', 'label' => 'عنوان', 'class' => null, 'style' => null, 'values' => array()],
 //                        'title_fa' => ['type'=>'text','label'=>'عنوان فارسی','class'=>null,'style'=>null,'values' => array()],
 //                          'image' => ['type'=>'file','label'=>'عکس','class'=>null,'style'=>null,'values' => array()],
 //                        'description' => ['type'=>'text','label'=>'توضیحات انگلیسی','class'=>null,'style'=>null,'values' => array()],
@@ -111,7 +112,7 @@ return [
 //                        'description_fa' => ['type'=>'text','label'=>'توضیحات فارسی','class'=>null,'style'=>null,'values' => array()],
             'link' => ['type' => 'text', 'label' => 'لینک', 'class' => null, 'style' => null, 'values' => array()],
 //                        'link_fa' => ['type'=>'text','label'=>'لینک فارسی','class'=>null,'style'=>null,'values' => array()]
-        ],
+        ],*/
 //        'customers' => ['name' => ['type'=>'text','label'=>'نام انگلیسی','class'=>null,'style'=>null,'values' => array()],
 //                        'name_fa' => ['type'=>'text','label'=>'نام فارسی','class'=>null,'style'=>null,'values' => array()],
 //                        'c_name' => ['type'=>'text','label'=>'نام شرکت انگلیسی','class'=>null,'style'=>null,'values' => array()],
@@ -129,25 +130,9 @@ return [
             'telegram_link' => ['type' => 'text', 'label' => 'لینک تلگرام', 'class' => null, 'style' => null, 'values' => array()],
             'twitter_link' => ['type' => 'text', 'label' => 'لینک توئیتر', 'class' => null, 'style' => null, 'values' => array()],
             'linkedin_link' => ['type' => 'text', 'label' => 'لینک لینکیداین', 'class' => null, 'style' => null, 'values' => array()],
-            'instagram_link' => ['type' => 'text', 'label' => 'لینک اینستاگرام', 'class' => null, 'style' => null, 'values' => array()]
+            'instagram_link' => ['type' => 'text', 'label' => 'لینک اینستاگرام', 'class' => null, 'style' => null, 'values' => array()],
+            'facebook_link' => ['type' => 'text', 'label' => 'لینک اینستاگرام', 'class' => null, 'style' => null, 'values' => array()],
         ],
-
-        'introduction' => [
-            'background_img' => ['type' => 'file', 'label' => 'عکس بکگراند قسمت دوم', 'class' => null, 'style' => null, 'values' => array()],
-            'catalog_img' => ['type' => 'file', 'label' => 'عکس کاتالوگ قسمت دوم', 'class' => null, 'style' => null, 'values' => array()],
-            'catalog_header' => ['type' => 'text', 'label' => ' سر تیتر کاتالوگ قسمت دوم', 'class' => null, 'style' => null, 'values' => array()],
-            'catalog_intro' => ['type' => 'text', 'label' => 'توضیحات کاتالوگ قسمت دوم', 'class' => null, 'style' => null, 'values' => array()],
-            'shop1_img' => ['type' => 'file', 'label' => 'عکس شاپ راست', 'class' => null, 'style' => null, 'values' => array()],
-            'shop1_intro' => ['type' => 'text', 'label' => 'توضیحات شاپ راست', 'class' => null, 'style' => null, 'values' => array()],
-            'shop1_btn' => ['type' => 'text', 'label' => 'دکمه شاپ راست', 'class' => null, 'style' => null, 'values' => array()],
-            'shop_img' => ['type' => 'file', 'label' => 'عکس شاپ وسط', 'class' => null, 'style' => null, 'values' => array()],
-            'shop2_img' => ['type' => 'file', 'label' => 'عکس شاپ چپ', 'class' => null, 'style' => null, 'values' => array()],
-            'shop2_intro' => ['type' => 'text', 'label' => 'توضیحات شاپ چپ', 'class' => null, 'style' => null, 'values' => array()],
-            'shop2_btn' => ['type' => 'text', 'label' => 'دکمه شاپ چپ', 'class' => null, 'style' => null, 'values' => array()],
-            'sliderSide_title' => ['type' => 'text', 'label' => 'عنوان توضیحات کنار اسلایدر', 'class' => null, 'style' => null, 'values' => array()],
-            'sliderSide_intro' => ['type' => 'text', 'label' => ' توضیحات کنار اسلایدر', 'class' => null, 'style' => null, 'values' => array()],
-
-        ]
 //        'skill' => [    'title' => ['type'=>'text','label'=>'عنوان انگلیسی','class'=>null,'style'=>null,'values' => array()],
 //                        'title_fa' => ['type'=>'text','label'=>'عنوان فارسی','class'=>null,'style'=>null,'values' => array()],
 //                        'number' => ['type'=>'text','label'=>'تعداد','class'=>null,'style'=>null,'values' => array()]
@@ -155,16 +140,9 @@ return [
 
     ],
     'addable' => [
-        'introduction' => true,
-        'banners' => true,
         'sliderFirst' => true,
         'setting' => true,
         'contact' => true,
-        'footer_title' => true,
-        'footer_1' => true,
-        'footer_2' => true,
-        'footer_3' => true,
-        'footer_4' => true,
 
     ]
 

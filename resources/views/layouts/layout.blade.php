@@ -41,7 +41,7 @@
         </div>
 
     </div>
-    <a class="navbar-image" href="#"><img src="{{$setting->data['image_black']}}"/></a>
+    <a class="navbar-image" href="#"><img src="{{asset($setting->data['image_black'])}}"/></a>
     <button class="navbar-toggler text-black p-2" type="button" data-toggle="collapse" style="display: block"
             data-target="#navbarSupportedContent1"
             aria-controls="navbarSupportedContent1"
@@ -59,13 +59,10 @@
                         <div class="bg-second shadow h-100 overflow-s">
                             <div class="container-fluid">
                                 <div class="row">
-                                    @foreach($cats as $key => $cat)
+                                    @foreach($categories as $key => $cat)
                                         <div class="col-md-2 pt-3 text-center item-hover">
                                             <a href="#">
-
-                                                <img src="pic/menu1.png"
-
-                                                     class="w-100"/>
+                                                <div class="bg-background w-100" style="height: 150px;background-image:url('{{asset($cat->image)}}') "></div>
 
                                                 <div class="text-center p-3">
                                                     {{$cat->name}}
@@ -83,7 +80,7 @@
                     </div>
                 </li>
                 <li class="nav-item ">
-                    <a href="#" class="text-black p-4 d-inline-block">درباره ما</a>
+                    <a href="/aboutus" class="text-black p-4 d-inline-block">درباره ما</a>
                 </li>
                 <li class="nav-item ">
                     <a href="#" class="text-black p-4 d-inline-block">تماس با ما</a>
@@ -101,7 +98,7 @@
         <i class="fas fa-times"></i>
     </div>
     <div class="w-100 bg-black p-3 h5 mb-0 menuHover">
-        <img src="{{$setting->data['image_white']}}" class="w-100" alt="">
+        <img src="{{asset($setting->data['image_white'])}}" class="w-100" alt="">
     </div>
 </div>
 <div class="menuBar ">
@@ -189,12 +186,12 @@
     @yield('content')
     <footer class="bg-black222">
         <div class="p-5 text-center">
-            <img src="{{$setting->data['image_white']}}" width="250"/>
+            <img src="{{asset($setting->data['image_white'])}}" width="250"/>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <img src="pic/pippa-logo-800pxWhite.png" width="82"/></div>
+                    <img src="{{asset($setting->data['image_white'])}}" width="82"/></div>
                 <div class="col-md-6">
                     <ul class="list-unstyled d-lg-flex flex-lg-row justify-content-center">
                         <li class="p-3"><a href="#" class="text-white">DISCLAIMER & WEBSITE</a></li>
@@ -205,12 +202,16 @@
                 </div>
                 <div class="col-md-3">
                     <ul class="d-flex flex-row list-unstyled justify-content-center">
-                        <li class="m-3"><a class="text-white menuHover" href=""><i
+                        <li class="m-3"><a class="text-white menuHover" href="{{$contact->data['facebook_link']}}"><i
                                         class="fab fa-facebook-f"></i></a></li>
-                        <li class="m-3"><a class="text-white menuHover" href="#"><i
+                        <li class="m-3"><a class="text-white menuHover" href="{{$contact->data['instagram_link']}}"><i
                                         class="fab fa-instagram"></i></a></li>
-                        <li class="m-3"><a class="text-white menuHover" href="#"><i
+                        <li class="m-3"><a class="text-white menuHover" href="{{$contact->data['twitter_link']}}"><i
                                         class="fab fa-twitter"></i></a></li>
+                        <li class="m-3"><a class="text-white menuHover" href="{{$contact->data['linkedin_link']}}"><i
+                                        class="fab fa-linkedin"></i></a></li>
+                        <li class="m-3"><a class="text-white menuHover" href="{{$contact->data['telegram_link']}}"><i
+                                        class="fab fa-telegram"></i></a></li>
                     </ul>
                 </div>
             </div>

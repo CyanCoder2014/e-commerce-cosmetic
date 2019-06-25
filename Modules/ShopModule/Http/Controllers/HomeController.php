@@ -85,7 +85,7 @@ class HomeController extends Controller
         $this->setInspect($dataId,'product');
 //        $contentCats = ProductCatModel::where('parent_id', '0')->orderby('id', 'desc')->paginate(30);
 
-        $related = ProductModel::where('pc_id', $product->pc_id)->where('id','!=',$dataId)->paginate(3);
+        $related = ProductModel::where('category_id', $product->category_id)->where('id','!=',$dataId)->paginate(3);
 //
 //        $contentsL = ProductModel::orderBy('created_at', 'desc')->paginate(4);
 //        $contentsR = Content::where('cat_id', $dataId)->orderBy('id', 'desc')->paginate(4);
@@ -123,7 +123,7 @@ class HomeController extends Controller
         $cat = ProductCatModel::find($dataId);
         $contentCat = ProductCatModel::where('parent_id', $dataId)->orderby('id', 'desc')->paginate(15);
 
-        $contents = ProductModel::where('pc_id', $dataId)->orderby('id', 'desc')->paginate(20);
+        $contents = ProductModel::where('category_id', $dataId)->orderby('id', 'desc')->paginate(20);
         $contentCats = ProductCatModel::where('parent_id', '0')->orderby('id', 'desc')->paginate(30);
 
 //        $contentsV = ProductModel::orderBy('view', 'desc')->paginate(4);

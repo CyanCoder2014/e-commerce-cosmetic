@@ -60,6 +60,11 @@ class ProductModel extends Model
             return $this->hasMany(ProductFeaturePvot::class ,'product_id');
 
     }
+    public function link(){
+
+            return route('shop.show',['id' => '324-'.$this->id.'-'.$this->name]);
+
+    }
 //    public function shippings(){
 //        return $this->belongsToMany('Modules\ShopModule\Products\Shipping', 'shipping_products','product_id');
 //    }
