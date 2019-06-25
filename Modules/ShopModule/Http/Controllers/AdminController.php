@@ -651,6 +651,7 @@ class AdminController extends Controller
     {
         $cat = new ProductCatModel();
         $cat->name=$request->input('name');
+        $cat->image=$request->input('image');
         if($request->input('parent_id') != 0)
             $cat->parent_id=$request->input('parent_id');
         else
@@ -665,6 +666,7 @@ class AdminController extends Controller
     {
         $cat = ProductCatModel::find($id);
         $cat->name=$request->input('name');
+        $cat->image=$request->input('image');
         if($request->input('parent_id') != 0)
             $cat->parent_id=$request->input('parent_id');
         else

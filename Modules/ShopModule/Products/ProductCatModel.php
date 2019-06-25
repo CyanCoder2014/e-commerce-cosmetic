@@ -12,7 +12,7 @@ class ProductCatModel extends Model
 
     protected $table='product_cat';
     public $timestamps=true;
-    protected $fillable = ['id','name','parent_id'];
+    protected $fillable = ['id','name','parent_id','image'];
 //    protected $casts = ['name' => 'array'];
 
     public function parent(){

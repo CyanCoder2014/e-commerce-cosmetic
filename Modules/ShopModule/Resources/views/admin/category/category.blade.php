@@ -1,4 +1,11 @@
 @extends('layouts.admin')
+@section('end_script')
+    <script src="{{asset('/vendor/laravel-filemanager/js/lfm.js')}}"></script>
+
+    <script>
+        $('.lfm').filemanager('image');
+    </script>
+@endsection
 @section('content')
 
 
@@ -133,6 +140,16 @@
                                     <input required name="name" type="text" value="" class="form-control">
                                 </div>
                             </div>
+                            <div class="col-md-6" style="float: right">
+                                <label for="field">عکس</label>
+                                <span class="input-group-btn">
+                                     <a id="lfm" data-input="field" data-preview="thumbnail" class="btn btn-primary lfm">
+                                       <i class="fa fa-picture-o"></i> انتخاب
+                                     </a>
+                                 </span>
+                                <input id="field" class="form-control" type="text" name="image" value="">
+                                <img id="thumbnail" style="margin-top:15px;max-height:100px;" >
+                            </div>
 
                             <div class="col-md-12">
                                 <div class="sec"><p> دسته </p>
@@ -183,6 +200,16 @@
                                     <div class="input-group"><p style="float: right">  عنوان فارسی دسته بندی</p>
                                         <input required name="name" type="text" value="{{$cat->name}}" class="form-control">
                                     </div>
+                                </div>
+                                <div class="col-md-6" style="float: right">
+                                    <label for="field{{$cat->id}}">عکس</label>
+                                    <span class="input-group-btn">
+                                     <a id="lfm{{$cat->id}}" data-input="field{{$cat->id}}" data-preview="thumbnail{{$cat->id}}" class="btn btn-primary lfm">
+                                       <i class="fa fa-picture-o"></i> انتخاب
+                                     </a>
+                                 </span>
+                                    <input id="field{{$cat->id}}" class="form-control" type="text" name="image" value="{{$cat->image??''}}">
+                                    <img id="thumbnail{{$cat->id}}" style="margin-top:15px;max-height:100px;" src="{{$cat->image??''}}">
                                 </div>
                                 <div class="col-md-12">
                                     <div class="sec"><p> دسته</p>
