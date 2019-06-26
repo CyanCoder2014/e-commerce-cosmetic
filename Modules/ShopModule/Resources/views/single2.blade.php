@@ -183,7 +183,7 @@
                 </div>
                 <div class="col-md-7 text-black text-right">
                     <h1 class="display-4">ویژگی های محصول</h1>
-                    <ul class="my-3 list-unstyled">
+                    <ul class="my-3 list-unstyled ml-3">
                         @foreach($product->features as $key => $productFeatures)
                             <li class="nav-item text-right p-2 shadow">
                                 {{$productFeatures->name}}

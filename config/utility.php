@@ -85,6 +85,7 @@ return [
         ],
         'sliderAboutUs2' => [
             'title' => ['type' => 'text', 'label' => 'عنوان ', 'class' => null, 'style' => null, 'values' => array()],
+            'year' => ['type' => 'text', 'label' => 'سال ', 'class' => null, 'style' => null, 'values' => array()],
             'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
             'description' => ['type' => 'textarea', 'label' => 'توضیحات ', 'class' => null, 'style' => null, 'values' => array()],
         ],

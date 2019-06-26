@@ -58,7 +58,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-black p-5">
+    <div class="bg-white p-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
@@ -66,7 +66,7 @@
                         <span class="text-gray font-weight-bold">{{$setting->data['about_us_more2']}}</span>
                         <span class="d-inline-block ml-3 bg-gray" style="width: 50px;height: 3px"></span>
                     </div>
-                    <h1 class="text-white font-weight-bold mt-3">{{$setting->data['about_us_title']}}</h1>
+                    <h1 class="font-weight-bold mt-3">{{$setting->data['about_us_title']}}</h1>
                 </div>
                 <div class="col-md-7 ">
                     <div class="text-gray">
@@ -102,70 +102,50 @@
             </div>
         </div>
     </div>
-    <div class="bg-carousel">
-        <div class="view padding-14">
-            <img src="{{asset($setting->about_us_image_bg)}}" class="w-100" alt="placeholder">
-            <div class="mask flex-center waves-effect waves-light rgba-black-strong">
-                <div>
-                    <div id="about-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#about-carousel" data-slide-to="0" class="active">
-                                <div>1994</div>
-                            </li>
-                            <li data-target="#about-carousel" data-slide-to="1">
-                                <div>2000</div>
-                            </li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="container ">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <img src="pic/schwan-cosmetics-products-inspiration-06gr.jpg"
-                                                 class="w-100" alt="placeholder">
-                                        </div>
-                                        <div class="col-md-6 pl-4">
-                                            <h3 class="text-white mt-3">WE ARE PROUD TO PRESENT THE 7132 HOTEL’S
-                                                COWS.</h3>
-                                            <p class="text-gray mt-3">Lorem ipsum dolor sit amet, consectetur
-                                                adipisicing elit. Aliquid culpa
-                                                dicta dolorum eaque eos et laborum, omnis quae. A adipisci, at earum
-                                                maxime nam quia quis ratione soluta tempora totam!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <img src="pic/schwan-cosmetics-products-inspiration-02gr.jpg" class="w-100"
-                                                 alt="placeholder">
-                                        </div>
-                                        <div class="col-md-6 pl-4">
-                                            <h3 class="text-white mt-3">WE ARE PROUD TO PRESENT THE 7132 HOTEL’S
-                                                COWS.</h3>
-                                            <p class="text-gray mt-3">Lorem ipsum dolor sit amet, consectetur
-                                                adipisicing elit. Aliquid culpa
-                                                dicta dolorum eaque eos et laborum, omnis quae. A adipisci, at earum
-                                                maxime nam quia quis ratione soluta tempora totam!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#about-carousel" role="button" data-slide="prev">
+    <div class="bg-second-index parallax mt-5"
+         style="background-image: url('{{asset($setting->about_us_image_bg)}}');clip-path: none">
+        <div class="cover_bg-second"></div>
+        <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                   <div id="about-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+                       <ol class="carousel-indicators">
+                           @foreach($sliderAboutUs2 as $key => $sliderAboutUs4)
+                               <li data-target="#about-carousel" data-slide-to="{{$key}}" @if($key===0) class="active" @endif >
+                                   <div>{{$sliderAboutUs4->year}}</div>
+                               </li>
+                           @endforeach
+                       </ol>
+                       <div class="carousel-inner">
+                           @foreach($sliderAboutUs2 as $key => $sliderAboutUs3)
+                               <div class="carousel-item @if($key===0) active @endif">
+                                   <div class="container ">
+                                       <div class="row">
+                                           <div class="col-md-6">
+                                               <img src="{{$sliderAboutUs3->image}}"
+                                                    class="w-100" alt="placeholder">
+                                           </div>
+                                           <div class="col-md-6 pl-4">
+                                               <h3 class="text-white mt-3">{{$sliderAboutUs3->title}}</h3>
+                                               <p class="text-gray mt-3">{{$sliderAboutUs3->description}}</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           @endforeach
+                       </div>
+                       <a class="carousel-control-prev" href="#about-carousel" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"><i
                                         class="fas fa-chevron-left fa-3x"></i></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#about-carousel" role="button" data-slide="next">
+                           <span class="sr-only">Previous</span>
+                       </a>
+                       <a class="carousel-control-next" href="#about-carousel" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"><i
                                         class="fas fa-chevron-right fa-3x"></i></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
+                           <span class="sr-only">Next</span>
+                       </a>
+                   </div>
+               </div>
             </div>
         </div>
     </div>
