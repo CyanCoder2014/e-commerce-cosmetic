@@ -10,22 +10,7 @@
         <div class="row">
             <div class="col-md-6">
                 @if(Auth::check())
-                    <div class="col-sm-10">
-                        <select class="form-control" id="classification" name="classification">
-                            <option value="1"
-                                    @if($roll_seller[0])
-                                    selected
-                                    @endif
-                            >{{$roll_seller[0]->name}}</option>
-                            <option value="2"
-                                    @if($roll_repairman[0])
-                                    selected
-                                    @endif
-                            >{{$roll_repairman[0]->name}}</option>
 
-                        </select>
-
-                    </div>
                 @endif
                 <form class="text-right shadow p-4" method="POST" action="{{ route('register') }}">
                     {{ csrf_field() }}

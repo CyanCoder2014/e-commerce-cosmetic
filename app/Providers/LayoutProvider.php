@@ -36,7 +36,7 @@ class LayoutProvider extends ServiceProvider
 //        $footer_4=Utility::where('type',"footer_4")->orderBy('id', 'desc')->get();
 //        $banners=Utility::where('type',"banners")->orderBy('id', 'desc')->first();
 //        $brands=Brand::paginate(100);
-//        $provinces=Province::all();
+        $provinces=Province::all();
 
 
         view()->share([
@@ -52,7 +52,7 @@ class LayoutProvider extends ServiceProvider
 //            'footer_4' => $footer_4,
 //            'cats' => $cats,
 //            'brands' => $brands,
-//            'provinces' => $provinces,
+            'provinces' => $provinces,
 
         ]);
 
