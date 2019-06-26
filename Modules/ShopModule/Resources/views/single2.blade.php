@@ -191,9 +191,24 @@
                         @endforeach
                     </ul>
                     <ul class="list-unstyled d-flex flex-row justify-content-end flex-wrap ml-3 p-3 border rounded">
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg"
-                                                                                                  class="rounded"
-                                                                                                  alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
                     </ul>
                 </div>
 
@@ -203,38 +218,38 @@
                     <h3 class="my-5 text-center">Ratings & Reviews</h3>
                 </div>
                 <div class="col-md-6">
-                    <div class="my-2">
-                        <span>5 ستاره </span><span class="float-left">555 نفر</span>
+                    <div class="my-2 myProgress">
+                        <span class="dir-r text-right">5 star</span><span class="float-left">555 نفر</span>
                         <div class="progress">
-                            <div class="progress-bar bg-black" role="progressbar" style="width: 25%" aria-valuenow="25"
+                            <div class="progress-bar bg-black" role="progressbar" style="width: 80%" aria-valuenow="25"
                                  aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="my-2 myProgress">
-                        <span>5 ستاره </span><span class="float-left">555 نفر</span>
+                        <span>4 star</span><span class="float-left">555 نفر</span>
                         <div class="progress">
-                            <div class="progress-bar bg-black" role="progressbar" style="width: 25%" aria-valuenow="25"
+                            <div class="progress-bar bg-black" role="progressbar" style="width: 60%" aria-valuenow="25"
                                  aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="my-2 myProgress">
-                        <span>5 ستاره </span><span class="float-left">555 نفر</span>
+                        <span>3 star</span><span class="float-left">555 نفر</span>
                         <div class="progress">
-                            <div class="progress-bar bg-black" role="progressbar" style="width: 25%" aria-valuenow="25"
+                            <div class="progress-bar bg-black" role="progressbar" style="width: 20%" aria-valuenow="25"
                                  aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="my-2 myProgress">
-                        <span>5 ستاره </span><span class="float-left">555 نفر</span>
+                        <span>2 star</span><span class="float-left">555 نفر</span>
                         <div class="progress">
-                            <div class="progress-bar bg-black" role="progressbar" style="width: 25%" aria-valuenow="25"
+                            <div class="progress-bar bg-black" role="progressbar" style="width: 15%" aria-valuenow="25"
                                  aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="my-2 myProgress">
-                        <span>5 ستاره </span><span class="float-left">555 نفر</span>
+                        <span>1 star</span><span class="float-left">555 نفر</span>
                         <div class="progress">
-                            <div class="progress-bar bg-black" role="progressbar" style="width: 25%" aria-valuenow="25"
+                            <div class="progress-bar bg-black" role="progressbar" style="width: 10%" aria-valuenow="25"
                                  aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
@@ -242,8 +257,10 @@
                 <div class="col-md-6">
                     <div class="text-center mt-5">
                         <span><i class="fas fa-star fa-2x"></i></span>
-                        <span><i class="far fa-star fa-2x"></i></span>
+                        <span><i class="fas fa-star fa-2x"></i></span>
+                        <span><i class="fas fa-star fa-2x"></i></span>
                         <span><i class="fas fa-star-half-alt fa-2x"></i></span>
+                        <span><i class="far fa-star fa-2x"></i></span>
                     </div>
                     <div class="text-center mt-3">4.5 / 5 stars</div>
                 </div>
@@ -253,31 +270,36 @@
             <div class="row border-top">
                 <div class="col-md-8 text-right dir-r">
                     <div class="mt-4">
-                        <span><i class="fas fa-star"></i></span>
                         <span><i class="far fa-star"></i></span>
                         <span><i class="fas fa-star-half-alt"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+
                     </div>
                     <div class="font-weight-bold my-3">title</div>
                     <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut blanditiis culpa debitis
                         distinctio, ex facilis ipsam maxime minima nam necessitatibus nostrum odio, quos, tenetur
                         veniam. Exercitationem porro rerum tenetur!</p><a href="#">read more</a>
                     <div>
-                        <button type="button" class="btn btn-outline-black btn-sm waves-effect">Primary</button>
-                        <button type="button" class="btn btn-outline-black btn-sm waves-effect">Primary</button>
+                        <button type="button" class="btn btn-outline-black btn-sm waves-effect">موافقم</button>
+                        <button type="button" class="btn btn-outline-black btn-sm waves-effect">مخالفم</button>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="mt-4">
-                        <span class="px-2 font-weight-bold text-right">family</span>
+                        <span class="px-2 font-weight-bold text-right">نام و نام خانوادگی</span>
                         <span class="px-2"><img src="/pic/g1.jpg" width="50" height="50" class="rounded-circle" alt=""></span>
                     </div>
-                    <ul class="mt-3 list-unstyled">
-                        <li class="font-small"><span>something</span> <span
-                                    class="font-weight-bold ml-2">something</span></li>
-                        <li class="font-small"><span>something</span> <span
-                                    class="font-weight-bold ml-2">something</span></li>
-                        <li class="font-small"><span>something</span> <span
-                                    class="font-weight-bold ml-2">something</span></li>
+                    <ul class="mt-3 list-unstyled dir-r">
+                        <li class="font-small"><span
+                                    class="font-weight-bold ml-2">سن</span>
+                            <span>23</span>
+                        </li>
+                        <li class="font-small"> <span
+                                    class="font-weight-bold ml-2">رنگ چشم</span><span>قهوه ای</span></li>
+                        <li class="font-small"> <span
+                                    class="font-weight-bold ml-2">رنگ مو</span><span>میشی</span></li>
                     </ul>
                 </div>
             </div>
