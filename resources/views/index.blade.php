@@ -136,14 +136,11 @@
                 <div>
                     <div class="product-item">
                         <div style="height: 300px">
-                            @foreach($productsIn->image as $key => $productsImg)
-                                @if($key===0)
-                                    <div class="img-product1" style="background-image: url('{{$productsImg}}');"></div>
-                                @endif
-                                @if($key===1)
-                                    <div class="img-product2" style="background-image: url('{{$productsImg}}');"></div>
-                                @endif
-                            @endforeach
+                            <div class="img-product1"
+                                 style="background-image: url('{{$productsIn->image[0]??'defualt'}}');"></div>
+
+                            <div class="img-product2"
+                                 style="background-image: url('{{$productsIn->image[1]??'defualt'}}');"></div>
                         </div>
 
                         {{--<div class="img-product1" style="background-image: url('{{$products->image}}');"></div>
@@ -214,14 +211,34 @@
 
                         @foreach($cat->products() as $key1 => $productsInner)
                             {{-- {{dd($productsInner)}}--}}
-                            @switch($key1%4)
+                            @switch($key1%8)
 
-                                @case(3)
-                                <div class=" @if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--height1">
+                                @case(0)
+                                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--width2 grid-item--height4">
                                     <a href="{{$productsInner->link()}}">
                                         <div class="view overlay cursor-p">
 
-                                            <div class="bg-background grid-item--height1"
+                                            <div class="bg-background grid-item--height4"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
+                                                    <div class="font-small">{!!$productsInner->description!!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @break
+                                @case(1)
+                                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--width2 grid-item--height4">
+                                    <a href="{{$productsInner->link()}}">
+                                        <div class="view overlay cursor-p">
+
+                                            <div class="bg-background grid-item--height4"
                                                  style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
@@ -256,8 +273,28 @@
                                     </a>
                                 </div>
                                 @break
-                                @case(1)
-                                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--width2 grid-item--height4">
+                                @case(3)
+                                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--height2">
+                                    <a href="{{$productsInner->link()}}">
+                                        <div class="view overlay cursor-p">
+
+                                            <div class="bg-background grid-item--height2"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
+                                                    <div class="font-small">{!!$productsInner->description!!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @break
+                                @case(4)
+                                <div class="@if($key%2===0) grid-item2 @else grid-item1 @endif grid-item--width2 grid-item--height4">
                                     <a href="{{$productsInner->link()}}">
                                         <div class="view overlay cursor-p">
 
@@ -276,12 +313,52 @@
                                     </a>
                                 </div>
                                 @break
-                                @case(0)
-                                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--width2 grid-item--height4">
+                                @case(5)
+                                <div class="@if($key%2===0) grid-item2 @else grid-item1 @endif grid-item--width2 grid-item--height4">
                                     <a href="{{$productsInner->link()}}">
                                         <div class="view overlay cursor-p">
 
                                             <div class="bg-background grid-item--height4"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
+                                                    <div class="font-small">{!!$productsInner->description!!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @break
+                                @case(6)
+                                <div class="@if($key%2===0) grid-item2 @else grid-item1 @endif grid-item--height2">
+                                    <a href="{{$productsInner->link()}}">
+                                        <div class="view overlay cursor-p">
+
+                                            <div class="bg-background grid-item--height2"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
+                                                    <div class="font-small">{!!$productsInner->description!!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @break
+                                @case(7)
+                                <div class="@if($key%2===0) grid-item2 @else grid-item1 @endif grid-item--height2">
+                                    <a href="{{$productsInner->link()}}">
+                                        <div class="view overlay cursor-p">
+
+                                            <div class="bg-background grid-item--height2"
                                                  style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">

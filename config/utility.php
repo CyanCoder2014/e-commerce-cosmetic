@@ -19,6 +19,8 @@ return [
 //        'sliderFirst' => 'اسلاید شو اول',
         'setting' => 'تنظیمات سایت',
         'sliderFirst' => 'اسلاید شو صفحه اول',
+        'sliderAboutUs' => 'اسلاید شو اول درباره ما',
+        'sliderAboutUs2' => 'اسلاید شو تاریخ درباره ما',
         //       'slider2' => 'اسلاید دوم',
         'contact' => 'تماس با ما',
         //       'gallery' => 'گالري عکس',
@@ -31,7 +33,7 @@ return [
 
 
     ],
-    'types' => ['introduction', 'setting', 'slider', 'contact', 'banner1', 'banner2', 'footer_title', 'footer_1', 'footer_2', 'footer_3', 'footer_4', 'factor','sliderFirst'],
+    'types' => ['setting', 'contact', 'sliderFirst', 'sliderAboutUs', 'sliderAboutUs2'],
     'forms' => [             //  name       type            label
         'setting' => [
 //                        'title_fa' => ['type'=>'text','label'=>'نام سایت فارسی','class'=>null,'style'=>null,'values' => array()],
@@ -46,7 +48,11 @@ return [
 //                        'banner1' => ['type'=>'file','label'=>'بنر 1','class'=>null,'style'=>null,'values' => array()],
 //                        'banner2' => ['type'=>'file','label'=>'بنر 2','class'=>null,'style'=>null,'values' => array()],
             'about_us' => ['type' => 'text', 'label' => 'توضیحات درباره ما', 'class' => null, 'style' => null, 'values' => array()],
-            'about_us_image' => ['type' => 'file', 'label' => 'عکس درباره ما', 'class' => null, 'style' => null, 'values' => array()],
+            'about_us_more' => ['type' => 'text', 'label' => 'توضیحات درباره ما بالای اسلایدر', 'class' => null, 'style' => null, 'values' => array()],
+            'about_us_more2' => ['type' => 'text', 'label' => 'توضیحات دوم درباره ما بالای اسلایدر', 'class' => null, 'style' => null, 'values' => array()],
+            'about_us_title' => ['type' => 'text', 'label' => 'عنوان درباره ما بالای اسلایدر', 'class' => null, 'style' => null, 'values' => array()],
+            'about_us_image' => ['type' => 'file', 'label' => 'عکس اصلی درباره ما', 'class' => null, 'style' => null, 'values' => array()],
+            'about_us_image2' => ['type' => 'file', 'label' => 'عکس دوم درباره ما', 'class' => null, 'style' => null, 'values' => array()],
             'about_us_image_bg' => ['type' => 'file', 'label' => 'عکس درباره ما بکگراند', 'class' => null, 'style' => null, 'values' => array()],
             'catalog_right_title' => ['type' => 'text', 'label' => 'عنوان عکس کاتالوگ سمت راست', 'class' => null, 'style' => null, 'values' => array()],
             'catalog_right_image' => ['type' => 'file', 'label' => 'عکس کاتالوگ سمت راست', 'class' => null, 'style' => null, 'values' => array()],
@@ -64,6 +70,7 @@ return [
             'grow_image4_text' => ['type' => 'text', 'label' => 'عنوان عکس بزرگ شونده 4', 'class' => null, 'style' => null, 'values' => array()],
 //                        'about_us_fa' => ['type'=>'text','label'=>'درباره ما فوتر فارسی','class'=>null,'style'=>null,'values' => array()],
         ],
+
         'sliderFirst' => [
 //                        'title_fa' => ['type'=>'text','label'=>'عنوان فارسی','class'=>null,'style'=>null,'values' => array()],
             'title' => ['type' => 'text', 'label' => 'عنوان ', 'class' => null, 'style' => null, 'values' => array()],
@@ -73,7 +80,14 @@ return [
 //                        'link_fa' => ['type'=>'text','label'=>'لینک فارسی','class'=>null,'style'=>null,'values' => array()],
             'link' => ['type' => 'text', 'label' => 'لینک ', 'class' => null, 'style' => null, 'values' => array()]
         ],
-
+        'sliderAboutUs' => [
+            'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
+        ],
+        'sliderAboutUs2' => [
+            'title' => ['type' => 'text', 'label' => 'عنوان ', 'class' => null, 'style' => null, 'values' => array()],
+            'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
+            'description' => ['type' => 'textarea', 'label' => 'توضیحات ', 'class' => null, 'style' => null, 'values' => array()],
+        ],
 
         /*'footer_title' => [
             'title_1' => ['type' => 'text', 'label' => 'عنوان اولی', 'class' => null, 'style' => null, 'values' => array()],
@@ -143,6 +157,8 @@ return [
         'sliderFirst' => true,
         'setting' => true,
         'contact' => true,
+        'sliderAboutUs' => true,
+        'sliderAboutUs2' => true,
 
     ]
 
