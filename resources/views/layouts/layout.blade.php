@@ -85,6 +85,9 @@
                 <li class="nav-item ">
                     <a href="#" class="text-black p-4 d-inline-block">تماس با ما</a>
                 </li>
+                <li class="nav-item ">
+                    <a href="/agents" class="text-black p-4 d-inline-block">نمایندگان فروش</a>
+                </li>
             </ul>
 
         </div>

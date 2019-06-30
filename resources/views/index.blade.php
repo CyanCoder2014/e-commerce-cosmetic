@@ -761,7 +761,182 @@
             </section>
         </div>
     </div>
+<div class="dir-r text-right">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb pb-0 pr-5 mb-0 py-2 bg-white z-depth-2 font-small">
+                <li class="breadcrumb-item "><a href="#">خانه</a></li>
+                <li class="breadcrumb-item active ">نمایندگان فروش و خدمات پس از فروش</li>
+            </ol>
+        </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <div class=my-3">
+                    نمایش فهرست نمایندگی های مجاز فروش و خدمان پس از فروش
+                    pippa در ذیل داده میشود
+                </div>
+                <div class="bg-black mt-3 text-white p-2 z-depth-1 rounded">استان مورد
+                    نظر خود را انتخاب کنید
+                </div>
+                <div class="agent-prrovince-background pb-4">
+                    <div class="container-fluid">
 
+
+                        <form method="get"
+                              action="" id="agentform">
+
+
+                            <div class="row p-3 bg-white mt-3">
+
+
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-4 pt-1 font-small"> نام
+                                            استان:
+                                        </div>
+                                        <div class="col-md-8">
+
+
+                                            <select name="city"
+                                                    class="browser-default custom-select custom-select-sm"
+                                                    id="city">
+                                                <option selected>نام استان را انتخاب
+                                                    کنید
+                                                </option>
+                                                <option value="azarbayjan sharghi">
+                                                    آذربایجان شرقی
+                                                </option>
+                                                <option value="azarbayjan gharbi">
+                                                    آذربایجان غربی
+                                                </option>
+                                                <option value="ardebil">اردبیل
+                                                </option>
+                                                <option value="esfehan">اصفهان
+                                                </option>
+                                                <option value="alborz">البرز
+                                                </option>
+                                                <option value="ilam">ایلام</option>
+                                                <option value="bushehr">بوشهر
+                                                </option>
+                                                <option value="tehran">تهران
+                                                </option>
+                                                <option value="mahal">چهارمحال
+                                                    بختیاری
+                                                </option>
+                                                <option value="khorasan jonubi">
+                                                    خراسان جنوبی
+                                                </option>
+                                                <option value="khorasan razavi">
+                                                    خراسان رضوی
+                                                </option>
+                                                <option value="khorasan shomali">
+                                                    خراسان شمالی
+                                                </option>
+                                                <option value="khuzestan">خوزستان
+                                                </option>
+                                                <option value="zanjan">زنجان
+                                                </option>
+                                                <option value="semnan">سمنان
+                                                </option>
+                                                <option value="sistan">سیستان و
+                                                    بلوچستان
+                                                </option>
+                                                <option value="fars">فارس</option>
+                                                <option value="ghazvin">قزوین
+                                                </option>
+                                                <option value="ghom">قم</option>
+                                                <option value="kordestan">کردستان
+                                                </option>
+                                                <option value="kerman">کرمان
+                                                </option>
+                                                <option value="kermanshah">
+                                                    کرمانشاه
+                                                </option>
+                                                <option value="kohgiluye">کهکیلویه و
+                                                    بویراحمد
+                                                </option>
+                                                <option value="golestan">گلستان
+                                                </option>
+                                                <option value="gilan">گیلان</option>
+                                                <option value="lorestan">لرستان
+                                                </option>
+                                                <option value="mazandaran">
+                                                    مازندران
+                                                </option>
+                                                <option value="markazi">مرکزی
+                                                </option>
+                                                <option value="hormozgan">هرمزگان
+                                                </option>
+                                                <option value="hamedan">همدان
+                                                </option>
+                                                <option value="yazd">یزد</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-4">
+
+                                    <!-- <span class="agent-border-color ">
+                                         <a class=" p-1">
+                                         <i class="fas fa-key"></i>
+                                             </a>
+                                     </span>
+                                             <span class="font11">فروش</span>
+                                             <span class="agent-border-color">
+                                             <a class=" p-1">
+                                    <i class="fas fa-wrench"></i>
+                                             </a>
+                                     </span>
+                                             <span class="font11">خدمات پس از فروش</span>
+
+                                             -->
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <div class="bg-pink p-2 text-white z-depth-1">عنوان</div>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12958.568448977405!2d51.411705618567204!3d35.71042366599737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e0166f8cc432f%3A0x3dca3f769a547d6a!2sKachiran!5e0!3m2!1sen!2ses!4v1544976503063"
+                        frameborder="0" style="border:0; height: 160px"
+                        class=" w-100"
+                        allowfullscreen></iframe>
+
+
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <div class=" p-2 bg-pink text-white z-depth-1">
+                    <div>نام نماینده اصلی</div>
+                </div>
+
+                <hr class="m-0 hr-agent">
+                <ul class=" p-2 m-3">
+                    <li><span>استان :</span><span>تهران</span></li>
+                    <li><span>شهر :</span><span>تهران</span></li>
+                    <li><span>آدرس :</span><span>تهران</span></li>
+                    <li><span>تلفن :</span><span>تهران</span></li>
+                    <li><span>فکس :</span><span>تهران</span></li>
+                    <li><span>ایمیل :</span><span>تهران</span></li>
+                    <li><span>سایت :</span><span>تهران</span></li>
+                    <li><span>توضیحات :</span><span>تهران</span></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</div>
 
 
 

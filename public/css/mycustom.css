@@ -946,3 +946,6 @@ body::-webkit-scrollbar {
 .changeColor{
     border: 2px solid transparent;
 }
+.bg-pink{
+    background-color: rgb(163, 94, 112);
+}
