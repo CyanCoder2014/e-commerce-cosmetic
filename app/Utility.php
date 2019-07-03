@@ -21,7 +21,7 @@ class Utility extends Model
             return $var;
         elseif (!array_key_exists($varName,$this->data)){
             //this attribute is not defined!
-            return;
+            return null;
         }
         else return $this->data[$varName];
 

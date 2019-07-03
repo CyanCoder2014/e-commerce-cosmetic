@@ -71,11 +71,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-black">
-                    <img src="{{$setting->data['image_black']}}" class="w-75 mx-auto d-block" alt="">
-                    <p class="text-center">{{$setting->data['about_us']}}</p>
+                    <img src="{{$setting->image_black}}" class="w-75 mx-auto d-block" alt="">
+                    <p class="text-center">{{$setting->about_us}}</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="{{$setting->data['about_us_image']}}" class="w-100 secondBgImg" alt="">
+                    <img src="{{$setting->about_us_image}}" class="w-100 secondBgImg" alt="">
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
             <span class="catalogProduct menuBarBtn active menuHover2">
                 <h3 class="text-black font-weight-bold m-3">کاتالوگ محصولات</h3>
                 <div class="bg-black">
-                    <img src="{{$setting->data['image_white']}}" class="w-100" alt="">
+                    <img src="{{$setting->image_white}}" class="w-100" alt="">
 
                 </div>
             </span>
@@ -94,9 +94,9 @@
                     <div class="height1">
                         <div class="view overlay grow">
                             <a href="#" class="d-block">
-                                <img src="{{$setting->data['catalog_left_top_image']}}" class="w-100 "
+                                <img src="{{$setting->catalog_left_top_image}}" class="w-100 "
                                      alt="smaple image">
-                                <div class="text-overlay">{{$setting->data['catalog_left_top_title']}}</div>
+                                <div class="text-overlay">{{$setting->catalog_left_top_title}}</div>
                                 <div class="mask flex-center rgba-black-light">
                                 </div>
                             </a>
@@ -105,9 +105,9 @@
                     <div class="height2">
                         <div class="view overlay grow">
                             <a href="#" class="d-block">
-                                <img src="{{$setting->data['catalog_left_bottom_image']}}" class="w-100 "
+                                <img src="{{$setting->catalog_left_bottom_image}}" class="w-100 "
                                      alt="smaple image">
-                                <div class="text-overlay">{{$setting->data['catalog_left_bottom_title']}}</div>
+                                <div class="text-overlay">{{$setting->catalog_left_bottom_title}}</div>
                                 <div class="mask flex-center rgba-black-light">
                                 </div>
                             </a>
@@ -117,9 +117,9 @@
                 <div class="col-md-7 p-0 height3 overflow-h">
                     <div class="view overlay grow">
                         <a href="#" class="d-block">
-                            <img src="{{$setting->data['catalog_right_image']}}" class="w-100 "
+                            <img src="{{$setting->data['catalog_right_image}}" class="w-100 "
                                  alt="smaple image">
-                            <div class="text-overlay">{{$setting->data['catalog_right_title']}}</div>
+                            <div class="text-overlay">{{$setting->catalog_right_title}}</div>
                             <div class="mask flex-center rgba-black-light">
                             </div>
                         </a>
@@ -137,7 +137,7 @@
                     <div class="product-item">
                         <div style="height: 300px">
                             <div class="img-product1"
-                                 style="background-image: url('{{$productsIn->image[0]??'defualt'}}');"></div>
+                                 style="background-image: url('{{ $productsIn->image[0]??'defualt' }}');"></div>
 
                             <div class="img-product2"
                                  style="background-image: url('{{$productsIn->image[1]??'defualt'}}');"></div>
@@ -159,30 +159,30 @@
         <div class="item-flex">
             <a href="#">
                 <div class="bg-background w-100 heightItem h-100"
-                     style="background-image:url('{{$setting->data['grow_image1']}}') "></div>
-                <div class="item-flex-text">{{$setting->data['grow_image1_text']}}</div>
+                     style="background-image:url('{{$setting->grow_image1}}') "></div>
+                <div class="item-flex-text">{{$setting->data['grow_image1_text}}</div>
             </a>
 
         </div>
         <div class="item-flex">
             <a href="#">
                 <div class="bg-background w-100 heightItem h-100"
-                     style="background-image:url('{{$setting->data['grow_image2']}}') "></div>
+                     style="background-image:url('{{$setting->grow_image2}}') "></div>
                 <div class="item-flex-text">{{$setting->data['grow_image2_text']}}</div>
             </a>
         </div>
         <div class="item-flex">
             <a href="#">
                 <div class="bg-background w-100 heightItem h-100"
-                     style="background-image:url('{{$setting->data['grow_image3']}}') "></div>
-                <div class="item-flex-text">{{$setting->data['grow_image3_text']}}</div>
+                     style="background-image:url('{{$setting->grow_image3}}') "></div>
+                <div class="item-flex-text">{{$setting->grow_image3_text}}</div>
             </a>
         </div>
         <div class="item-flex">
             <a href="#">
                 <div class="bg-background w-100 heightItem h-100"
-                     style="background-image:url('{{$setting->data['grow_image4']}}') "></div>
-                <div class="item-flex-text">{{$setting->data['grow_image4_text']}}</div>
+                     style="background-image:url('{{$setting->grow_image4}}') "></div>
+                <div class="item-flex-text">{{$setting->grow_image4_text}}</div>
             </a>
         </div>
     </div>
@@ -219,7 +219,7 @@
                                         <div class="view overlay cursor-p">
 
                                             <div class="bg-background grid-item--height4"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');"></div>
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt' }}');"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
@@ -239,7 +239,7 @@
                                         <div class="view overlay cursor-p">
 
                                             <div class="bg-background grid-item--height4"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt' }}')"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"

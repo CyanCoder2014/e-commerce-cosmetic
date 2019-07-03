@@ -89,6 +89,9 @@ Route::group(array('prefix' => Config::get('app.locale_prefix')), function () {
     Route::get('/admin/city/find', 'CityController@find');
 
 
+    Route::group(['prefix' => 'admin','middleware' => 'UserMiddleware'], function () {
+        \App\Agency::Route_list();
+    });
     Route::group(['prefix' => 'home'], function () {
 
         Auth::routes();

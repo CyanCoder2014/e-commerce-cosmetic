@@ -73,7 +73,7 @@
                 <div class="inner" style="min-height: 565px;">
                     <div class="row">
 
-                        <section id="lts_sec " class="right w-100" style="margin: 0px auto">
+                        <section id="lts_sec " class="right w-100">
 
                             <div class="container ">
                                 <div class="row ">

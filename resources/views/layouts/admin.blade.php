@@ -540,6 +540,11 @@
 
                                         </a>
                                     </li>
+                                    <li><a href="{{ route('agency.index') }}"><i class="fa fa-newspaper-o"></i>
+                                            <span> مدیریت نمایندگی ها </span>
+
+                                        </a>
+                                    </li>
 
 
 

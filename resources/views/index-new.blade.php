@@ -59,7 +59,7 @@
 
         <article class="hero__devices">
             <div class="hero__laptop"><img class="screen anim slow-fade" data-wow-delay=".5s"
-                                           src="{{ $firstpage->data['image1'] }}"
+                                           src="{{ $firstpage->data['image1 }}"
                                            alt="چگونه انگیزه خود را بالا ببریم؟" data-pagespeed-url-hash="1809658852"
                                            onload="pagespeed.CriticalImages.checkImageForCriticality(this);"
                                            style="visibility: visible; animation-delay: 0.5s; animation-name: slow-fade;">
@@ -69,7 +69,7 @@
                      onload="pagespeed.CriticalImages.checkImageForCriticality(this);"
                      style="visibility: visible; animation-name: slight-up;"></div>
             <div class="hero__mobile"><img class="screen anim slow-fade" data-wow-delay=".5s"
-                                           src="{{ $firstpage->data['image2'] }}"
+                                           src="{{ $firstpage->data['image2 }}"
                                            alt="آموزش افزایش انگیزه" data-pagespeed-url-hash="720791545"
                                            onload="pagespeed.CriticalImages.checkImageForCriticality(this);"
                                            style="visibility: visible; animation-delay: 0.5s; animation-name: slow-fade;">

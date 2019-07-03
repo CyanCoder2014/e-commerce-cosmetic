@@ -104,7 +104,7 @@
                             <li role="presentation"><a href="#meta" aria-controls="meta" role="tab" data-toggle="tab">مشخصات</a></li>
                             <li role="presentation"><a href="#images" aria-controls="images" role="tab" data-toggle="tab">عکس</a></li>
                             <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">ویدیو</a></li>
-{{--                            <li role="presentation"><a href="#historyTab" aria-controls="history" role="tab" data-toggle="tab">حمل و نقل</a></li>--}}
+                            <li role="presentation"><a href="#historyTab" aria-controls="history" role="tab" data-toggle="tab">انواع محصول</a></li>
                         </ul>
 
                         <div class="tab-content">
@@ -455,49 +455,49 @@
 
                             </div>
                             <!-- tab in tabs -->
-{{--                            <div role="tabpanel" class="tab-pane" id="historyTab">--}}
+                            <div role="tabpanel" class="tab-pane" id="historyTab">
 
 
 
 
 
-{{--                                <!-- row -->--}}
-{{--                                <div class="row">--}}
-{{--                                    <!-- col -->--}}
-{{--                                    <div class="col-md-12">--}}
-{{--                                        <section class="tile">--}}
+                                <!-- row -->
+                                <div class="row">
+                                    <!-- col -->
+                                    <div class="col-md-12">
+                                        <section class="tile">
 
-{{--                                            <!-- tile header -->--}}
-{{--                                            <div class="tile-header dvd dvd-btm 33">--}}
-{{--                                                <h1 class="custom-font"><strong>سیستم های حمل نقل محصول </strong> </h1>--}}
-{{--                                            </div>--}}
-{{--                                            <!-- /tile header -->--}}
-
-
-{{--                                            <!-- tile body -->--}}
-{{--                                            <div class="tile-body">--}}
-
-{{--                                                <div class="form-group">--}}
-{{--                                                    <label for="shipping_list">سیستم های حمل نقل محصول:</label>--}}
-{{--                                                    <select id="shipping_list" name="shipping_list[]" class="form-control" multiple></select>--}}
-{{--                                                </div>--}}
+                                            <!-- tile header -->
+                                            <div class="tile-header dvd dvd-btm 33">
+                                                <h1 class="custom-font"><strong>انواع محصولات </strong> </h1>
+                                            </div>
+                                            <!-- /tile header -->
 
 
-{{--                                            </div>--}}
-{{--                                            <!-- /tile body -->--}}
+                                            <!-- tile body -->
+                                            <div class="tile-body">
 
-{{--                                        </section>--}}
-
-
-{{--                                    </div>--}}
-{{--                                    <!-- /col -->--}}
-{{--                                </div>--}}
-{{--                                <!-- /row -->--}}
+                                                <div class="form-group">
+                                                    <label for="shipping_list">سیستم های حمل نقل محصول:</label>
+                                                    <select id="shipping_list" name="shipping_list[]" class="form-control" multiple></select>
+                                                </div>
 
 
+                                            </div>
+                                            <!-- /tile body -->
+
+                                        </section>
 
 
-{{--                            </div><!-- end ngRepeat: tab in tabs -->--}}
+                                    </div>
+                                    <!-- /col -->
+                                </div>
+                                <!-- /row -->
+
+
+
+
+                            </div><!-- end ngRepeat: tab in tabs -->
                         </div>
                     </div>
                 </div>
@@ -614,6 +614,23 @@
                 e.preventDefault();
                 $(this).parent().parent().remove(); //Remove field html
                 y--; //Decrement field counter
+            });
+
+            var ptypeCount = 1;
+            var max_ptype=10;
+            $('.addptype').click(function(){ //Once add button is clicked
+                console.log('hey');
+                if(ptypeCount < max_pic){ //Check maximum number of input fields
+                    $(this).siblings('table').children('.pic_wrapper').append('<tr>'+
+                        '<td>'+
+                        '<a data-input="typethumbnail'+picCount+'" data-preview="typethumbnailholder'+picCount+'"  class="lfm btn btn-primary">' +
+                        '<i class="fa fa-picture-o"></i>انتخاب</a>'+
+                        '<input id="typethumbnail'+picCount+'" class="form-control" type="text" name="Images[]">'+
+                        '<img id="typethumbnailholder'+picCount+'" class="filemanage-image"></td>'+
+                        '<td> <a href="javascript:void(0);" class="remove_button" title="Remove field"><span class="glyphicon glyphicon-remove"></span></a></td> </tr>'); // Add field html
+                    picCount++;
+                    $('.lfm').filemanager('image');
+                }
             });
 
 

@@ -49,7 +49,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-white">
-                    <img src="{{$setting->data['image_white']}}" class="w-75 mx-auto d-block" alt="">
+                    <img src="{{$setting->image_white}}" class="w-75 mx-auto d-block" alt="">
                     <p class="text-center">{{$setting->data['about_us']}}</p>
                 </div>
                 <div class="col-md-6">
