@@ -137,10 +137,10 @@
                     <div class="product-item">
                         <div style="height: 300px">
                             <div class="img-product1"
-                                 style="background-image: url('{{ $productsIn->image[0]??'defualt' }}');"></div>
+                                 style="background-image: url('{{ $productsIn->image[0] }}');"></div>
 
                             <div class="img-product2"
-                                 style="background-image: url('{{$productsIn->image[1]??'defualt'}}');"></div>
+                                 style="background-image: url('{{$productsIn->image[1]}}');"></div>
                         </div>
 
                         {{--<div class="img-product1" style="background-image: url('{{$products->image}}');"></div>
@@ -219,7 +219,7 @@
                                         <div class="view overlay cursor-p">
 
                                             <div class="bg-background grid-item--height4"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt' }}');"></div>
+                                                 style="background-image: url('{{$productsInner->image[0] }}');"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
@@ -239,7 +239,7 @@
                                         <div class="view overlay cursor-p">
 
                                             <div class="bg-background grid-item--height4"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt' }}')"></div>
+                                                 style="background-image: url('{{$productsInner->image[0] }}')"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
@@ -259,7 +259,7 @@
                                         <div class="view overlay cursor-p">
 
                                             <div class="bg-background grid-item--height2"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
+                                                 style="background-image: url('{{$productsInner->image[0]}}')"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
@@ -279,7 +279,7 @@
                                         <div class="view overlay cursor-p">
 
                                             <div class="bg-background grid-item--height2"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
+                                                 style="background-image: url('{{$productsInner->image[0]}}')"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
@@ -299,7 +299,7 @@
                                         <div class="view overlay cursor-p">
 
                                             <div class="bg-background grid-item--height4"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');"></div>
+                                                 style="background-image: url('{{$productsInner->image[0]}}');"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
@@ -319,7 +319,7 @@
                                         <div class="view overlay cursor-p">
 
                                             <div class="bg-background grid-item--height4"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');"></div>
+                                                 style="background-image: url('{{$productsInner->image[0]}}');"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
@@ -339,7 +339,7 @@
                                         <div class="view overlay cursor-p">
 
                                             <div class="bg-background grid-item--height2"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
+                                                 style="background-image: url('{{$productsInner->image[0]}}')"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
@@ -359,7 +359,7 @@
                                         <div class="view overlay cursor-p">
 
                                             <div class="bg-background grid-item--height2"
-                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
+                                                 style="background-image: url('{{$productsInner->image[0]}}')"></div>
                                             <div class="mask rgba-black-light">
                                                 <div class="textHover">
                                                     <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
