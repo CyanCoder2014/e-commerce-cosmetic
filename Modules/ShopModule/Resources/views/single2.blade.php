@@ -39,15 +39,23 @@
             });
             $("#exzoom").removeClass('hidden')
         });
+        var images = ['/photos/shares/801-promo.jpg', '/photos/shares/eyebrow-group(1).jpg', '/photos/shares/menu1.png']
         $('.changeColor').hover(function () {
             var color = $(this).attr('data-key');
-            var images = ['/photos/shares/801-promo.jpg', '/photos/shares/eyebrow-group(1).jpg', '/photos/shares/menu1.png']
             for (var i = 0; i <= images.length; i++) {
                 $('.exzoom_img_ul li:eq( ' + i + ' ) img').attr('src', images[i])
                 $('.exzoom_nav_inner span:eq( ' + i + ' ) img').attr('src', images[i])
             }
+        })
+        $('.exzoom_img_box').hover(function () {
+            var width=$('.exzoom_img_ul li:eq(0) img').width()
+            var imgNum = -Math.round(parseInt($('.exzoom_img_ul').css('left'))/width)
+            for (var i = 0; i <= images.length; i++) {
 
-
+                if(imgNum === i){
+                    $('.exzoom_preview_img').attr('src',images[i])
+                }
+            }
         })
 
     </script>
@@ -167,7 +175,7 @@
                             <div class="exzoom_img_box">
                                 <ul class='exzoom_img_ul'>
                                     @foreach($product->image as $key => $productImage)
-                                        <li><img src="{{$productImage}}"/></li>
+                                        <li><img  src="{{$productImage}}"/></li>
                                     @endforeach
                                 </ul>
                             </div>

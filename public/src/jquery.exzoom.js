@@ -100,6 +100,7 @@
         },
     };
 
+
     $.fn.extend({
         "exzoom": function (method, options) {
             if (arguments.length === 0 || (typeof method === 'object' && !options)) {
@@ -133,7 +134,7 @@
         //循环所有图片,计算尺寸,添加缩略图导航
         for (let i = 0; i < imgNum; i++) {
             imgArr[i] = copute_image_prop(images.eq(i));//记录图片的尺寸属性等
-            console.log(imgArr[i]);
+            /*console.log(imgArr[i]);*/
             let li = exzoom_img_ul.find("li").eq(i);
             li.css("width", boxWidth);//设置图片上级的 li 元素的宽度
             li.find("img").css({
@@ -292,7 +293,7 @@
         //移动端大图区域的 touchend 事件
         exzoom_img_ul.on("touchend", function (event) {
             //触屏滑动,根据移动方向按倍数对齐元素
-            console.log(endX < startX);
+            /*console.log(endX < startX);*/
             if (endX < startX) {
                 //向左滑动
                 moveRight();
@@ -421,7 +422,7 @@
         //直接对比当前索引的图片占据的宽度和exzoom的宽度的差作为偏移量即可
         let temp = nav_item_width * (imgIndex + 1);
         if (temp > exzoom_nav_width) {
-            new_nav_offset =  boxWidth - temp;
+            new_nav_offset = boxWidth - temp;
         }
 
         exzoom_nav_inner.css({
@@ -565,7 +566,7 @@
             res[7] = boxHeight / 2;
             res[8] = boxHeight * 2;//width
             res[9] = boxHeight * 2;//height
-            exzoom_nav_inner.append(`<span><img src="${src}" width="${g.navWidth }" height="${g.navHeight }"/></span>`);
+            exzoom_nav_inner.append(`<span><img src="${src}" width="${g.navWidth}" height="${g.navHeight}"/></span>`);
         } else if (img_scale > 1) {
             res[3] = boxHeight;//width
             res[4] = boxHeight / img_scale;
@@ -575,7 +576,7 @@
             res[8] = boxHeight * 2 * img_scale;//width
             res[9] = boxHeight * 2;//height
             let top = (g.navHeight - (g.navWidth / img_scale)) / 2;
-            exzoom_nav_inner.append(`<span><img src="${src}" width="${g.navWidth }" style='top:${top}px;' /></span>`);
+            exzoom_nav_inner.append(`<span><img src="${src}" width="${g.navWidth}" style='top:${top}px;' /></span>`);
         } else if (img_scale < 1) {
             res[3] = boxHeight * img_scale;//width
             res[4] = boxHeight;//height
