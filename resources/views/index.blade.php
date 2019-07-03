@@ -73,12 +73,9 @@
                 <div class="col-md-6 text-black">
                     <img src="{{$setting->data['image_black']}}" class="w-75 mx-auto d-block" alt="">
                     <p class="text-center">{{$setting->data['about_us']}}</p>
-                    <img src="{{$setting->image_black}}" class="w-75 mx-auto d-block" alt="">
-                    <p class="text-center">{{$setting->about_us}}</p>
                 </div>
                 <div class="col-md-6">
                     <img src="{{$setting->data['about_us_image']}}" class="w-100 secondBgImg" alt="">
-                    <img src="{{$setting->about_us_image}}" class="w-100 secondBgImg" alt="">
                 </div>
             </div>
         </div>
@@ -89,7 +86,6 @@
                 <h3 class="text-black font-weight-bold m-3">کاتالوگ محصولات</h3>
                 <div class="bg-black">
                     <img src="{{$setting->data['image_white']}}" class="w-100" alt="">
-                    <img src="{{$setting->image_white}}" class="w-100" alt="">
 
                 </div>
             </span>
@@ -99,10 +95,8 @@
                         <div class="view overlay grow">
                             <a href="#" class="d-block">
                                 <img src="{{$setting->data['catalog_left_top_image']}}" class="w-100 "
-                                <img src="{{$setting->catalog_left_top_image}}" class="w-100 "
                                      alt="smaple image">
                                 <div class="text-overlay">{{$setting->data['catalog_left_top_title']}}</div>
-                                <div class="text-overlay">{{$setting->catalog_left_top_title}}</div>
                                 <div class="mask flex-center rgba-black-light">
                                 </div>
                             </a>
@@ -112,10 +106,8 @@
                         <div class="view overlay grow">
                             <a href="#" class="d-block">
                                 <img src="{{$setting->data['catalog_left_bottom_image']}}" class="w-100 "
-                                <img src="{{$setting->catalog_left_bottom_image}}" class="w-100 "
                                      alt="smaple image">
                                 <div class="text-overlay">{{$setting->data['catalog_left_bottom_title']}}</div>
-                                <div class="text-overlay">{{$setting->catalog_left_bottom_title}}</div>
                                 <div class="mask flex-center rgba-black-light">
                                 </div>
                             </a>
@@ -126,10 +118,8 @@
                     <div class="view overlay grow">
                         <a href="#" class="d-block">
                             <img src="{{$setting->data['catalog_right_image']}}" class="w-100 "
-                            <img src="{{$setting->data['catalog_right_image}}" class="w-100 "
                                  alt="smaple image">
                             <div class="text-overlay">{{$setting->data['catalog_right_title']}}</div>
-                            <div class="text-overlay">{{$setting->catalog_right_title}}</div>
                             <div class="mask flex-center rgba-black-light">
                             </div>
                         </a>
@@ -148,22 +138,21 @@
                         <div style="height: 300px">
                             <div class="img-product1"
                                  style="background-image: url('{{$productsIn->image[0]??'defualt'}}');"></div>
-                            style="background-image: url('{{ $productsIn->image[0]??'defualt' }}');"></div>
 
-                        <div class="img-product2"
-                             style="background-image: url('{{$productsIn->image[1]??'defualt'}}');"></div>
+                            <div class="img-product2"
+                                 style="background-image: url('{{$productsIn->image[1]??'defualt'}}');"></div>
+                        </div>
+
+                        {{--<div class="img-product1" style="background-image: url('{{$products->image}}');"></div>
+                        <div class="img-product2" style="background-image: url('{{$products->image}}');"></div>--}}
+                        <div class="p-3 font-weight-bold">{{$productsIn->name}}</div>
+                        <div>{{$productsIn->datadescription}}</div>
+                        <button type="button" class="btn btn-block waves-effect productBtn">خرید</button>
+                        </p>
                     </div>
-
-                    {{--<div class="img-product1" style="background-image: url('{{$products->image}}');"></div>
-                    <div class="img-product2" style="background-image: url('{{$products->image}}');"></div>--}}
-                    <div class="p-3 font-weight-bold">{{$productsIn->name}}</div>
-                    <div>{{$productsIn->datadescription}}</div>
-                    <button type="button" class="btn btn-block waves-effect productBtn">خرید</button>
-                    </p>
                 </div>
-    </div>
-    @endforeach
-    </section>
+            @endforeach
+        </section>
 
     </div>
     <div class="moving-card">
@@ -172,37 +161,30 @@
                 <div class="bg-background w-100 heightItem h-100"
                      style="background-image:url('{{$setting->data['grow_image1']}}') "></div>
                 <div class="item-flex-text">{{$setting->data['grow_image1_text']}}</div>
-                style="background-image:url('{{$setting->grow_image1}}') "></div>
-        <div class="item-flex-text">{{$setting->data['grow_image1_text}}</div>
-        </a>
+            </a>
 
-    </div>
-    <div class="item-flex">
-        <a href="#">
-            <div class="bg-background w-100 heightItem h-100"
-                 style="background-image:url('{{$setting->data['grow_image2']}}') "></div>
-            style="background-image:url('{{$setting->grow_image2}}') "></div>
-    <div class="item-flex-text">{{$setting->data['grow_image2_text']}}</div>
-    </a>
-    </div>
-    <div class="item-flex">
-        <a href="#">
-            <div class="bg-background w-100 heightItem h-100"
-                 style="background-image:url('{{$setting->data['grow_image3']}}') "></div>
-            <div class="item-flex-text">{{$setting->data['grow_image3_text']}}</div>
-            style="background-image:url('{{$setting->grow_image3}}') "></div>
-    <div class="item-flex-text">{{$setting->grow_image3_text}}</div>
-    </a>
-    </div>
-    <div class="item-flex">
-        <a href="#">
-            <div class="bg-background w-100 heightItem h-100"
-                 style="background-image:url('{{$setting->data['grow_image4']}}') "></div>
-            <div class="item-flex-text">{{$setting->data['grow_image4_text']}}</div>
-            style="background-image:url('{{$setting->grow_image4}}') "></div>
-    <div class="item-flex-text">{{$setting->grow_image4_text}}</div>
-    </a>
-    </div>
+        </div>
+        <div class="item-flex">
+            <a href="#">
+                <div class="bg-background w-100 heightItem h-100"
+                     style="background-image:url('{{$setting->data['grow_image2']}}') "></div>
+                <div class="item-flex-text">{{$setting->data['grow_image2_text']}}</div>
+            </a>
+        </div>
+        <div class="item-flex">
+            <a href="#">
+                <div class="bg-background w-100 heightItem h-100"
+                     style="background-image:url('{{$setting->data['grow_image3']}}') "></div>
+                <div class="item-flex-text">{{$setting->data['grow_image3_text']}}</div>
+            </a>
+        </div>
+        <div class="item-flex">
+            <a href="#">
+                <div class="bg-background w-100 heightItem h-100"
+                     style="background-image:url('{{$setting->data['grow_image4']}}') "></div>
+                <div class="item-flex-text">{{$setting->data['grow_image4_text']}}</div>
+            </a>
+        </div>
     </div>
     <div>
         <div class="bg-background position-relative bg-white">
@@ -238,526 +220,524 @@
 
                                             <div class="bg-background grid-item--height4"
                                                  style="background-image: url('{{$productsInner->image[0]??'defualt'}}');"></div>
-                                            style="background-image: url('{{$productsInner->image[0]??'defualt' }}');"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
+                                                    <div class="font-small">{!!$productsInner->description!!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @break
+                                @case(1)
+                                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--width2 grid-item--height4">
+                                    <a href="{{$productsInner->link()}}">
+                                        <div class="view overlay cursor-p">
+
+                                            <div class="bg-background grid-item--height4"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
+                                                    <div class="font-small">{!!$productsInner->description!!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @break
+                                @case(2)
+                                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--height2">
+                                    <a href="{{$productsInner->link()}}">
+                                        <div class="view overlay cursor-p">
+
+                                            <div class="bg-background grid-item--height2"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
+                                                    <div class="font-small">{!!$productsInner->description!!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @break
+                                @case(3)
+                                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--height2">
+                                    <a href="{{$productsInner->link()}}">
+                                        <div class="view overlay cursor-p">
+
+                                            <div class="bg-background grid-item--height2"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
+                                                    <div class="font-small">{!!$productsInner->description!!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @break
+                                @case(4)
+                                <div class="@if($key%2===0) grid-item2 @else grid-item1 @endif grid-item--width2 grid-item--height4">
+                                    <a href="{{$productsInner->link()}}">
+                                        <div class="view overlay cursor-p">
+
+                                            <div class="bg-background grid-item--height4"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
+                                                    <div class="font-small">{!!$productsInner->description!!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @break
+                                @case(5)
+                                <div class="@if($key%2===0) grid-item2 @else grid-item1 @endif grid-item--width2 grid-item--height4">
+                                    <a href="{{$productsInner->link()}}">
+                                        <div class="view overlay cursor-p">
+
+                                            <div class="bg-background grid-item--height4"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
+                                                    <div class="font-small">{!!$productsInner->description!!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @break
+                                @case(6)
+                                <div class="@if($key%2===0) grid-item2 @else grid-item1 @endif grid-item--height2">
+                                    <a href="{{$productsInner->link()}}">
+                                        <div class="view overlay cursor-p">
+
+                                            <div class="bg-background grid-item--height2"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
+                                                    <div class="font-small">{!!$productsInner->description!!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @break
+                                @case(7)
+                                <div class="@if($key%2===0) grid-item2 @else grid-item1 @endif grid-item--height2">
+                                    <a href="{{$productsInner->link()}}">
+                                        <div class="view overlay cursor-p">
+
+                                            <div class="bg-background grid-item--height2"
+                                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
+                                                    <div class="font-small">{!!$productsInner->description!!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @break
+                            @endswitch
+                        @endforeach
+                        {{--<div class="grid-item grid-item--width2">
+                            <div class="view overlay">
+                                <div class="bg-background"
+                                     style="background-image: url('pic/800-table.jpg');height: 400px"></div>
+                                <div class="mask rgba-black-light">
+                                    <div class="textHover">
+                                        <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                  height="90" alt=""></div>
+                                        <div class="font-weight-bold py-3">header</div>
+                                        <div class="font-small">Achieve full and hydrating coverage with the
+                                            Caché Crème Satin Foundation
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="view overlay">
+                                <div class="bg-background"
+                                     style="background-image: url('pic/Wide-promo-foundation.jpg');height: 300px"></div>
+                                <div class="mask rgba-black-light">
+                                    <div class="textHover">
+                                        <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                  height="90" alt=""></div>
+                                        <div class="font-weight-bold py-3">header</div>
+                                        <div class="font-small">Achieve full and hydrating coverage with the
+                                            Caché Crème Satin Foundation
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="view overlay">
+                                <div class="bg-background"
+                                     style="background-image: url('pic/800-table.jpg');height: 400px"></div>
+                                <div class="mask rgba-black-light">
+                                    <div class="textHover">
+                                        <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                  height="90" alt=""></div>
+                                        <div class="font-weight-bold py-3">header</div>
+                                        <div class="font-small">Achieve full and hydrating coverage with the
+                                            Caché Crème Satin Foundation
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="view overlay">
+                                <div class="bg-background"
+                                     style="background-image: url('pic/Wide-promo-foundation.jpg');height: 300px"></div>
+                                <div class="mask rgba-black-light">
+                                    <div class="textHover">
+                                        <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                  height="90" alt=""></div>
+                                        <div class="font-weight-bold py-3">header</div>
+                                        <div class="font-small">Achieve full and hydrating coverage with the
+                                            Caché Crème Satin Foundation
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>--}}
+
+                    </div>
+                    {{--<div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-8 p-0">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-6 p-0">
+                                            <div class="view overlay">
+                                                <div class="bg-background"
+                                                     style="background-image: url('pic/800-table.jpg');height: 300px"></div>
+                                                <div class="mask rgba-black-light">
+                                                    <div class="textHover">
+                                                        <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                                  height="90" alt=""></div>
+                                                        <div class="font-weight-bold py-3">header</div>
+                                                        <div class="font-small">Achieve full and hydrating coverage with the
+                                                            Caché Crème Satin Foundation
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p-0">
+                                            <div class="view overlay">
+                                                <div class="bg-background"
+                                                     style="background-image: url('pic/lipstick-closeup.jpg');height: 300px"></div>
+                                                <div class="mask rgba-black-light">
+                                                    <div class="textHover">
+                                                        <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                                  height="90" alt=""></div>
+                                                        <div class="font-weight-bold py-3">header</div>
+                                                        <div class="font-small">Achieve full and hydrating coverage with the
+                                                            Caché Crème Satin Foundation
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 p-0">
+                                            <div class="view overlay">
+                                                <div class="bg-background"
+                                                     style="background-image: url('pic/Wide-promo-foundation.jpg');height: 500px"></div>
+                                                <div class="mask rgba-black-light">
+                                                    <div class="textHover">
+                                                        <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                                  height="90" alt=""></div>
+                                                        <div class="font-weight-bold py-3">header</div>
+                                                        <div class="font-small">Achieve full and hydrating coverage with the
+                                                            Caché Crème Satin Foundation
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 p-0">
+                                <div>
+                                    <div class="view overlay">
+                                        <div class="bg-background"
+                                             style="background-image: url('pic/nightfall-promo.jpg');height: 500px"></div>
                                         <div class="mask rgba-black-light">
                                             <div class="textHover">
                                                 <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
                                                           height="90" alt=""></div>
-                                                <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
-                                                <div class="font-small">{!!$productsInner->description!!}
+                                                <div class="font-weight-bold py-3">header</div>
+                                                <div class="font-small">Achieve full and hydrating coverage with the Caché
+                                                    Crème Satin Foundation
                                                 </div>
                                             </div>
                                         </div>
-                                </div>
-                                </a>
-                    </div>
-                    @break
-                    @case(1)
-                    <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--width2 grid-item--height4">
-                        <a href="{{$productsInner->link()}}">
-                            <div class="view overlay cursor-p">
-
-                                <div class="bg-background grid-item--height4"
-                                     style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
-                                style="background-image: url('{{$productsInner->image[0]??'defualt' }}')"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
-                                    <div class="font-small">{!!$productsInner->description!!}
                                     </div>
                                 </div>
-                            </div>
-                    </div>
-                    </a>
-                </div>
-                @break
-                @case(2)
-                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--height2">
-                    <a href="{{$productsInner->link()}}">
-                        <div class="view overlay cursor-p">
-
-                            <div class="bg-background grid-item--height2"
-                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
-                                    <div class="font-small">{!!$productsInner->description!!}
+                                <div>
+                                    <div class="view overlay">
+                                        <div class="bg-background"
+                                             style="background-image: url('pic/eyebrow-group(1).jpg');height: 300px"></div>
+                                        <div class="mask rgba-black-light">
+                                            <div class="textHover">
+                                                <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                          height="90" alt=""></div>
+                                                <div class="font-weight-bold py-3">header</div>
+                                                <div class="font-small">Achieve full and hydrating coverage with the Caché
+                                                    Crème Satin Foundation
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
+
                         </div>
-                    </a>
+                    </div>--}}
                 </div>
-                @break
-                @case(3)
-                <div class="@if($key%2===0) grid-item1 @else grid-item2 @endif grid-item--height2">
-                    <a href="{{$productsInner->link()}}">
-                        <div class="view overlay cursor-p">
-
-                            <div class="bg-background grid-item--height2"
-                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
-                                    <div class="font-small">{!!$productsInner->description!!}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @break
-                @case(4)
-                <div class="@if($key%2===0) grid-item2 @else grid-item1 @endif grid-item--width2 grid-item--height4">
-                    <a href="{{$productsInner->link()}}">
-                        <div class="view overlay cursor-p">
-
-                            <div class="bg-background grid-item--height4"
-                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
-                                    <div class="font-small">{!!$productsInner->description!!}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @break
-                @case(5)
-                <div class="@if($key%2===0) grid-item2 @else grid-item1 @endif grid-item--width2 grid-item--height4">
-                    <a href="{{$productsInner->link()}}">
-                        <div class="view overlay cursor-p">
-
-                            <div class="bg-background grid-item--height4"
-                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}');"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
-                                    <div class="font-small">{!!$productsInner->description!!}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @break
-                @case(6)
-                <div class="@if($key%2===0) grid-item2 @else grid-item1 @endif grid-item--height2">
-                    <a href="{{$productsInner->link()}}">
-                        <div class="view overlay cursor-p">
-
-                            <div class="bg-background grid-item--height2"
-                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
-                                    <div class="font-small">{!!$productsInner->description!!}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @break
-                @case(7)
-                <div class="@if($key%2===0) grid-item2 @else grid-item1 @endif grid-item--height2">
-                    <a href="{{$productsInner->link()}}">
-                        <div class="view overlay cursor-p">
-
-                            <div class="bg-background grid-item--height2"
-                                 style="background-image: url('{{$productsInner->image[0]??'defualt'}}')"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">{{$productsInner->name}}</div>
-                                    <div class="font-small">{!!$productsInner->description!!}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @break
-                @endswitch
             @endforeach
-            {{--<div class="grid-item grid-item--width2">
-                <div class="view overlay">
-                    <div class="bg-background"
-                         style="background-image: url('pic/800-table.jpg');height: 400px"></div>
-                    <div class="mask rgba-black-light">
-                        <div class="textHover">
-                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                      height="90" alt=""></div>
-                            <div class="font-weight-bold py-3">header</div>
-                            <div class="font-small">Achieve full and hydrating coverage with the
-                                Caché Crème Satin Foundation
+            {{--<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8 p-0">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12 p-0">
+                                        <div class="view overlay">
+                                            <div class="bg-background"
+                                                 style="background-image: url('pic/Wide-promo-foundation.jpg');height: 500px"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">header</div>
+                                                    <div class="font-small">Achieve full and hydrating coverage with the
+                                                        Caché Crème Satin Foundation
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 p-0">
+                                        <div class="view overlay">
+                                            <div class="bg-background"
+                                                 style="background-image: url('pic/800-table.jpg');height: 300px"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">header</div>
+                                                    <div class="font-small">Achieve full and hydrating coverage with the
+                                                        Caché Crème Satin Foundation
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p-0">
+                                        <div class="view overlay">
+                                            <div class="bg-background"
+                                                 style="background-image: url('pic/lipstick-closeup.jpg');height: 300px"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">header</div>
+                                                    <div class="font-small">Achieve full and hydrating coverage with the
+                                                        Caché Crème Satin Foundation
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
+                        <div class="col-md-4 p-0">
+
+                            <div>
+                                <div class="view overlay">
+                                    <div class="bg-background"
+                                         style="background-image: url('pic/eyebrow-group(1).jpg');height: 300px"></div>
+                                    <div class="mask rgba-black-light">
+                                        <div class="textHover">
+                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                      height="90" alt=""></div>
+                                            <div class="font-weight-bold py-3">header</div>
+                                            <div class="font-small">Achieve full and hydrating coverage with the Caché
+                                                Crème Satin Foundation
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="view overlay">
+                                    <div class="bg-background"
+                                         style="background-image: url('pic/nightfall-promo.jpg');height: 500px"></div>
+                                    <div class="mask rgba-black-light">
+                                        <div class="textHover">
+                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                      height="90" alt=""></div>
+                                            <div class="font-weight-bold py-3">header</div>
+                                            <div class="font-small">Achieve full and hydrating coverage with the Caché
+                                                Crème Satin Foundation
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <div class="grid-item">
-                <div class="view overlay">
-                    <div class="bg-background"
-                         style="background-image: url('pic/Wide-promo-foundation.jpg');height: 300px"></div>
-                    <div class="mask rgba-black-light">
-                        <div class="textHover">
-                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                      height="90" alt=""></div>
-                            <div class="font-weight-bold py-3">header</div>
-                            <div class="font-small">Achieve full and hydrating coverage with the
-                                Caché Crème Satin Foundation
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 p-0">
+                            <div>
+                                <div class="view overlay">
+                                    <div class="bg-background"
+                                         style="background-image: url('pic/nightfall-promo.jpg');height: 500px"></div>
+                                    <div class="mask rgba-black-light">
+                                        <div class="textHover">
+                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                      height="90" alt=""></div>
+                                            <div class="font-weight-bold py-3">header</div>
+                                            <div class="font-small">Achieve full and hydrating coverage with the Caché
+                                                Crème Satin Foundation
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="view overlay">
+                                    <div class="bg-background"
+                                         style="background-image: url('pic/eyebrow-group(1).jpg');height: 300px"></div>
+                                    <div class="mask rgba-black-light">
+                                        <div class="textHover">
+                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                      height="90" alt=""></div>
+                                            <div class="font-weight-bold py-3">header</div>
+                                            <div class="font-small">Achieve full and hydrating coverage with the Caché
+                                                Crème Satin Foundation
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-8 p-0">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 p-0">
+                                        <div class="view overlay">
+                                            <div class="bg-background"
+                                                 style="background-image: url('pic/800-table.jpg');height: 300px"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">header</div>
+                                                    <div class="font-small">Achieve full and hydrating coverage with the
+                                                        Caché Crème Satin Foundation
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p-0">
+                                        <div class="view overlay">
+                                            <div class="bg-background"
+                                                 style="background-image: url('pic/lipstick-closeup.jpg');height: 300px"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">header</div>
+                                                    <div class="font-small">Achieve full and hydrating coverage with the
+                                                        Caché Crème Satin Foundation
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p-0">
+                                        <div class="view overlay">
+                                            <div class="bg-background"
+                                                 style="background-image: url('pic/Wide-promo-foundation.jpg');height: 500px"></div>
+                                            <div class="mask rgba-black-light">
+                                                <div class="textHover">
+                                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
+                                                              height="90" alt=""></div>
+                                                    <div class="font-weight-bold py-3">header</div>
+                                                    <div class="font-small">Achieve full and hydrating coverage with the
+                                                        Caché Crème Satin Foundation
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="view overlay">
-                    <div class="bg-background"
-                         style="background-image: url('pic/800-table.jpg');height: 400px"></div>
-                    <div class="mask rgba-black-light">
-                        <div class="textHover">
-                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                      height="90" alt=""></div>
-                            <div class="font-weight-bold py-3">header</div>
-                            <div class="font-small">Achieve full and hydrating coverage with the
-                                Caché Crème Satin Foundation
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="view overlay">
-                    <div class="bg-background"
-                         style="background-image: url('pic/Wide-promo-foundation.jpg');height: 300px"></div>
-                    <div class="mask rgba-black-light">
-                        <div class="textHover">
-                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                      height="90" alt=""></div>
-                            <div class="font-weight-bold py-3">header</div>
-                            <div class="font-small">Achieve full and hydrating coverage with the
-                                Caché Crème Satin Foundation
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
             </div>--}}
-
         </div>
-        {{--<div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8 p-0">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6 p-0">
-                                <div class="view overlay">
-                                    <div class="bg-background"
-                                         style="background-image: url('pic/800-table.jpg');height: 300px"></div>
-                                    <div class="mask rgba-black-light">
-                                        <div class="textHover">
-                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                                      height="90" alt=""></div>
-                                            <div class="font-weight-bold py-3">header</div>
-                                            <div class="font-small">Achieve full and hydrating coverage with the
-                                                Caché Crème Satin Foundation
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 p-0">
-                                <div class="view overlay">
-                                    <div class="bg-background"
-                                         style="background-image: url('pic/lipstick-closeup.jpg');height: 300px"></div>
-                                    <div class="mask rgba-black-light">
-                                        <div class="textHover">
-                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                                      height="90" alt=""></div>
-                                            <div class="font-weight-bold py-3">header</div>
-                                            <div class="font-small">Achieve full and hydrating coverage with the
-                                                Caché Crème Satin Foundation
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 p-0">
-                                <div class="view overlay">
-                                    <div class="bg-background"
-                                         style="background-image: url('pic/Wide-promo-foundation.jpg');height: 500px"></div>
-                                    <div class="mask rgba-black-light">
-                                        <div class="textHover">
-                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                                      height="90" alt=""></div>
-                                            <div class="font-weight-bold py-3">header</div>
-                                            <div class="font-small">Achieve full and hydrating coverage with the
-                                                Caché Crème Satin Foundation
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 p-0">
-                    <div>
-                        <div class="view overlay">
-                            <div class="bg-background"
-                                 style="background-image: url('pic/nightfall-promo.jpg');height: 500px"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">header</div>
-                                    <div class="font-small">Achieve full and hydrating coverage with the Caché
-                                        Crème Satin Foundation
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="view overlay">
-                            <div class="bg-background"
-                                 style="background-image: url('pic/eyebrow-group(1).jpg');height: 300px"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">header</div>
-                                    <div class="font-small">Achieve full and hydrating coverage with the Caché
-                                        Crème Satin Foundation
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>--}}
-    </div>
-    @endforeach
-    {{--<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8 p-0">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12 p-0">
-                                <div class="view overlay">
-                                    <div class="bg-background"
-                                         style="background-image: url('pic/Wide-promo-foundation.jpg');height: 500px"></div>
-                                    <div class="mask rgba-black-light">
-                                        <div class="textHover">
-                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                                      height="90" alt=""></div>
-                                            <div class="font-weight-bold py-3">header</div>
-                                            <div class="font-small">Achieve full and hydrating coverage with the
-                                                Caché Crème Satin Foundation
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 p-0">
-                                <div class="view overlay">
-                                    <div class="bg-background"
-                                         style="background-image: url('pic/800-table.jpg');height: 300px"></div>
-                                    <div class="mask rgba-black-light">
-                                        <div class="textHover">
-                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                                      height="90" alt=""></div>
-                                            <div class="font-weight-bold py-3">header</div>
-                                            <div class="font-small">Achieve full and hydrating coverage with the
-                                                Caché Crème Satin Foundation
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 p-0">
-                                <div class="view overlay">
-                                    <div class="bg-background"
-                                         style="background-image: url('pic/lipstick-closeup.jpg');height: 300px"></div>
-                                    <div class="mask rgba-black-light">
-                                        <div class="textHover">
-                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                                      height="90" alt=""></div>
-                                            <div class="font-weight-bold py-3">header</div>
-                                            <div class="font-small">Achieve full and hydrating coverage with the
-                                                Caché Crème Satin Foundation
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-4 p-0">
-
-                    <div>
-                        <div class="view overlay">
-                            <div class="bg-background"
-                                 style="background-image: url('pic/eyebrow-group(1).jpg');height: 300px"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">header</div>
-                                    <div class="font-small">Achieve full and hydrating coverage with the Caché
-                                        Crème Satin Foundation
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="view overlay">
-                            <div class="bg-background"
-                                 style="background-image: url('pic/nightfall-promo.jpg');height: 500px"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">header</div>
-                                    <div class="font-small">Achieve full and hydrating coverage with the Caché
-                                        Crème Satin Foundation
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4 p-0">
-                    <div>
-                        <div class="view overlay">
-                            <div class="bg-background"
-                                 style="background-image: url('pic/nightfall-promo.jpg');height: 500px"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">header</div>
-                                    <div class="font-small">Achieve full and hydrating coverage with the Caché
-                                        Crème Satin Foundation
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="view overlay">
-                            <div class="bg-background"
-                                 style="background-image: url('pic/eyebrow-group(1).jpg');height: 300px"></div>
-                            <div class="mask rgba-black-light">
-                                <div class="textHover">
-                                    <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                              height="90" alt=""></div>
-                                    <div class="font-weight-bold py-3">header</div>
-                                    <div class="font-small">Achieve full and hydrating coverage with the Caché
-                                        Crème Satin Foundation
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-8 p-0">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6 p-0">
-                                <div class="view overlay">
-                                    <div class="bg-background"
-                                         style="background-image: url('pic/800-table.jpg');height: 300px"></div>
-                                    <div class="mask rgba-black-light">
-                                        <div class="textHover">
-                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                                      height="90" alt=""></div>
-                                            <div class="font-weight-bold py-3">header</div>
-                                            <div class="font-small">Achieve full and hydrating coverage with the
-                                                Caché Crème Satin Foundation
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 p-0">
-                                <div class="view overlay">
-                                    <div class="bg-background"
-                                         style="background-image: url('pic/lipstick-closeup.jpg');height: 300px"></div>
-                                    <div class="mask rgba-black-light">
-                                        <div class="textHover">
-                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                                      height="90" alt=""></div>
-                                            <div class="font-weight-bold py-3">header</div>
-                                            <div class="font-small">Achieve full and hydrating coverage with the
-                                                Caché Crème Satin Foundation
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 p-0">
-                                <div class="view overlay">
-                                    <div class="bg-background"
-                                         style="background-image: url('pic/Wide-promo-foundation.jpg');height: 500px"></div>
-                                    <div class="mask rgba-black-light">
-                                        <div class="textHover">
-                                            <div><img src="pic/pippa-logo-800px.png" class="m-auto" width="140"
-                                                      height="90" alt=""></div>
-                                            <div class="font-weight-bold py-3">header</div>
-                                            <div class="font-small">Achieve full and hydrating coverage with the
-                                                Caché Crème Satin Foundation
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </div>--}}
-    </div>
     </div>
     <div>
         <div class="text-center font-weight-bold py-5">پیام در اینستاگرام</div>
@@ -971,4 +951,3 @@
         });
     </script>
 @endsection
-
