@@ -21,6 +21,7 @@ class ProductModel extends Model
         'image','description','details','score','view','state','dimensions','weight'];
     protected $casts=[
         'image'=> 'array',
+        'types'=> 'array',
 //        'name'=> 'array',
 //        'description'=> 'array',
 //        'details'=> 'array',

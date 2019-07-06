@@ -9,6 +9,17 @@
         .select2-container {
             width: 100% !important;
         }
+        .image-address{
+            display: none;
+        }
+        .btn {
+            margin-right: 0px !important;
+        }
+        .filemanage-image{
+            margin-top:15px;
+            max-height:100px;
+            max-width:100px;
+        }
     </style>
 @endsection
 @section('end_script')
@@ -104,7 +115,7 @@
                                 <li role="presentation"><a href="#meta" aria-controls="meta" role="tab" data-toggle="tab">مشخصات</a></li>
                                 <li role="presentation"><a href="#images" aria-controls="images" role="tab" data-toggle="tab">عکس</a></li>
                                 <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">ویدیو</a></li>
-                                {{--                            <li role="presentation"><a href="#historyTab" aria-controls="history" role="tab" data-toggle="tab">حمل و نقل</a></li>--}}
+                                <li role="presentation"><a href="#historyTab" aria-controls="history" role="tab" data-toggle="tab">انواع محصول</a></li>
                             </ul>
 
                             <div class="tab-content">
@@ -317,7 +328,7 @@
                                                 <div class="tile-body">
                                                     <div class="tile-body">
 
-                                                        <div class="table-responsive">
+                                                        <div class="tile-header dvd dvd-btm">
                                                             <table class="table-striped " style="width:100%">
                                                                 <tbody class="field_wrapper">
                                                                 <tr>
@@ -498,49 +509,58 @@
 
                                 </div>
                                 <!-- tab in tabs -->
-                                {{--                            <div role="tabpanel" class="tab-pane" id="historyTab">--}}
+                                <div role="tabpanel" class="tab-pane" id="historyTab">
+
+
+                                    <div class="tile-header dvd dvd-btm">
+                                        <table id="product-type" class="table-striped " style="width:100%">
+                                            <thead>
+                                            <tr>
+                                                <th>توضیح</th>
+                                                <th>عکس شاخص</th>
+                                                <th>عکس</th>
+                                                <th>عکس</th>
+                                                <th>عکس</th>
+                                                <th>عکس</th>
+                                                <th>حذف</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="type_wrapper">
+                                            @if(is_array($product->types))
+                                                @foreach($product->types as $id => $type)
+                                                    <tr>
+                                                        <td><input class="form-control" type="text" name="type_description[{{$id}}]" value="{{ $type['description']??"" }}"></td>
+                                                        <td>
+                                                            <a data-input="typethumbnail{{$id}}" data-preview="typethumbnailholder{{$id}}"  class="lfm btn btn-primary">
+                                                                <i class="fa fa-picture-o"></i>انتخاب</a>
+                                                            <input id="typethumbnail{{$id}}" class="form-control image-address" type="text" name="index_type_image[{{$id}}]" value="{{ $type['index_image']??"" }}">
+                                                            <img id="typethumbnailholder{{$id}}" class="filemanage-image" src="{{ asset( $type['index_image']??"") }}">
+                                                        </td>
+                                                        @for($key =0; $key <4 ;$key++)
+                                                            <td>
+                                                                <a data-input="typeImage{{$id}}{{ $key }}" data-preview="typeImageholder{{$id}}{{ $key }}"  class="lfm btn btn-primary">
+                                                                    <i class="fa fa-picture-o"></i>انتخاب</a>
+                                                                <input id="typeImage{{$id}}{{ $key }}" class="form-control image-address" type="text" name="type_image[{{$id}}][]" @if(isset($type['images'][$key])) value="{{ $type['images'][$key] }}" @endif>
+                                                                <img id="typeImageholder{{$id}}{{ $key }}" class="filemanage-image" @if(isset($type['images'][$key])) src="{{ asset($type['images'][$key]) }}" @endif>
+                                                            </td>
+                                                        @endfor
+                                                        <td> <a href="javascript:void(0);" class="remove_button" title="Remove field"><span class="glyphicon glyphicon-remove"></span></a></td>
+                                                    </tr>
+                                                @endforeach
+                                            @endif
+                                            </tbody>
+                                        </table>
+                                        <a href="javascript:void(0);" id="" class="btn btn-success addtype" style="margin-top: 10px" title="Add field"><span class="glyphicon glyphicon-plus"></span></a>
+
+                                    </div>
+                                        <!-- /col -->
+                                    </div>
+                                    <!-- /row -->
 
 
 
 
-
-                                {{--                                <!-- row -->--}}
-                                {{--                                <div class="row">--}}
-                                {{--                                    <!-- col -->--}}
-                                {{--                                    <div class="col-md-12">--}}
-                                {{--                                        <section class="tile">--}}
-
-                                {{--                                            <!-- tile header -->--}}
-                                {{--                                            <div class="tile-header dvd dvd-btm 33">--}}
-                                {{--                                                <h1 class="custom-font"><strong>سیستم های حمل نقل محصول </strong> </h1>--}}
-                                {{--                                            </div>--}}
-                                {{--                                            <!-- /tile header -->--}}
-
-
-                                {{--                                            <!-- tile body -->--}}
-                                {{--                                            <div class="tile-body">--}}
-
-                                {{--                                                <div class="form-group">--}}
-                                {{--                                                    <label for="shipping_list">سیستم های حمل نقل محصول:</label>--}}
-                                {{--                                                    <select id="shipping_list" name="shipping_list[]" class="form-control" multiple></select>--}}
-                                {{--                                                </div>--}}
-
-
-                                {{--                                            </div>--}}
-                                {{--                                            <!-- /tile body -->--}}
-
-                                {{--                                        </section>--}}
-
-
-                                {{--                                    </div>--}}
-                                {{--                                    <!-- /col -->--}}
-                                {{--                                </div>--}}
-                                {{--                                <!-- /row -->--}}
-
-
-
-
-                                {{--                            </div><!-- end ngRepeat: tab in tabs -->--}}
+                                </div><!-- end ngRepeat: tab in tabs -->
                             </div>
                         </div>
                     </div>
@@ -659,7 +679,46 @@
                 y--; //Decrement field counter
             });
 
-
+            var ptypeCount = 1;
+            var max_ptype=10;
+            $('.addtype').click(function(){ //Once add button is clicked
+                if(ptypeCount < max_ptype){ //Check maximum number of input fields
+                    $(this).siblings('table').children('.type_wrapper').append('<tr>'+
+                        '<td><input class="form-control" type="text" name="type_description['+picCount+']"></td>'+
+                        '<td>'+
+                        '<a data-input="typethumbnail'+picCount+'" data-preview="typethumbnailholder'+picCount+'"  class="lfm btn btn-primary">' +
+                        '<i class="fa fa-picture-o"></i>انتخاب</a>'+
+                        '<input id="typethumbnail'+picCount+'" class="form-control image-address" type="text" name="index_type_image['+picCount+']">'+
+                        '<img id="typethumbnailholder'+picCount+'" class="filemanage-image">' +
+                        '</td>'+
+                        '<td>'+
+                        '<a data-input="typeImage'+picCount+'1" data-preview="typeImageholder'+picCount+'1"  class="lfm btn btn-primary">' +
+                        '<i class="fa fa-picture-o"></i>انتخاب</a>'+
+                        '<input id="typeImage'+picCount+'1" class="form-control image-address" type="text" name="type_image['+picCount+'][]">'+
+                        '<img id="typeImageholder'+picCount+'1" class="filemanage-image">' +
+                        '</td>'+
+                        '<td>'+
+                        '<a data-input="typeImage'+picCount+'2" data-preview="typeImageholder'+picCount+'2"  class="lfm btn btn-primary">' +
+                        '<i class="fa fa-picture-o"></i>انتخاب</a>'+
+                        '<input id="typeImage'+picCount+'2" class="form-control image-address" type="text" name="type_image['+picCount+'][]">'+
+                        '<img id="typeImageholder'+picCount+'2" class="filemanage-image">' +
+                        '</td>'+
+                        '<td>'+
+                        '<a data-input="typeImage'+picCount+'3" data-preview="typeImageholder'+picCount+'3"  class="lfm btn btn-primary">' +
+                        '<i class="fa fa-picture-o"></i>انتخاب</a>'+
+                        '<input id="typeImage'+picCount+'3" class="form-control image-address" type="text" name="type_image['+picCount+'][]">'+
+                        '<img id="typeImageholder'+picCount+'3" class="filemanage-image">' +
+                        '</td>'+
+                        '<td>'+
+                        '<a data-input="typeImage'+picCount+'4" data-preview="typeImageholder'+picCount+'4"  class="lfm btn btn-primary">' +
+                        '<i class="fa fa-picture-o"></i>انتخاب</a>'+
+                        '<input id="typeImage'+picCount+'4" class="form-control image-address" type="text" name="type_image['+picCount+'][]">'+
+                        '<img id="typeImageholder'+picCount+'4" class="filemanage-image"></td>'+
+                        '<td> <a href="javascript:void(0);" class="remove_button" title="Remove field"><span class="glyphicon glyphicon-remove"></span></a></td> </tr>'); // Add field html
+                    picCount++;
+                    $('.lfm').filemanager('image');
+                }
+            });
             $(filebutton).click(function(){ //Once add button is clicked
                 console.log('hey');
                 if(y < maxFile){ //Check maximum number of input fields

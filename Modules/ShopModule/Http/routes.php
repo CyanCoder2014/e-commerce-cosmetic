@@ -30,6 +30,7 @@ Route::group(array('prefix' => Config::get('app.locale_prefix')), function () {
 
 
         Route::get('/show/{id}', 'HomeController@show')->name('shop.show');
+        Route::get('/product/{productId}/type', 'HomeController@getProductTypes')->name('shop.product.types');
 //        Route::get('/category/{id}', 'HomeController@category')->name('shop.category');
 
         Route::post('/product/comment', 'CommentController@productComment')->name('product.comment.add');

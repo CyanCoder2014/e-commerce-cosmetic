@@ -114,6 +114,15 @@ class HomeController extends Controller
 
 
 
+
+    public function getProductTypes($productId)
+    {
+        $product = ProductModel::findOrFail($productId);
+        return json_encode($product->types);
+    }
+
+
+
     public function category($id)
     {
         $dataDetail = explode('-', $id);

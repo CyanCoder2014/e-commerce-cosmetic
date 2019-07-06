@@ -10,6 +10,12 @@
         .select2-container {
             width: 100% !important;
         }
+        .image-address{
+            display: none;
+        }
+        .btn {
+            margin-right: 0px !important;
+        }
     </style>
 @endsection
 @section('end_script')
@@ -360,7 +366,7 @@
 
                                             <!-- tile header -->
                                             <div class="tile-header dvd dvd-btm">
-                                                <h1 class="custom-font"><strong>انتخاب تصویر مطلب </strong></h1>
+                                                <h1 class="custom-font"><strong>انتخاب تصویر محصول </strong></h1>
                                                 <label for="picp"></label>
                                                 <table id="picp" class="table-striped " style="width:100%">
                                                     <thead>
@@ -469,7 +475,7 @@
 
                                             <!-- tile header -->
                                             <div class="tile-header dvd dvd-btm 33">
-                                                <h1 class="custom-font"><strong>انواع محصولات </strong> </h1>
+                                                <h1 class="custom-font"><strong>انواع محصول </strong> </h1>
                                             </div>
                                             <!-- /tile header -->
 
@@ -477,9 +483,46 @@
                                             <!-- tile body -->
                                             <div class="tile-body">
 
-                                                <div class="form-group">
-                                                    <label for="shipping_list">سیستم های حمل نقل محصول:</label>
-                                                    <select id="shipping_list" name="shipping_list[]" class="form-control" multiple></select>
+                                                <div class="tile-header dvd dvd-btm">
+                                                    <table id="product-type" class="table-striped " style="width:100%">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>توضیح</th>
+                                                            <th>عکس شاخص</th>
+                                                            <th>عکس</th>
+                                                            <th>عکس</th>
+                                                            <th>عکس</th>
+                                                            <th>عکس</th>
+                                                            <th>حذف</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody class="type_wrapper">
+                                                            @if(is_array(old('index_type_image')))
+                                                                @foreach(old('index_type_image') as $id => $Iimage)
+                                                                    <tr>
+                                                                        <td><input class="form-control" type="text" name="type_description[{{$id}}]" value="{{ old('type_description.'.$id) }}"></td>
+                                                                        <td>
+                                                                            <a data-input="typethumbnail{{$id}}" data-preview="typethumbnailholder{{$id}}"  class="lfm btn btn-primary">
+                                                                                <i class="fa fa-picture-o"></i>انتخاب</a>
+                                                                            <input id="typethumbnail{{$id}}" class="form-control image-address" type="text" name="index_type_image[{{$id}}]" value="{{ $Iimage }}">
+                                                                            <img id="typethumbnailholder{{$id}}" class="filemanage-image" src="{{ asset($Iimage) }}">
+                                                                        </td>
+                                                                        @for($key =0; $key <4 ;$key++)
+                                                                        <td>
+                                                                            <a data-input="typeImage{{$id}}{{ $key }}" data-preview="typeImageholder{{$id}}{{ $key }}"  class="lfm btn btn-primary">
+                                                                                <i class="fa fa-picture-o"></i>انتخاب</a>
+                                                                            <input id="typeImage{{$id}}{{ $key }}" class="form-control image-address" type="text" name="type_image[{{$id}}][]" value="{{old('type_image.'.$id.'.'.$key)}}">
+                                                                            <img id="typeImageholder{{$id}}{{ $key }}" class="filemanage-image" @if(old('type_image.'.$id.'.'.$key)) src="{{ asset(old('type_image.'.$id.'.'.$key)) }}" @endif>
+                                                                        </td>
+                                                                        @endfor
+                                                                       <td> <a href="javascript:void(0);" class="remove_button" title="Remove field"><span class="glyphicon glyphicon-remove"></span></a></td>
+                                                                    </tr>
+                                                                @endforeach
+                                                            @endif
+                                                        </tbody>
+                                                    </table>
+                                                    <a href="javascript:void(0);" id="" class="btn btn-success addtype" style="margin-top: 10px" title="Add field"><span class="glyphicon glyphicon-plus"></span></a>
+
                                                 </div>
 
 
@@ -616,21 +659,54 @@
                 y--; //Decrement field counter
             });
 
-            var ptypeCount = 1;
+            var ptypeCount = {{ count(old('index_type_image',[])) }};
+            var ptCounter = {{ count(old('index_type_image',[])) }};
             var max_ptype=10;
-            $('.addptype').click(function(){ //Once add button is clicked
-                console.log('hey');
-                if(ptypeCount < max_pic){ //Check maximum number of input fields
-                    $(this).siblings('table').children('.pic_wrapper').append('<tr>'+
+            $('.addtype').click(function(){ //Once add button is clicked
+                console.log(ptypeCount);
+                if(ptCounter < max_ptype){ //Check maximum number of input fields
+                    $(this).siblings('table').children('.type_wrapper').append('<tr>'+
+                        '<td><input class="form-control" type="text" name="type_description['+ptypeCount+']"></td>'+
                         '<td>'+
-                        '<a data-input="typethumbnail'+picCount+'" data-preview="typethumbnailholder'+picCount+'"  class="lfm btn btn-primary">' +
+                        '<a data-input="typethumbnail'+ptypeCount+'" data-preview="typethumbnailholder'+ptypeCount+'"  class="lfm btn btn-primary">' +
                         '<i class="fa fa-picture-o"></i>انتخاب</a>'+
-                        '<input id="typethumbnail'+picCount+'" class="form-control" type="text" name="Images[]">'+
-                        '<img id="typethumbnailholder'+picCount+'" class="filemanage-image"></td>'+
-                        '<td> <a href="javascript:void(0);" class="remove_button" title="Remove field"><span class="glyphicon glyphicon-remove"></span></a></td> </tr>'); // Add field html
-                    picCount++;
+                        '<input id="typethumbnail'+ptypeCount+'" class="form-control image-address" type="text" name="index_type_image['+ptypeCount+']">'+
+                        '<img id="typethumbnailholder'+ptypeCount+'" class="filemanage-image">' +
+                        '</td>'+
+                        '<td>'+
+                        '<a data-input="typeImage'+ptypeCount+'1" data-preview="typeImageholder'+ptypeCount+'1"  class="lfm btn btn-primary">' +
+                        '<i class="fa fa-picture-o"></i>انتخاب</a>'+
+                        '<input id="typeImage'+ptypeCount+'1" class="form-control image-address" type="text" name="type_image['+ptypeCount+'][]">'+
+                        '<img id="typeImageholder'+ptypeCount+'1" class="filemanage-image">' +
+                        '</td>'+
+                        '<td>'+
+                        '<a data-input="typeImage'+ptypeCount+'2" data-preview="typeImageholder'+ptypeCount+'2"  class="lfm btn btn-primary">' +
+                        '<i class="fa fa-picture-o"></i>انتخاب</a>'+
+                        '<input id="typeImage'+ptypeCount+'2" class="form-control image-address" type="text" name="type_image['+ptypeCount+'][]">'+
+                        '<img id="typeImageholder'+ptypeCount+'2" class="filemanage-image">' +
+                        '</td>'+
+                        '<td>'+
+                        '<a data-input="typeImage'+ptypeCount+'3" data-preview="typeImageholder'+ptypeCount+'3"  class="lfm btn btn-primary">' +
+                        '<i class="fa fa-picture-o"></i>انتخاب</a>'+
+                        '<input id="typeImage'+ptypeCount+'3" class="form-control image-address" type="text" name="type_image['+ptypeCount+'][]">'+
+                        '<img id="typeImageholder'+ptypeCount+'3" class="filemanage-image">' +
+                        '</td>'+
+                        '<td>'+
+                        '<a data-input="typeImage'+ptypeCount+'4" data-preview="typeImageholder'+ptypeCount+'4"  class="lfm btn btn-primary">' +
+                        '<i class="fa fa-picture-o"></i>انتخاب</a>'+
+                        '<input id="typeImage'+ptypeCount+'4" class="form-control image-address" type="text" name="type_image['+ptypeCount+'][]">'+
+                        '<img id="typeImageholder'+ptypeCount+'4" class="filemanage-image"></td>'+
+                        '<td> <a href="javascript:void(0);" class="remove_button" title="Remove field"><span class="glyphicon glyphicon-remove"></span></a></td> ' +
+                        '</tr>'); // Add field html
+                    ptypeCount++;
+                    ptCounter++;
                     $('.lfm').filemanager('image');
                 }
+            });
+            $('.type_wrapper').on('click', '.remove_button', function(e){ //Once remove button is clicked
+                e.preventDefault();
+                $(this).parent().parent().remove(); //Remove field html
+                ptCounter--; //Decrement field counter
             });
 
 

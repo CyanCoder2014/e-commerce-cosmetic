@@ -149,6 +149,20 @@ class AdminController extends Controller
 //        $product->quantity =$request->quantity;
 //        $product->special =($request->input('special'))? true : false;
 
+        /////////////////// product type /////////////////////
+        $Product_types=[];
+        if (is_array($request->index_type_image))
+            foreach ($request->index_type_image as $key => $Iimage)
+            {
+                $detail= [];
+                $detail['index_image']=$Iimage;
+                $detail['description']=$request->input('type_description.'.$key);
+                $detail['images']=$request->input('type_image.'.$key);
+                $Product_types[$key]=$detail;
+            }
+        $product->types = $Product_types;
+        ////////////////////////////////////////////////////////
+
         $product->save();
 
         ////////////////////////****** Features *******//////////////////////////////
@@ -200,17 +214,21 @@ class AdminController extends Controller
 //            }
 //
 //        $detail_cat=$request->input('detail_cat');
+        $details=[];
         for ($i=0; $request->input('detail_name.'.$i);$i++)
         {
             if (! $request->input('detail_description.'.$i) )
                 return back()->with("پر کردن توضیح مشخصات الزامی است ");
-            $detail= new ProductDetailModel();
-            $detail->product_id=$product->id;
-            $detail->title=$request->input('detail_name.'.$i);
-            $detail->description=$request->input('detail_description.'.$i);
-            $detail->group_id=$request->input('detail_cat.'.$i);
-            $detail->save();
+            $detail= [];
+            $detail['product_id']=$product->id;
+            $detail['title']=$request->input('detail_name.'.$i);
+            $detail['description']=$request->input('detail_description.'.$i);
+            $detail['group_id']=$request->input('detail_cat.'.$i);
+            $details[]=$detail;
         }
+        if (!empty($details))
+            ProductDetailModel::Insert($details);
+
         ///////////////////////////////// package /////////////////////////////////////
 //        if($request->input('package_name')){
 //            foreach ($request->input('package_desc') as $index => $pname){
@@ -426,6 +444,19 @@ class AdminController extends Controller
 //        $product->provider_id =$request->provider_id;
 //        $product->quantity =$request->quantity;
 //        $product->special =($request->input('special'))? true : false;
+        /////////////////// product type /////////////////////
+        $Product_types=[];
+        if (is_array($request->index_type_image))
+        foreach ($request->index_type_image as $key => $Iimage)
+        {
+            $detail= [];
+            $detail['index_image']=$Iimage;
+            $detail['description']=$request->input('type_description.'.$key);
+            $detail['images']=$request->input('type_image.'.$key);
+            $Product_types[$key]=$detail;
+        }
+        $product->types = $Product_types;
+        ////////////////////////////////////////////////////////
 
         $product->save();
         ////////////////////////****** Features *******//////////////////////////////
@@ -468,28 +499,33 @@ class AdminController extends Controller
         $detail_cat= [];
         $previous_details=ProductDetailModel::where('product_id',$id)->get();
         $detail_cat=$request->input('detail_cat');
-        for ($i=0; $request->input('detail_name.'.$i);$i++)
+        foreach ($request->detail_name as $i =>$name)
         {
             if (!$request->input('detail_description.'.$i))
                 return back()->with('message',"پر کردن توضیح مشخصات الزامی است ");
             $detail =  null;
-            if($request->detail_id[$i] == 0)
+//            if($request->detail_id[$i] == 0)
+//                $detail = new ProductDetailModel();
+//            else{
+////                foreach ($previous_details as $key => $olddetails)
+////                    if($request->detail_id[$i] == $olddetails->id){
+////                        $detail = $olddetails;
+////                        unset($previous_details[$key]);
+////                        break;
+////                    }
+//
+//
+//            }
+            if ($previous_details->count() > 0)
+                $detail = $previous_details->pop();
+            else
                 $detail = new ProductDetailModel();
-            else{
-                foreach ($previous_details as $key => $olddetails)
-                    if($request->detail_id[$i] == $olddetails->id){
-                        $detail = $olddetails;
-                        unset($previous_details[$key]);
-                        break;
-                    }
-//                $detail = ProductDetailModel::find($request->detail_id[$i]);
 
-            }
             if($detail !=  null){
                 $detail->product_id=$id;
-                $detail->title=$request->input('detail_name.'.$i);
+                $detail->title=$name;
                 $detail->description=$request->input('detail_description.'.$i);
-//                $detail->title=$detail_name[$i];
+//                $detail->title=$name;
 //                $detail->description=$detail_description[$i];
                 $detail->group_id=$request->input('detail_cat.'.$i);
                 $detail->save();
