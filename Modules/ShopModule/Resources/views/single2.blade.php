@@ -21,6 +21,9 @@
         .exzoom .exzoom_nav .exzoom_nav_inner span.current {
             border: none !important;
         }
+        .changeColor img{
+            width: 70px;
+        }
     </style>
 @endsection
 
@@ -39,15 +42,32 @@
             });
             $("#exzoom").removeClass('hidden')
         });
-        var images = ['/photos/shares/801-promo.jpg', '/photos/shares/eyebrow-group(1).jpg', '/photos/shares/menu1.png']
+        var types = JSON.parse('<?php echo json_encode($product->types) ?>')
+        <?php
+            if (is_array($product->images))
+                $images = $product->image;
+            else
+                $images = [];
+            ?>
+        var pimages = JSON.parse('<?php echo json_encode(array_filter($images)) ?>')
+        var images = [];
+        images.concat(pimages);
+        if(types.length > 0)
+            images.concat(types[0]['images']);
         $('.changeColor').hover(function () {
             var color = $(this).attr('data-key');
-            for (var i = 0; i <= images.length; i++) {
-                $('.exzoom_img_ul li:eq( ' + i + ' ) img').attr('src', images[i])
-                $('.exzoom_nav_inner span:eq( ' + i + ' ) img').attr('src', images[i])
+            var timages = types[color]['images'];
+            images = pimages;
+            images.concat(timages);
+            console.log(images[0])
+            for (var i = pimages.length; i < (pimages.length + timages.length); i++) {
+                $('.exzoom_img_ul li:eq( ' + i + ' ) img').attr('src', timages[i])
+                $('.exzoom_nav_inner span:eq( ' + i + ' ) img').attr('src', timages[i])
             }
+
         })
         $('.exzoom_img_box').hover(function () {
+            console.log(images[0])
             var width=$('.exzoom_img_ul li:eq(0) img').width()
             var imgNum = -Math.round(parseInt($('.exzoom_img_ul').css('left'))/width)
             for (var i = 0; i <= images.length; i++) {
@@ -174,9 +194,16 @@
                         <div class="exzoom hidden" id="exzoom">
                             <div class="exzoom_img_box">
                                 <ul class='exzoom_img_ul'>
+
                                     @foreach($product->image as $key => $productImage)
                                         <li><img  src="{{$productImage}}"/></li>
                                     @endforeach
+                                    @if(isset($product->types[0]))
+                                        @foreach($product->types[0]['images'] as $key => $productImage)
+                                            <li><img  src="{{$productImage}}"/></li>
+                                        @endforeach
+                                    @endif
+
                                 </ul>
                             </div>
                             <div class="exzoom_nav"></div>
@@ -199,24 +226,13 @@
                         @endforeach
                     </ul>
                     <ul class="list-unstyled d-flex flex-row justify-content-end flex-wrap ml-3 p-3 border rounded">
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
-                        <li class="changeColor m-2 cursor-p rounded" data-key="colorNumber1"><img src="/pic/color.jpg" class="rounded" alt=""></li>
+                        @if(is_array($product->types))
+                        @foreach($product->types as $key => $type)
+                            @if(isset($type['index_image']))
+                            <li class="changeColor m-2 cursor-p rounded" data-key="{{ $key }}"><img src="{{ asset($type['index_image']??'') }}" class="rounded" alt=""></li>
+                        @endif
+                                @endforeach
+                                @endif
                     </ul>
                 </div>
 

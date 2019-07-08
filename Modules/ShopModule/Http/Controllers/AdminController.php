@@ -499,6 +499,7 @@ class AdminController extends Controller
         $detail_cat= [];
         $previous_details=ProductDetailModel::where('product_id',$id)->get();
         $detail_cat=$request->input('detail_cat');
+        if (is_array($request->detail_name))
         foreach ($request->detail_name as $i =>$name)
         {
             if (!$request->input('detail_description.'.$i))
