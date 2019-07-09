@@ -17,7 +17,12 @@ body {
 h1, h2, h3, h4, h5 {
     font-family: BYekann;
 }
-
+a{
+    color: initial;
+}
+a:hover{
+    color: rgb(163, 94, 112);
+}
 body::-webkit-scrollbar {
     width: 0;
     background-color: #F5F5F5;
@@ -145,6 +150,7 @@ body::-webkit-scrollbar {
     width: 100%;
     position: absolute;
     top: 0;
+    right: 0;
     left: 0;
     transition: all .5s;
     transition-timing-function: cubic-bezier(0.7, 1.0, 0.7, 0.5);
@@ -157,6 +163,7 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 0;
     right: -100%;
+    left: -200%;
     z-index: 1;
     transition: all .5s;
     transition-timing-function: cubic-bezier(0.7, 1.0, 0.7, 0.5);
@@ -326,7 +333,7 @@ body::-webkit-scrollbar {
 }
 
 .dropdown-win {
-    height: auto;
+    height: 400px;
     z-index: -1;
     position: absolute;
     background-color: transparent;
@@ -334,7 +341,7 @@ body::-webkit-scrollbar {
     left: 0;
     padding: 0;
     width: 100%;
-    transform: translate(0, -300px);
+    transform: translate(0, -400px);
     opacity: 0;
     transition: all .6s ease-out;
 }
@@ -477,6 +484,10 @@ body::-webkit-scrollbar {
     width: 60%;
     margin: auto;
 }
+.slickSlider4 {
+    width: 87%;
+    margin: auto;
+}
 
 .slick-slide {
     margin: 0px 20px;
@@ -494,6 +505,10 @@ body::-webkit-scrollbar {
 
 .slick3 .slick-prev:before,
 .slick3 .slick-next:before {
+    color: black;
+}
+.slick4 .slick-prev:before,
+.slick4 .slick-next:before {
     color: black;
 }
 
@@ -589,7 +604,7 @@ body::-webkit-scrollbar {
 
 .navbar-image {
     position: absolute;
-    right: 5%;
+    left: 5%;
 }
 
 .navbar-image img {
@@ -709,6 +724,11 @@ body::-webkit-scrollbar {
 }
 
 @media screen and (max-width: 992px) {
+    .navMenu{
+        left: 0;
+        right: auto;
+        top: 70px;
+    }
     .navbar-image img {
         height: 38px;
     }
@@ -948,4 +968,26 @@ body::-webkit-scrollbar {
 }
 .bg-pink{
     background-color: rgb(163, 94, 112);
+}
+.dropdown-win ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 300px;
+}
+.dropdown-win li {
+    height: 10%;
+}
+#carouselNavbar .carousel-control-next,#carouselNavbar .carousel-control-prev{
+    top: auto;
+    color: black;
+}
+.introAgency{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
 }

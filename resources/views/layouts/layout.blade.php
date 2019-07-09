@@ -49,17 +49,62 @@
     </button>
 
     <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-        <div class="w-100 boxShadowBottom text-black ml-xl-5">
+    <div class="collapse navbar-collapse boxShadowBottom" id="navbarSupportedContent1">
+        <div class="w-100 text-black mr-xl-5">
 
-            <ul class="nav flex-xs-column p-0 font-weight-bold h5 myNav">
+            <ul class="nav flex-xs-column p-0 myNav justify-content-end">
                 <li class="nav-item ">
-                    <a href="#" class="text-black p-4 d-inline-block">دسته بندی محصولات</a>
+                    <a href="#" class="text-black p-4 d-inline-block font-weight-bold">دسته بندی محتوا</a>
                     <div class="dropdown-win">
-                        <div class="bg-second shadow h-100 overflow-s">
-                            <div class="container-fluid">
+                        <div class="bg-white shadow h-100 overflow-s">
+                            <div class="container-fluid py-5">
                                 <div class="row">
-                                    @foreach($categories as $key => $cat)
+                                    <div class="col-md-10 dir-r">
+                                        <div class="container-fluid">
+                                            <div class="row dir-r">
+                                                <div class="col-md-3">
+                                                    <a href="#">
+                                                        <img src="/pic/lips-edited.jpg" class="w-100" alt="">
+                                                        <div class="p-3 text-center">
+                                                            <div class="font-weight-bold">عنوان</div>
+                                                            <div>توضیحات</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a href="#">
+                                                        <img src="/pic/lips-edited.jpg" class="w-100" alt="">
+                                                        <div class="p-3 text-center">
+                                                            <div class="font-weight-bold">عنوان</div>
+                                                            <div>توضیحات</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a href="#">
+                                                        <img src="/pic/lips-edited.jpg" class="w-100" alt="">
+                                                        <div class="p-3 text-center">
+                                                            <div class="font-weight-bold">عنوان</div>
+                                                            <div>توضیحات</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 dir-r">
+                                        <ul>
+                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                        </ul>
+                                    </div>
+                                    {{--@foreach($categories as $key => $cat)
                                         <div class="col-md-2 pt-3 text-center item-hover">
                                             <a href="#">
                                                 <div class="bg-background w-100" style="height: 150px;background-image:url('{{asset($cat->image)}}') "></div>
@@ -69,7 +114,7 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    @endforeach
+                                    @endforeach--}}
 
 
                                 </div>
@@ -80,13 +125,259 @@
                     </div>
                 </li>
                 <li class="nav-item ">
-                    <a href="/aboutus" class="text-black p-4 d-inline-block">درباره ما</a>
+                    <a href="#" class="text-black p-4 d-inline-block font-weight-bold">نکات آرایشی</a>
+                    <div class="dropdown-win">
+                        <div class="bg-white shadow h-100 overflow-s">
+                            <div class="container-fluid py-5">
+                                <div class="row">
+                                    <div class="col-md-10 dir-r">
+                                        <div class="container-fluid">
+                                            <div class="row dir-r">
+                                                <div class="col-md-3">
+                                                    <a href="#">
+                                                        <img src="/pic/lips-edited.jpg" class="w-100" alt="">
+                                                        <div class="p-3 text-center">
+                                                            <div class="font-weight-bold">عنوان</div>
+                                                            <div>توضیحات</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a href="#">
+                                                        <img src="/pic/lips-edited.jpg" class="w-100" alt="">
+                                                        <div class="p-3 text-center">
+                                                            <div class="font-weight-bold">عنوان</div>
+                                                            <div>توضیحات</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a href="#">
+                                                        <img src="/pic/lips-edited.jpg" class="w-100" alt="">
+                                                        <div class="p-3 text-center">
+                                                            <div class="font-weight-bold">عنوان</div>
+                                                            <div>توضیحات</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 dir-r">
+                                        <ul>
+                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                        </ul>
+                                    </div>
+                                    {{--@foreach($categories as $key => $cat)
+                                        <div class="col-md-2 pt-3 text-center item-hover">
+                                            <a href="#">
+                                                <div class="bg-background w-100" style="height: 150px;background-image:url('{{asset($cat->image)}}') "></div>
+
+                                                <div class="text-center p-3">
+                                                    {{$cat->name}}
+                                                </div>
+                                            </a>
+                                        </div>
+                                    @endforeach--}}
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item ">
-                    <a href="#" class="text-black p-4 d-inline-block">تماس با ما</a>
+                    <a href="#" class="text-black p-4 d-inline-block font-weight-bold">دسته بندی محصولات</a>
+                    <div class="dropdown-win">
+                        <div class="bg-white shadow h-100 overflow-s">
+                            <div class="container-fluid py-5">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div id="carouselNavbar" class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img class="d-block w-100"
+                                                         src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg"
+                                                         alt="First slide">
+                                                    <div class="p-3 text-center">
+                                                        <div class="font-weight-bold">title</div>
+                                                        <div class="text-grey">description</div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img class="d-block w-100"
+                                                         src="https://mdbootstrap.com/img/Photos/Slides/img%20(46).jpg"
+                                                         alt="Second slide">
+                                                    <div class="p-3 text-center">
+                                                        <div class="font-weight-bold">title</div>
+                                                        <div class="text-grey">description</div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img class="d-block w-100"
+                                                         src="https://mdbootstrap.com/img/Photos/Slides/img%20(47).jpg"
+                                                         alt="Third slide">
+                                                    <div class="p-3 text-center">
+                                                        <div class="font-weight-bold">title</div>
+                                                        <div class="text-grey">description</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselNavbar" role="button"
+                                               data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"><i
+                                                            class="fas fa-chevron-left"></i></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselNavbar" role="button"
+                                               data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"><i
+                                                            class="fas fa-chevron-right"></i></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 dir-r example example-balance">
+                                        <ul>
+                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-2 dir-r">
+                                        <ul class="font-weight-bold">
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                            <li><a href="#">لینک</a></li>
+                                        </ul>
+                                    </div>
+                                    {{--@foreach($categories as $key => $cat)
+                                        <div class="col-md-2 pt-3 text-center item-hover">
+                                            <a href="#">
+                                                <div class="bg-background w-100" style="height: 150px;background-image:url('{{asset($cat->image)}}') "></div>
+
+                                                <div class="text-center p-3">
+                                                    {{$cat->name}}
+                                                </div>
+                                            </a>
+                                        </div>
+                                    @endforeach--}}
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item ">
-                    <a href="/agents" class="text-black p-4 d-inline-block">نمایندگان فروش</a>
+                    <a href="/aboutus" class="text-black p-4 d-inline-block font-weight-bold">درباره ما</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="#" class="text-black p-4 d-inline-block font-weight-bold">تماس با ما</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="/agents" class="text-black p-4 d-inline-block font-weight-bold">نمایندگان فروش</a>
+                    <div class="dropdown-win">
+                        <div class="bg-white shadow h-100 overflow-s py-3">
+                            <section class="slick4 slickSlider4">
+                                <div>
+                                    <a href="#">
+                                        <img src="http://placehold.it/350x300?text=1" class="w-100" alt="">
+                                        <div class="p-3 text-right">
+                                            <div class="font-weight-bold">نام نمایندگی</div>
+                                            <div>آدرس</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <img src="http://placehold.it/350x300?text=2" class="w-100">
+                                        <div class="p-3 text-right">
+                                            <div class="font-weight-bold">نام نمایندگی</div>
+                                            <div>آدرس</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <img src="http://placehold.it/350x300?text=3" class="w-100">
+                                        <div class="p-3 text-right">
+                                            <div class="font-weight-bold">نام نمایندگی</div>
+                                            <div>آدرس</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <img src="http://placehold.it/350x300?text=4" class="w-100">
+                                        <div class="p-3 text-right">
+                                            <div class="font-weight-bold">نام نمایندگی</div>
+                                            <div>آدرس</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <img src="http://placehold.it/350x300?text=5">
+                                        <div class="p-3 text-right">
+                                            <div class="font-weight-bold">نام نمایندگی</div>
+                                            <div>آدرس</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </section>
+
+
+                        </div>
+                    </div>
                 </li>
             </ul>
 
@@ -104,6 +395,7 @@
         <img src="{{asset($setting->image_white)}}" class="w-100" alt="">
     </div>
 </div>
+
 <div class="menuBar ">
     <div class="bg-slider">
         <div class="coverBlack"></div>
@@ -130,11 +422,11 @@
                                 </li>
                             </ul>
                             <ul class=" list-unstyled mt-5">
-                                <li class="m-3"><a class=" h5 menuHover" href="#">Rooms and suites</a>
+                                <li class="m-3"><a class=" h5 menuHover text-white" href="#">Rooms and suites</a>
                                 </li>
-                                <li class="m-3"><a class=" h5 menuHover" href="#">Rooms and suites</a>
+                                <li class="m-3"><a class=" h5 menuHover text-white" href="#">Rooms and suites</a>
                                 </li>
-                                <li class="m-3"><a class=" h5 menuHover" href="#">Rooms and suites</a>
+                                <li class="m-3"><a class=" h5 menuHover text-white" href="#">Rooms and suites</a>
                                 </li>
                             </ul>
                         </div>

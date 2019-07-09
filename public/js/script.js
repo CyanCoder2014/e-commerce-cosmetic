@@ -9,13 +9,17 @@ $(document).ready(function () {
     $('.my-Index').height($(window).height())
     $('.menuBarBtn').click(function () {
         if ($('.menuBarBtn').hasClass('active')) {
-            $('.menuBarBtn').removeClass('active')
+            $('.menuBarBtn').removeClass('active');
             $('.my-Index').css('left', '-100%');
+            $('.my-Index').css('right', '-200%');
             $('.menuBar').css('right', '0');
+            $('.menuBar').css('left', '0');
         } else {
-            $('.menuBarBtn').addClass('active')
+            $('.menuBarBtn').addClass('active');
             $('.my-Index').css('left', '0');
+            $('.my-Index').css('right', '0');
             $('.menuBar').css('right', '-100%');
+            $('.menuBar').css('left', '-200%');
         }
 
     });
@@ -30,6 +34,37 @@ $(document).ready(function () {
         dots: true,
         infinite: true,
         slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+    });
+    $(".slick2").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         responsive: [
@@ -88,10 +123,10 @@ $(document).ready(function () {
                 }
             }]
     });
-    $(".slick2").slick({
+    $(".slick4").slick({
         dots: true,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
         responsive: [

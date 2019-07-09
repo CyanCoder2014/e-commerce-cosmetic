@@ -19,8 +19,9 @@ return [
 //        'sliderFirst' => 'اسلاید شو اول',
         'setting' => 'تنظیمات سایت',
         'sliderFirst' => 'اسلاید شو صفحه اول',
-        'sliderAboutUs' => 'اسلاید شو اول درباره ما',
-        'sliderAboutUs2' => 'اسلاید شو تاریخ درباره ما',
+        'aboutUs' => 'درباره ما',
+        'sliderAboutUs' => 'اسلاید شو شرکت نمایندگی درباره ما',
+        'sliderAboutUs2' => 'اسلاید شو شرکت اصلی درباره ما',
         //       'slider2' => 'اسلاید دوم',
         'contact' => 'تماس با ما',
         //       'gallery' => 'گالري عکس',
@@ -33,7 +34,7 @@ return [
 
 
     ],
-    'types' => ['setting', 'contact', 'sliderFirst', 'sliderAboutUs', 'sliderAboutUs2'],
+    'types' => ['setting', 'contact', 'sliderFirst', 'sliderAboutUs', 'sliderAboutUs2','aboutUs'],
     'forms' => [             //  name       type            label
         'setting' => [
 //                        'title_fa' => ['type'=>'text','label'=>'نام سایت فارسی','class'=>null,'style'=>null,'values' => array()],
@@ -47,13 +48,9 @@ return [
 //                        'banner' => ['type'=>'file','label'=>'بنر بالای صفحه','class'=>null,'style'=>null,'values' => array()],
 //                        'banner1' => ['type'=>'file','label'=>'بنر 1','class'=>null,'style'=>null,'values' => array()],
 //                        'banner2' => ['type'=>'file','label'=>'بنر 2','class'=>null,'style'=>null,'values' => array()],
+
             'about_us' => ['type' => 'text', 'label' => 'توضیحات درباره ما', 'class' => null, 'style' => null, 'values' => array()],
-            'about_us_more' => ['type' => 'text', 'label' => 'توضیحات درباره ما بالای اسلایدر', 'class' => null, 'style' => null, 'values' => array()],
-            'about_us_more2' => ['type' => 'text', 'label' => 'توضیحات دوم درباره ما بالای اسلایدر', 'class' => null, 'style' => null, 'values' => array()],
-            'about_us_title' => ['type' => 'text', 'label' => 'عنوان درباره ما بالای اسلایدر', 'class' => null, 'style' => null, 'values' => array()],
-            'about_us_image' => ['type' => 'file', 'label' => 'عکس اصلی درباره ما', 'class' => null, 'style' => null, 'values' => array()],
-            'about_us_image2' => ['type' => 'file', 'label' => 'عکس دوم درباره ما', 'class' => null, 'style' => null, 'values' => array()],
-            'about_us_image_bg' => ['type' => 'file', 'label' => 'عکس درباره ما بکگراند', 'class' => null, 'style' => null, 'values' => array()],
+            'about_us_image' => ['type' => 'file', 'label' => 'عکس درباره ما', 'class' => null, 'style' => null, 'values' => array()],
             'catalog_right_title' => ['type' => 'text', 'label' => 'عنوان عکس کاتالوگ سمت راست', 'class' => null, 'style' => null, 'values' => array()],
             'catalog_right_image' => ['type' => 'file', 'label' => 'عکس کاتالوگ سمت راست', 'class' => null, 'style' => null, 'values' => array()],
             'catalog_left_top_title' => ['type' => 'text', 'label' => 'عنوان عکس کاتالوگ سمت چپ بالا', 'class' => null, 'style' => null, 'values' => array()],
@@ -69,12 +66,15 @@ return [
             'grow_image4' => ['type' => 'file', 'label' => 'عکس بزرگ شونده 4', 'class' => null, 'style' => null, 'values' => array()],
             'grow_image4_text' => ['type' => 'text', 'label' => 'عنوان عکس بزرگ شونده 4', 'class' => null, 'style' => null, 'values' => array()],
 //                        'about_us_fa' => ['type'=>'text','label'=>'درباره ما فوتر فارسی','class'=>null,'style'=>null,'values' => array()],
+            'about_us_title' => ['type' => 'text', 'label' => 'عنوان درباره ما ( شرکت نمایندگی )', 'class' => null, 'style' => null, 'values' => array()],
         ],
 
         'sliderFirst' => [
 //                        'title_fa' => ['type'=>'text','label'=>'عنوان فارسی','class'=>null,'style'=>null,'values' => array()],
             'title' => ['type' => 'text', 'label' => 'عنوان ', 'class' => null, 'style' => null, 'values' => array()],
             'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
+            'video' => ['type' => 'file', 'label' => 'فیلم', 'class' => null, 'style' => null, 'values' => array()],
+            'iframe' => ['type' => 'text', 'label' => 'لینک یوتیوب', 'class' => null, 'style' => null, 'values' => array()],
 //                        'description_fa' => ['type'=>'textarea','label'=>'توضیحات ','class'=>null,'style'=>null,'values' => array()],
             'description' => ['type' => 'textarea', 'label' => 'توضیحات ', 'class' => null, 'style' => null, 'values' => array()],
 //                        'link_fa' => ['type'=>'text','label'=>'لینک فارسی','class'=>null,'style'=>null,'values' => array()],
@@ -82,6 +82,17 @@ return [
         ],
         'sliderAboutUs' => [
             'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
+        ],
+        'aboutUs' => [
+            'about_us_image_bg' => ['type' => 'file', 'label' => 'عکس بکگراند', 'class' => null, 'style' => null, 'values' => array()],
+            'title1' => ['type' => 'text', 'label' => 'عنوان ( شرکت اصلی )', 'class' => null, 'style' => null, 'values' => array()],
+            'logo1' => ['type' => 'file', 'label' => 'لوگو ( شرکت اصلی )', 'class' => null, 'style' => null, 'values' => array()],
+            'image1' => ['type' => 'file', 'label' => 'تصویر ( شرکت اصلی )', 'class' => null, 'style' => null, 'values' => array()],
+            'intro1' => ['type' => 'text', 'label' => 'توضیحات ( شرکت اصلی )', 'class' => null, 'style' => null, 'values' => array()],
+            'title2' => ['type' => 'text', 'label' => 'توضیحات ( شرکت نمایندگی )', 'class' => null, 'style' => null, 'values' => array()],
+            'logo2' => ['type' => 'file', 'label' => 'لوگو ( شرکت نمایندگی )', 'class' => null, 'style' => null, 'values' => array()],
+            'image2' => ['type' => 'file', 'label' => 'عکس ( شرکت نمایندگی )', 'class' => null, 'style' => null, 'values' => array()],
+            'intro2' => ['type' => 'text', 'label' => 'توضیحات ( شرکت نمایندگی )', 'class' => null, 'style' => null, 'values' => array()],
         ],
         'sliderAboutUs2' => [
             'title' => ['type' => 'text', 'label' => 'عنوان ', 'class' => null, 'style' => null, 'values' => array()],
@@ -156,6 +167,7 @@ return [
     ],
     'addable' => [
         'sliderFirst' => true,
+        'aboutUs' => true,
         'setting' => true,
         'contact' => true,
         'sliderAboutUs' => true,

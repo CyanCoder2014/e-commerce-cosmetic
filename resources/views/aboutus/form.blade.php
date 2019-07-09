@@ -49,11 +49,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-white">
-                    <img src="{{$setting->image_white}}" class="w-75 mx-auto d-block" alt="">
-                    <p class="text-center">{{$setting->data['about_us']}}</p>
+                    <img src="{{$aboutUs->logo1}}" width="100" class="mx-auto d-block" alt="">
+                    <div class="text-center font-weight-bold h5 mt-3">{{$aboutUs->data['title1']}}</div>
+                    <p class="text-center">{{$aboutUs->data['intro1']}}</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="{{$setting->data['about_us_image']}}" class="w-100 secondBgImg" alt="">
+                    <img src="{{$aboutUs->data['image1']}}" class="w-100 secondBgImg" alt="">
                 </div>
             </div>
         </div>
@@ -61,24 +62,25 @@
     <div class="bg-white p-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
-                    <div>
-                        <span class="text-gray font-weight-bold">{{$setting->data['about_us_more2']}}</span>
+                <div class="col-md-6">
+                    {{--<div>
+                        <span class="text-gray font-weight-bold">{{$aboutUs->data['about_us_more2']}}</span>
                         <span class="d-inline-block ml-3 bg-gray" style="width: 50px;height: 3px"></span>
-                    </div>
-                    <h1 class="font-weight-bold mt-3">{{$setting->data['about_us_title']}}</h1>
-                </div>
-                <div class="col-md-7 ">
-                    <div class="text-gray">
-                        {{$setting->data['about_us_more']}}
-                    </div>
+                    </div>--}}
+                    <h1 class="font-weight-bold mt-3">{{$aboutUs->data['title2']}}</h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-5">
-                    <div class="mt-5"><img src="{{$setting->data['about_us_image2']}}" class="w-100"/></div>
+                <div class="col-md-6">
+                    <div class="mb-3"><img src="{{$aboutUs->logo2}}" width="100" class="m-auto" alt=""></div>
+                    <div class="position-relative">
+                        <img src="{{$aboutUs->data['image2']}}" class="w-100"/>
+                        <div class="introAgency">
+                            {{$aboutUs->data['intro2']}}
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-7 ">
+                <div class="col-md-6">
                     <div id="carouselSliderAboutUs" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             @foreach($sliderAboutUs as $key => $sliderAboutUs)
@@ -90,11 +92,13 @@
                             @endforeach
                         </div>
                         <a class="carousel-control-prev" href="#carouselSliderAboutUs" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                            <span class="carousel-control-prev-icon" aria-hidden="true"><i
+                                        class="fas fa-chevron-left"></i></span>
                             <span class="sr-only">Previous</span>
                         </a>
                         <a class="carousel-control-next" href="#carouselSliderAboutUs" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                            <span class="carousel-control-next-icon" aria-hidden="true"><i
+                                        class="fas fa-chevron-right"></i></span>
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
@@ -107,45 +111,46 @@
         <div class="cover_bg-second"></div>
         <div class="container">
             <div class="row">
-               <div class="col-md-12">
-                   <div id="about-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-                       <ol class="carousel-indicators">
-                           @foreach($sliderAboutUs2 as $key => $sliderAboutUs4)
-                               <li data-target="#about-carousel" data-slide-to="{{$key}}" @if($key===0) class="active" @endif >
-                                   <div>{{$sliderAboutUs4->year}}</div>
-                               </li>
-                           @endforeach
-                       </ol>
-                       <div class="carousel-inner">
-                           @foreach($sliderAboutUs2 as $key => $sliderAboutUs3)
-                               <div class="carousel-item @if($key===0) active @endif">
-                                   <div class="container ">
-                                       <div class="row">
-                                           <div class="col-md-6">
-                                               <img src="{{$sliderAboutUs3->image}}"
-                                                    class="w-100" alt="placeholder">
-                                           </div>
-                                           <div class="col-md-6 pl-4">
-                                               <h3 class="text-white mt-3">{{$sliderAboutUs3->title}}</h3>
-                                               <p class="text-gray mt-3">{{$sliderAboutUs3->description}}</p>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                           @endforeach
-                       </div>
-                       <a class="carousel-control-prev" href="#about-carousel" role="button" data-slide="prev">
+                <div class="col-md-12">
+                    <div id="about-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            @foreach($sliderAboutUs2 as $key => $sliderAboutUs4)
+                                <li data-target="#about-carousel" data-slide-to="{{$key}}"
+                                    @if($key===0) class="active" @endif >
+                                    <div>{{$sliderAboutUs4->year}}</div>
+                                </li>
+                            @endforeach
+                        </ol>
+                        <div class="carousel-inner">
+                            @foreach($sliderAboutUs2 as $key => $sliderAboutUs3)
+                                <div class="carousel-item @if($key===0) active @endif">
+                                    <div class="container ">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <img src="{{$sliderAboutUs3->image}}"
+                                                     class="w-100" alt="placeholder">
+                                            </div>
+                                            <div class="col-md-6 pl-4">
+                                                <h3 class="text-white mt-3">{{$sliderAboutUs3->title}}</h3>
+                                                <p class="text-gray mt-3">{{$sliderAboutUs3->description}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <a class="carousel-control-prev" href="#about-carousel" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"><i
                                         class="fas fa-chevron-left fa-3x"></i></span>
-                           <span class="sr-only">Previous</span>
-                       </a>
-                       <a class="carousel-control-next" href="#about-carousel" role="button" data-slide="next">
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#about-carousel" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"><i
                                         class="fas fa-chevron-right fa-3x"></i></span>
-                           <span class="sr-only">Next</span>
-                       </a>
-                   </div>
-               </div>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
