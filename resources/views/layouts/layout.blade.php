@@ -56,7 +56,7 @@
                 <li class="nav-item ">
                     <a href="#" class="text-black p-4 d-inline-block font-weight-bold">دسته بندی محتوا</a>
                     <div class="dropdown-win">
-                        <div class="bg-white shadow h-100 overflow-s">
+                        <div class=" h-100 overflow-s">
                             <div class="container-fluid py-5">
                                 <div class="row">
                                     <div class="col-md-10 dir-r">
@@ -127,7 +127,7 @@
                 <li class="nav-item ">
                     <a href="#" class="text-black p-4 d-inline-block font-weight-bold">نکات آرایشی</a>
                     <div class="dropdown-win">
-                        <div class="bg-white shadow h-100 overflow-s">
+                        <div class="h-100 overflow-s">
                             <div class="container-fluid py-5">
                                 <div class="row">
                                     <div class="col-md-10 dir-r">
@@ -198,7 +198,7 @@
                 <li class="nav-item ">
                     <a href="#" class="text-black p-4 d-inline-block font-weight-bold">دسته بندی محصولات</a>
                     <div class="dropdown-win">
-                        <div class="bg-white shadow h-100 overflow-s">
+                        <div class=" h-100 overflow-s">
                             <div class="container-fluid py-5">
                                 <div class="row">
                                     <div class="col-md-3">
@@ -325,50 +325,50 @@
                 <li class="nav-item ">
                     <a href="/agents" class="text-black p-4 d-inline-block font-weight-bold">نمایندگان فروش</a>
                     <div class="dropdown-win">
-                        <div class="bg-white shadow h-100 overflow-s py-3">
+                        <div class="h-100 overflow-s py-5">
                             <section class="slick4 slickSlider4">
-                                <div>
-                                    <a href="#">
-                                        <img src="http://placehold.it/350x300?text=1" class="w-100" alt="">
+                                <div class="py-3">
+                                    <a href="#" class="z-depth-1 d-block">
                                         <div class="p-3 text-right">
                                             <div class="font-weight-bold">نام نمایندگی</div>
                                             <div>آدرس</div>
+                                            <div>شماره تلفن</div>
                                         </div>
                                     </a>
                                 </div>
-                                <div>
-                                    <a href="#">
-                                        <img src="http://placehold.it/350x300?text=2" class="w-100">
+                                <div class="py-3">
+                                    <a href="#" class="z-depth-1 d-block">
                                         <div class="p-3 text-right">
                                             <div class="font-weight-bold">نام نمایندگی</div>
                                             <div>آدرس</div>
+                                            <div>شماره تلفن</div>
                                         </div>
                                     </a>
                                 </div>
-                                <div>
-                                    <a href="#">
-                                        <img src="http://placehold.it/350x300?text=3" class="w-100">
+                                <div class="py-3">
+                                    <a href="#" class="z-depth-1 d-block">
                                         <div class="p-3 text-right">
                                             <div class="font-weight-bold">نام نمایندگی</div>
                                             <div>آدرس</div>
+                                            <div>شماره تلفن</div>
                                         </div>
                                     </a>
                                 </div>
-                                <div>
-                                    <a href="#">
-                                        <img src="http://placehold.it/350x300?text=4" class="w-100">
+                                <div class="py-3">
+                                    <a href="#" class="z-depth-1 d-block">
                                         <div class="p-3 text-right">
                                             <div class="font-weight-bold">نام نمایندگی</div>
                                             <div>آدرس</div>
+                                            <div>شماره تلفن</div>
                                         </div>
                                     </a>
                                 </div>
-                                <div>
-                                    <a href="#">
-                                        <img src="http://placehold.it/350x300?text=5">
+                                <div class="py-3">
+                                    <a href="#" class="z-depth-1 d-block">
                                         <div class="p-3 text-right">
                                             <div class="font-weight-bold">نام نمایندگی</div>
                                             <div>آدرس</div>
+                                            <div>شماره تلفن</div>
                                         </div>
                                     </a>
                                 </div>

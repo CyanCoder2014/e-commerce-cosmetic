@@ -334,12 +334,13 @@ body::-webkit-scrollbar {
 
 .dropdown-win {
     height: 400px;
+    overflow: hidden;
     z-index: -1;
     position: absolute;
-    background-color: transparent;
     color: black;
     left: 0;
-    padding: 0;
+    padding: 20px;
+    background-color: white;
     width: 100%;
     transform: translate(0, -400px);
     opacity: 0;
