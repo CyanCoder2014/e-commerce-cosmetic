@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Advertising;
+use App\Agency;
 use App\Product;
 use App\UserProfile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Modules\BlogModule\Contents\Content;
 use Modules\ShopModule\Products\Brand;
 use Modules\ShopModule\Products\Collection;
@@ -84,5 +86,21 @@ class SearchController extends Controller
 
         return json_encode($result);
 
+    }
+
+    public  function agencies(Request $request){
+//        $this->validate($request,[
+//           'city_id' => 'exists:cities,id',
+//           'province_id' => 'exists:provinces,id'
+//        ]);
+        $Agencies = Agency::orderBy('id','desc');
+        if (isset($request->agency_id)  and ctype_digit($request->agency_id))
+            $Agencies = $Agencies->where('id',$request->agency_id);
+        if (isset($request->city_id)  and ctype_digit($request->city_id))
+            $Agencies = $Agencies->where('city_id',$request->city_id);
+        if (isset($request->province_id) and ctype_digit($request->province_id))
+            $Agencies = $Agencies->where('province_id',$request->province_id);
+        $Agencies = $Agencies->paginate(15);
+        return view('Agency.search',compact('Agencies'));
     }
 }

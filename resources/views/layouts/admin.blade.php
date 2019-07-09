@@ -346,13 +346,13 @@
                                                             class="fa fa-caret-right"></i>  مدیریت نظرات محصول</a></li>
 
                                             @endcan
-                                            @can('add pshipping','edit pshipping','delete pshipping')
-                                            <li>
-                                                <a href="<?= Url('/shop/admin/shipping') ?>">
-                                                    <i class="fa fa-caret-right"></i> سیستم های حمل و نقل
-                                                </a>
-                                            </li>
-                                            @endcan
+{{--                                            @can('add pshipping','edit pshipping','delete pshipping')--}}
+{{--                                            <li>--}}
+{{--                                                <a href="<?= Url('/shop/admin/shipping') ?>">--}}
+{{--                                                    <i class="fa fa-caret-right"></i> سیستم های حمل و نقل--}}
+{{--                                                </a>--}}
+{{--                                            </li>--}}
+{{--                                            @endcan--}}
                                             @can('add provider','edit provider','delete provider')
                                             <li>
                                                 <a href="<?= Url('/shop/admin/providers') ?>">
@@ -372,24 +372,24 @@
                                     </li>
 
 
-                                    <li>
-                                        <a role="button" tabindex="0"><i
-                                                    class="fa fa-file-text"></i>
-                                            <span>    مدیریت فروشگاه  </span>
-                                       </a>
-                                        <ul>
-                                            @can('order')
-                                            <li><a href="{{ route('order.list') }}"><i
-                                                            class="fa fa-caret-right"></i>  سفارشات </a>
-                                            </li>
-                                            @endcan
-                                            @can('invoice','edit invoice')
-                                            <li><a href="{{ route('invoice.list') }}"><i
-                                                            class="fa fa-caret-right"></i> فاکتورها </a>
-                                            </li>
-                                            @endcan
-                                        </ul>
-                                    </li>
+{{--                                    <li>--}}
+{{--                                        <a role="button" tabindex="0"><i--}}
+{{--                                                    class="fa fa-file-text"></i>--}}
+{{--                                            <span>    مدیریت فروشگاه  </span>--}}
+{{--                                       </a>--}}
+{{--                                        <ul>--}}
+{{--                                            @can('order')--}}
+{{--                                            <li><a href="{{ route('order.list') }}"><i--}}
+{{--                                                            class="fa fa-caret-right"></i>  سفارشات </a>--}}
+{{--                                            </li>--}}
+{{--                                            @endcan--}}
+{{--                                            @can('invoice','edit invoice')--}}
+{{--                                            <li><a href="{{ route('invoice.list') }}"><i--}}
+{{--                                                            class="fa fa-caret-right"></i> فاکتورها </a>--}}
+{{--                                            </li>--}}
+{{--                                            @endcan--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
 
 
                                     <li>
@@ -530,16 +530,16 @@
                                     </li>
                                     @endcan
 
-                                    <li><a href="{{ route('admin.advertising') }}"><i class="fa fa-shekel"></i>
-                                            <span>  مدیریت اگهی های  </span>
+{{--                                    <li><a href="{{ route('admin.advertising') }}"><i class="fa fa-shekel"></i>--}}
+{{--                                            <span>  مدیریت اگهی های  </span>--}}
 
-                                        </a>
-                                    </li>
-                                    <li><a href="{{ route('admin.userprofile') }}"><i class="fa fa-newspaper-o"></i>
-                                            <span>  مدیریت فروشگاه ها و تعمیرگاه ها  </span>
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li><a href="{{ route('admin.userprofile') }}"><i class="fa fa-newspaper-o"></i>--}}
+{{--                                            <span>  مدیریت فروشگاه ها و تعمیرگاه ها  </span>--}}
 
-                                        </a>
-                                    </li>
+{{--                                        </a>--}}
+{{--                                    </li>--}}
                                     <li><a href="{{ route('agency.index') }}"><i class="fa fa-newspaper-o"></i>
                                             <span> مدیریت نمایندگی ها </span>
 

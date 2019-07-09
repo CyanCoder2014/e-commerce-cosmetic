@@ -56,6 +56,11 @@ class Agency extends CRUD
             'validation' => 'required'
         ],
         [
+            'name'=> 'first_page',
+            'type' => 'checkbox',
+            'slug' => 'نمایش در صفحه اول',
+        ],
+        [
             'name'=> 'province_id',
             'type' => 'select',
             'slug' => 'استان',
@@ -139,6 +144,9 @@ class Agency extends CRUD
     }
     public function province(){
         return $this->belongsTo('App\Province');
+    }
+    public function link(){
+        return route('agency.search',['agency_id'=>$this->id,'city_id'=> $this->city_id,'province_id'=> $this->province_id]);
     }
 
 }

@@ -26,6 +26,7 @@ Route::group(array('prefix' => Config::get('app.locale_prefix')), function () {
 
     Route::get('/content/page/{id}', 'HomeController@page');
 
+    Route::get('/agencies', 'SearchController@agencies')->name('agency.search');
     Route::post('/search', 'HomeController@search')->name('search');
     Route::get('/search/ajax', 'SearchController@ajax')->name('search.ajax');
     Route::get('/sale', 'HomeController@sale')->name('sale');
