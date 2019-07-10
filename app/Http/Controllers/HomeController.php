@@ -49,7 +49,6 @@ class HomeController extends BaseController
 
     }
 
-
     public function index()
     {
 
@@ -67,7 +66,6 @@ class HomeController extends BaseController
         $cats = ProductCatModel::where('id', '!=', '25')->orderBy('id', 'desc')->paginate(6);
 
         $brandsHome = Brand::paginate(15);
-
 
         return view('index', compact( 'slides',
             'introduction',
