@@ -62,7 +62,21 @@
                                     <div class="col-md-10 dir-r">
                                         <div class="container-fluid">
                                             <div class="row dir-r">
+                                                @foreach($contents as $key =>$content)
+                                                    @if($key < 3)
                                                 <div class="col-md-3">
+                                                    <a href="{{ route('content.show',['id' => '324-'.$content->id.'-'.str_replace(" ","-",$content->title['fa'])]) }}">
+                                                        <div class="bg-background"
+                                                             style="height: 200px; background-image: url('{{asset($content->image)}}')"></div>
+                                                        <div class="p-3 text-center">
+                                                            <div class="font-weight-bold">{!! \Illuminate\Support\Str::words($content->title['fa'] , $words = 8, $end = '...') !!}</div>
+                                                            <div>{!! \Illuminate\Support\Str::words($content->intro['fa'] , $words = 16, $end = '...') !!}</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                    @endif
+                                                @endforeach
+                                                {{--<div class="col-md-3">
                                                     <a href="#">
                                                         <img src="/pic/lips-edited.jpg" class="w-100" alt="">
                                                         <div class="p-3 text-center">
@@ -79,29 +93,20 @@
                                                             <div>توضیحات</div>
                                                         </div>
                                                     </a>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <a href="#">
-                                                        <img src="/pic/lips-edited.jpg" class="w-100" alt="">
-                                                        <div class="p-3 text-center">
-                                                            <div class="font-weight-bold">عنوان</div>
-                                                            <div>توضیحات</div>
-                                                        </div>
-                                                    </a>
-                                                </div>
+                                                </div>--}}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-2 dir-r">
                                         <ul>
-                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
+                                            @foreach($contents as $key =>$content)
+                                                @if($key >= 3)
+                                                    <li class="font-weight-bold"><a
+                                                                href="{{ route('content.show',['id' => '324-'.$content->id.'-'.str_replace(" ","-",$content->title['fa'])]) }}">
+                                                            {!! \Illuminate\Support\Str::words($content->title['fa'] , $words = 8, $end = '...') !!}
+                                                        </a></li>
+                                                @endif
+                                            @endforeach
                                         </ul>
                                     </div>
                                     {{--@foreach($categories as $key => $cat)
@@ -204,33 +209,17 @@
                                     <div class="col-md-3">
                                         <div id="carouselNavbar" class="carousel slide" data-ride="carousel">
                                             <div class="carousel-inner">
-                                                <div class="carousel-item active">
-                                                    <img class="d-block w-100"
-                                                         src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg"
-                                                         alt="First slide">
-                                                    <div class="p-3 text-center">
-                                                        <div class="font-weight-bold">title</div>
-                                                        <div class="text-grey">description</div>
+                                                @foreach($productSliderMenu as $key =>$productSliderMenuIn)
+                                                    <div class="carousel-item @if($key===0) active @endif">
+                                                        <div class="bg-background"
+                                                             style="height: 200px; background-image: url('{{asset($productSliderMenuIn->image)}}')"></div>
+
+                                                        <div class="p-3 text-center">
+                                                            <div class="font-weight-bold">{{$productSliderMenuIn->name}}</div>
+                                                            <div class="text-grey">{{$productSliderMenuIn->description}}</div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img class="d-block w-100"
-                                                         src="https://mdbootstrap.com/img/Photos/Slides/img%20(46).jpg"
-                                                         alt="Second slide">
-                                                    <div class="p-3 text-center">
-                                                        <div class="font-weight-bold">title</div>
-                                                        <div class="text-grey">description</div>
-                                                    </div>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img class="d-block w-100"
-                                                         src="https://mdbootstrap.com/img/Photos/Slides/img%20(47).jpg"
-                                                         alt="Third slide">
-                                                    <div class="p-3 text-center">
-                                                        <div class="font-weight-bold">title</div>
-                                                        <div class="text-grey">description</div>
-                                                    </div>
-                                                </div>
+                                                @endforeach
                                             </div>
                                             <a class="carousel-control-prev" href="#carouselNavbar" role="button"
                                                data-slide="prev">
@@ -248,52 +237,21 @@
                                     </div>
                                     <div class="col-md-7 dir-r example example-balance">
                                         <ul>
-                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li class="font-weight-bold"><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
+                                            @foreach($categories as $category)
+                                                <li class="font-weight-bold"><a href="#">{{ $category->name }}</a></li>
+                                                @foreach($category->products(10) as $product)
+                                                    <li class="font-small"><a
+                                                                href="{{ $product->link() }}">{{ $product->name }}</a>
+                                                    </li>
+                                                @endforeach
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <div class="col-md-2 dir-r">
                                         <ul class="font-weight-bold">
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
-                                            <li><a href="#">لینک</a></li>
+                                            @foreach($productLinks as $productLink)
+                                                <li><a href="{{$productLink->link}}">{{$productLink->name}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     {{--@foreach($categories as $key => $cat)
@@ -412,50 +370,63 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="mt-5">
-                            <ul class=" list-unstyled">
-                                <li class="m-3"><a class="text-white h3 menuHover" href="#">Rooms and suites</a>
-                                </li>
-                                <li class="m-3"><a class="text-white h3 menuHover" href="#">Rooms and suites</a>
-                                </li>
-                                <li class="m-3"><a class="text-white h3 menuHover" href="#">Rooms and suites</a>
-                                </li>
+                        <div class="mt-5 example example-balance">
+                            <ul>
+                                @foreach($categories as $category)
+                                    <li class="m-3"><a href="#"
+                                                       class="text-white h4 menuHover">{{ $category->name }}</a></li>
+                                    @foreach($category->products(10) as $product)
+                                        <li class="m-3"><a class=" menuHover text-white"
+                                                           href="{{ $product->link() }}">{{ $product->name }}</a>
+                                        </li>
+                                    @endforeach
+                                @endforeach
+                                {{-- <li class="m-3"><a class="text-white h3 menuHover" href="#">Rooms and suites</a>
+                                 </li>
+                                 <li class="m-3"><a class="text-white h3 menuHover" href="#">Rooms and suites</a>
+                                 </li>
+                                 <li class="m-3"><a class="text-white h3 menuHover" href="#">Rooms and suites</a>
+                                 </li>--}}
                             </ul>
-                            <ul class=" list-unstyled mt-5">
+                            {{--<ul class=" list-unstyled mt-5">
                                 <li class="m-3"><a class=" h5 menuHover text-white" href="#">Rooms and suites</a>
                                 </li>
                                 <li class="m-3"><a class=" h5 menuHover text-white" href="#">Rooms and suites</a>
                                 </li>
                                 <li class="m-3"><a class=" h5 menuHover text-white" href="#">Rooms and suites</a>
                                 </li>
-                            </ul>
+                            </ul>--}}
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="mt-5">
                             <div>
                                 <span class="d-inline-block mr-3 bg-gray" style="width: 50px;height: 3px"></span>
-                                <span class="text-gray font-weight-bold">WHERE WE ARE</span>
+                                <span class="text-gray font-weight-bold">تماس با ما</span>
                             </div>
                             <ul class="text-white list-unstyled">
-                                <li class="m-3"><span class=" h4 text-gray" href="#">4444444</span></li>
-                                <li class="m-3"><span class=" h4 text-gray" href="#">555555</span></li>
-                                <li class="m-3"><a class="text-white h4 menuHover" href="#">Rooms and suites</a>
-                                </li>
-                                <li class="m-3"><a class="text-white h4 menuHover" href="#">Rooms and suites</a>
-                                </li>
+                                <li class="m-3"><span class=" h4 text-white menuHover"
+                                                      href="#">{{$contact->phone}}</span></li>
+                                <li class="m-3"><span class=" h4 text-white menuHover"
+                                                      href="#">{{$contact->mobile}}</span></li>
+                                <li class="m-3"><span class=" h4 text-white menuHover"
+                                                      href="#">{{$contact->address_}}</span></li>
                             </ul>
                             <div class="mt-5">
                                 <span class="d-inline-block mr-3 bg-gray" style="width: 50px;height: 3px"></span>
-                                <span class="text-gray font-weight-bold">FOLLOW US ON</span>
+                                <span class="text-gray font-weight-bold">ما را دنبال کنید</span>
                             </div>
                             <ul class="d-flex flex-row list-unstyled justify-content-end">
-                                <li class="m-3"><a class="text-white menuHover" href="#"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                <li class="m-3"><a class="text-white menuHover" href="#"><i
-                                                class="fab fa-instagram"></i></a></li>
-                                <li class="m-3"><a class="text-white menuHover" href="#"><i
-                                                class="fab fa-twitter"></i></a></li>
+                                <li class="m-3"><a class="text-white menuHover" href="{{$contact->facebook_link}}"><i
+                                                class="fab fa-facebook-f fa-lg"></i></a></li>
+                                <li class="m-3"><a class="text-white menuHover" href="{{$contact->instagram_link}}"><i
+                                                class="fab fa-instagram fa-lg"></i></a></li>
+                                <li class="m-3"><a class="text-white menuHover" href="{{$contact->twitter_link}}"><i
+                                                class="fab fa-twitter fa-lg"></i></a></li>
+                                <li class="m-3"><a class="text-white menuHover" href="{{$contact->linkedin_link}}"><i
+                                                class="fab fa-linkedin fa-lg"></i></a></li>
+                                <li class="m-3"><a class="text-white menuHover" href="{{$contact->telegram_link}}"><i
+                                                class="fab fa-telegram fa-lg"></i></a></li>
                             </ul>
                             <div>
                                 <a href="#" class="button-circle-menu">
@@ -474,7 +445,6 @@
 
 
 </div>
-
 
 <section class="my-Index">
 

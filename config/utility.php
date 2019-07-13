@@ -18,6 +18,8 @@ return [
 //        'banners' => 'بنر ها و عکس چهار لینک اصلی',
 //        'sliderFirst' => 'اسلاید شو اول',
         'setting' => 'تنظیمات سایت',
+        'productLinks' => 'لینک های محصولات منو',
+        'productSliderMenu' => 'اسلایدر محصولات منو',
         'sliderFirst' => 'اسلاید شو صفحه اول',
         'aboutUs' => 'درباره ما',
         'sliderAboutUs' => 'اسلاید شو شرکت نمایندگی درباره ما',
@@ -34,7 +36,7 @@ return [
 
 
     ],
-    'types' => ['setting', 'contact', 'sliderFirst', 'sliderAboutUs', 'sliderAboutUs2','aboutUs'],
+    'types' => ['setting', 'contact', 'sliderFirst', 'sliderAboutUs', 'sliderAboutUs2', 'aboutUs', 'productLinks', 'productSliderMenu'],
     'forms' => [             //  name       type            label
         'setting' => [
 //                        'title_fa' => ['type'=>'text','label'=>'نام سایت فارسی','class'=>null,'style'=>null,'values' => array()],
@@ -80,6 +82,10 @@ return [
 //                        'link_fa' => ['type'=>'text','label'=>'لینک فارسی','class'=>null,'style'=>null,'values' => array()],
             'link' => ['type' => 'text', 'label' => 'لینک ', 'class' => null, 'style' => null, 'values' => array()]
         ],
+        'productLinks' => [
+            'name' => ['type' => 'text', 'label' => 'عنوان ', 'class' => null, 'style' => null, 'values' => array()],
+            'link' => ['type' => 'text', 'label' => 'لینک ', 'class' => null, 'style' => null, 'values' => array()]
+        ],
         'sliderAboutUs' => [
             'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
         ],
@@ -97,6 +103,11 @@ return [
         'sliderAboutUs2' => [
             'title' => ['type' => 'text', 'label' => 'عنوان ', 'class' => null, 'style' => null, 'values' => array()],
             'year' => ['type' => 'text', 'label' => 'سال ', 'class' => null, 'style' => null, 'values' => array()],
+            'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
+            'description' => ['type' => 'textarea', 'label' => 'توضیحات ', 'class' => null, 'style' => null, 'values' => array()],
+        ],
+        'productSliderMenu' => [
+            'name' => ['type' => 'text', 'label' => 'عنوان ', 'class' => null, 'style' => null, 'values' => array()],
             'image' => ['type' => 'file', 'label' => 'عکس', 'class' => null, 'style' => null, 'values' => array()],
             'description' => ['type' => 'textarea', 'label' => 'توضیحات ', 'class' => null, 'style' => null, 'values' => array()],
         ],
@@ -167,6 +178,8 @@ return [
     ],
     'addable' => [
         'sliderFirst' => true,
+        'productLinks' => true,
+        'productSliderMenu' => true,
         'aboutUs' => true,
         'setting' => true,
         'contact' => true,

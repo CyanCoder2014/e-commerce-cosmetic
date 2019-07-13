@@ -29,6 +29,9 @@ class LayoutProvider extends ServiceProvider
         $aboutUs=Utility::where('type','aboutUs')->orderBy('id', 'desc')->first();
         $sliderAboutUs=Utility::where('type','sliderAboutUs')->orderBy('id', 'desc')->get();
         $sliderAboutUs2=Utility::where('type','sliderAboutUs2')->orderBy('id', 'desc')->get();
+        $productLinks=Utility::where('type','productLinks')->orderBy('id', 'desc')->get();
+        $productSliderMenu=Utility::where('type','productSliderMenu')->orderBy('id', 'desc')->get();
+        $contents = Content::where('cat_id', '!=', '25')->orderby('id', 'desc')->paginate(20);
 //        $blogs= Content::orderBy('id', 'desc')->take(3)->get();
         $categories = ProductCatModel:: whereNull('parent_id')->get();
 //        $categories = ContentCat::paginate(10);
@@ -46,6 +49,9 @@ class LayoutProvider extends ServiceProvider
             'contact' => $contact,
             'sliderAboutUs' => $sliderAboutUs,
             'sliderAboutUs2' => $sliderAboutUs2,
+            'productLinks' => $productLinks,
+            'productSliderMenu' => $productSliderMenu,
+            'blog' => $contents,
 //            'banners' => $banners,
             'setting' => $setting,
             'aboutUs' => $aboutUs,
