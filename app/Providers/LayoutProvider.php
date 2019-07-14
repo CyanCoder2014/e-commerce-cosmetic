@@ -57,7 +57,6 @@ class LayoutProvider extends ServiceProvider
             'aboutUs' => $aboutUs,
 //            'blogs' => $blogs,
             'categories' => $categories,
-            'contents' => $contents,
 //            'footer_title' => $footer_title,
 //            'footer_1' => $footer_1,
 //            'footer_2' => $footer_2,

@@ -44,7 +44,7 @@
     <!--/.Carousel Wrapper-->
 
     <div class="bg-second-index dir-r mt-menu parallax"
-         style="background-image: url('{{asset($setting->about_us_image_bg)}}');clip-path: none">
+         style="background-image: url('{{asset($aboutUs->about_us_image_bg)}}');clip-path: none">
         <div class="cover_bg-second"></div>
         <div class="container">
             <div class="row">
@@ -107,7 +107,7 @@
         </div>
     </div>
     <div class="bg-second-index parallax mt-5"
-         style="background-image: url('{{asset($setting->about_us_image_bg)}}');clip-path: none">
+         style="background-image: url('{{asset($aboutUs->about_us_image_bg)}}');clip-path: none">
         <div class="cover_bg-second"></div>
         <div class="container">
             <div class="row">

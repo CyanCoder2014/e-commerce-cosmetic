@@ -62,7 +62,7 @@
                                     <div class="col-md-10 dir-r">
                                         <div class="container-fluid">
                                             <div class="row dir-r">
-                                                @foreach($contents as $key =>$content)
+                                                @foreach($blog as $key =>$content)
                                                     @if($key < 3)
                                                 <div class="col-md-3">
                                                     <a href="{{ route('content.show',['id' => '324-'.$content->id.'-'.str_replace(" ","-",$content->title['fa'])]) }}">
@@ -99,7 +99,7 @@
                                     </div>
                                     <div class="col-md-2 dir-r">
                                         <ul>
-                                            @foreach($contents as $key =>$content)
+                                            @foreach($blog as $key =>$content)
                                                 @if($key >= 3)
                                                     <li class="font-weight-bold"><a
                                                                 href="{{ route('content.show',['id' => '324-'.$content->id.'-'.str_replace(" ","-",$content->title['fa'])]) }}">
