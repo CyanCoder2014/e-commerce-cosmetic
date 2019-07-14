@@ -28,7 +28,8 @@ return [
         'contact' => 'تماس با ما',
         //       'gallery' => 'گالري عکس',
 //        'banner2' => 'بنر دوم',
-//        'footer_1' => 'فوتر اول',
+        'footer_links' => 'لینک های فوتر',
+        'footer_image' => 'تصویر فوتر',
 //        'footer_2' => 'فوتر دوم',
 //        'footer_3' => 'فوتر سوم',
 //        'footer_4' => 'فوتر چهارم',
@@ -36,7 +37,7 @@ return [
 
 
     ],
-    'types' => ['setting', 'contact', 'sliderFirst', 'sliderAboutUs', 'sliderAboutUs2', 'aboutUs', 'productLinks', 'productSliderMenu'],
+    'types' => ['setting', 'contact', 'sliderFirst', 'sliderAboutUs', 'sliderAboutUs2', 'aboutUs', 'productLinks', 'productSliderMenu','footer_links','footer_image'],
     'forms' => [             //  name       type            label
         'setting' => [
 //                        'title_fa' => ['type'=>'text','label'=>'نام سایت فارسی','class'=>null,'style'=>null,'values' => array()],
@@ -53,6 +54,7 @@ return [
 
             'about_us' => ['type' => 'text', 'label' => 'توضیحات درباره ما', 'class' => null, 'style' => null, 'values' => array()],
             'about_us_image' => ['type' => 'file', 'label' => 'عکس درباره ما', 'class' => null, 'style' => null, 'values' => array()],
+            'catalog_bg' => ['type' => 'file', 'label' => 'عکس بکگراند کاتالوگ محصولات', 'class' => null, 'style' => null, 'values' => array()],
             'catalog_right_title' => ['type' => 'text', 'label' => 'عنوان عکس کاتالوگ سمت راست', 'class' => null, 'style' => null, 'values' => array()],
             'catalog_right_image' => ['type' => 'file', 'label' => 'عکس کاتالوگ سمت راست', 'class' => null, 'style' => null, 'values' => array()],
             'catalog_left_top_title' => ['type' => 'text', 'label' => 'عنوان عکس کاتالوگ سمت چپ بالا', 'class' => null, 'style' => null, 'values' => array()],
@@ -112,12 +114,12 @@ return [
             'description' => ['type' => 'textarea', 'label' => 'توضیحات ', 'class' => null, 'style' => null, 'values' => array()],
         ],
 
-        /*'footer_title' => [
-            'title_1' => ['type' => 'text', 'label' => 'عنوان اولی', 'class' => null, 'style' => null, 'values' => array()],
-            'title_2' => ['type' => 'text', 'label' => 'عنوان دومی', 'class' => null, 'style' => null, 'values' => array()],
-            'title_3' => ['type' => 'text', 'label' => 'عنوان سومی', 'class' => null, 'style' => null, 'values' => array()],
-            'title_4' => ['type' => 'text', 'label' => 'عنوان چهارمی', 'class' => null, 'style' => null, 'values' => array()],
-        ],*/
+        'footer_links' => [
+            'name' => ['type' => 'text', 'label' => 'عنوان ', 'class' => null, 'style' => null, 'values' => array()],
+        ],
+        'footer_image' => [
+            'image' => ['type'=>'file','label'=>'عکس','class'=>null,'style'=>null,'values' => array()],
+        ],
         /*'footer_1' => ['title' => ['type' => 'text', 'label' => 'عنوان', 'class' => null, 'style' => null, 'values' => array()],
 //                        'title_fa' => ['type'=>'text','label'=>'عنوان فارسی','class'=>null,'style'=>null,'values' => array()],
 //                          'image' => ['type'=>'file','label'=>'عکس','class'=>null,'style'=>null,'values' => array()],
@@ -178,6 +180,8 @@ return [
     ],
     'addable' => [
         'sliderFirst' => true,
+        'footer_links' => true,
+        'footer_image' => true,
         'productLinks' => true,
         'productSliderMenu' => true,
         'aboutUs' => true,

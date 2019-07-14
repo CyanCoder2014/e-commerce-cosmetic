@@ -128,7 +128,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <img src="{{$sliderAboutUs3->image}}"
-                                                     class="w-100" alt="placeholder">
+                                                     class="w-100 rounded z-depth-3" alt="placeholder">
                                             </div>
                                             <div class="col-md-6 pl-4">
                                                 <h3 class="text-white mt-3">{{$sliderAboutUs3->title}}</h3>

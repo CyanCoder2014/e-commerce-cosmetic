@@ -27,10 +27,12 @@ class LayoutProvider extends ServiceProvider
         $contact=Utility::where('type','contact')->orderBy('id', 'desc')->first();
         $setting=Utility::where('type','setting')->orderBy('id', 'desc')->first();
         $aboutUs=Utility::where('type','aboutUs')->orderBy('id', 'desc')->first();
+        $footer_image=Utility::where('type','footer_image')->orderBy('id', 'desc')->first();
         $sliderAboutUs=Utility::where('type','sliderAboutUs')->orderBy('id', 'desc')->get();
         $sliderAboutUs2=Utility::where('type','sliderAboutUs2')->orderBy('id', 'desc')->get();
         $productLinks=Utility::where('type','productLinks')->orderBy('id', 'desc')->get();
         $productSliderMenu=Utility::where('type','productSliderMenu')->orderBy('id', 'desc')->get();
+        $footer_links=Utility::where('type','footer_links')->orderBy('id', 'desc')->get();
         $contents = Content::where('cat_id', '!=', '25')->orderby('id', 'desc')->paginate(20);
 //        $blogs= Content::orderBy('id', 'desc')->take(3)->get();
         $categories = ProductCatModel:: whereNull('parent_id')->get();
@@ -48,6 +50,8 @@ class LayoutProvider extends ServiceProvider
         view()->share([
             'contact' => $contact,
             'sliderAboutUs' => $sliderAboutUs,
+            'footer_links' => $footer_links,
+            'footer_image' => $footer_image,
             'sliderAboutUs2' => $sliderAboutUs2,
             'productLinks' => $productLinks,
             'productSliderMenu' => $productSliderMenu,

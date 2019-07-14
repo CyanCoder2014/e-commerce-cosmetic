@@ -754,7 +754,6 @@ body::-webkit-scrollbar {
 }
 
 .bg-slider {
-    background-image: url("../pic/bg-p.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

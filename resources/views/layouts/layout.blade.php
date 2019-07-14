@@ -355,7 +355,7 @@
 </div>
 
 <div class="menuBar ">
-    <div class="bg-slider">
+    <div class="bg-slider" style="background-image: url('{{asset($setting->catalog_bg)}}')">
         <div class="coverBlack"></div>
         <div class="pt-menu">
 
@@ -402,7 +402,7 @@
                         <div class="mt-5">
                             <div>
                                 <span class="d-inline-block mr-3 bg-gray" style="width: 50px;height: 3px"></span>
-                                <span class="text-gray font-weight-bold">تماس با ما</span>
+                                <span class="text-white font-weight-bold">تماس با ما</span>
                             </div>
                             <ul class="text-white list-unstyled">
                                 <li class="m-3"><span class=" h4 text-white menuHover"
@@ -414,7 +414,7 @@
                             </ul>
                             <div class="mt-5">
                                 <span class="d-inline-block mr-3 bg-gray" style="width: 50px;height: 3px"></span>
-                                <span class="text-gray font-weight-bold">ما را دنبال کنید</span>
+                                <span class="text-white font-weight-bold">ما را دنبال کنید</span>
                             </div>
                             <ul class="d-flex flex-row list-unstyled justify-content-end">
                                 <li class="m-3"><a class="text-white menuHover" href="{{$contact->facebook_link}}"><i
@@ -456,13 +456,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <img src="{{asset($setting->image_white)}}" width="82"/></div>
+                    <img src="{{asset($footer_image->image)}}" width="82"/></div>
                 <div class="col-md-6">
                     <ul class="list-unstyled d-lg-flex flex-lg-row justify-content-center">
-                        <li class="p-3"><a href="#" class="text-white">DISCLAIMER & WEBSITE</a></li>
-                        <li class="p-3"><a href="#" class="text-white">JOBS</a></li>
-                        <li class="p-3"><a href="#" class="text-white">PRESS</a></li>
-                        <li class="p-3"><a href="#" class="text-white">PRESS</a></li>
+                        @foreach($footer_links as $footer_link)
+                        <li class="p-3"><a href="#" class="text-white">{{$footer_link->name}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="col-md-3">
